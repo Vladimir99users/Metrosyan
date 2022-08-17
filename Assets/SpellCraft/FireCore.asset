@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd0444d93e16f442a73c7b348aaac91, type: 3}
+  m_Name: FireCore
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 21300000, guid: e747e8679b4ab894082999c0e2165d7f, type: 3}
+  _stats:
+    _damage: 8.800555e+10
+    _type: 0
+    _name: "\u041D\u0435\u043A\u0440\u0430\u0441\u0438\u0432\u044B\u0439 \u043E\u0433\u043E\u043D\u044C"
