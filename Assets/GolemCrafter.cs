@@ -3,14 +3,22 @@ using UnityEngine;
 
 public class GolemCrafter : MonoBehaviour
 {
-    [SerializeField] private Core _typeCore;
+    [SerializeField] private CoreSlot _typeSlot;
     private AttackFactoryBase _attackFactory = new RangeAttackFactory();
 
     public void Craft()
     {
-        IAttack golemAttack = _attackFactory.Get(_typeCore.Stats);
+        if (_typeSlot.Item is null)
+            return;
+
+        IAttack golemAttack = _attackFactory.Get(_typeSlot.Item.Stats);
         Spell golem = new Golem(golemAttack);
         golem.Use();
+    }
+
+    public void TryCraft()
+    {
+
     }
   
 }
