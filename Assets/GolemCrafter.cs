@@ -15,10 +15,5 @@ public class GolemCrafter : MonoBehaviour
         Spell golem = new Golem(golemAttack);
         golem.Use();
     }
-
-    public void TryCraft()
-    {
-
-    }
   
 }

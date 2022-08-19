@@ -1,23 +1,29 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(CanvasGroup))]
 public abstract class Menu : MonoBehaviour
 {
-    public bool IsOpen => _canvasGroup.interactable;
+    [SerializeField] private bool _closeOnAwake = true;
+
 
     public UnityEvent Opened;
     public UnityEvent Closed;
 
-    [SerializeField] private bool _closeOnAwake = true;
+    public bool IsOpen => _canvasGroup.interactable;
+
     private CanvasGroup _canvasGroup;
 
+    [ContextMenu("Open")]
     public virtual void Open()
     {
         _canvasGroup.interactable = true;
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.alpha = 1;
     }
+
+    [ContextMenu("Close")]
     public virtual void Close()
     {
         _canvasGroup.interactable = false;
