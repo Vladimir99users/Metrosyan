@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public abstract class MenuItem<TContent> : MonoBehaviour
 {
-    public TContent Content => content;
+    public TContent Item => _item;
 
     [SerializeField] protected Image image;
-    [SerializeField] protected TContent content;
+    [SerializeField] protected TContent _item;
 }
 

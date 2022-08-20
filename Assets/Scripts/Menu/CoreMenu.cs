@@ -1,10 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CoreMenu : Menu
 {
     [SerializeField] private List<CoreMenuItem> _menuItems;
     [SerializeField] private CoreMenuItem _selectedItem;
+
+    public Core SelectedCore => _selectedItem?.Item;
+
+    public event Action<Core> CoreSelected;
 
     protected override void OnAwake()
     {
@@ -19,6 +24,7 @@ public class CoreMenu : Menu
     private void OnItemSelected(CoreMenuItem coreMenuItem)
     {
         _selectedItem = coreMenuItem;
+        CoreSelected?.Invoke(_selectedItem.Item);
         Close();
     }
 

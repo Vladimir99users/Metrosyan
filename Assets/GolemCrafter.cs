@@ -4,7 +4,10 @@ using UnityEngine;
 public class GolemCrafter : MonoBehaviour
 {
     [SerializeField] private CoreSlot _typeSlot;
+    [SerializeField] private CoreMenu _menu;
+
     private AttackFactoryBase _attackFactory = new RangeAttackFactory();
+
 
     public void Craft()
     {
@@ -15,5 +18,7 @@ public class GolemCrafter : MonoBehaviour
         Spell golem = new Golem(golemAttack);
         golem.Use();
     }
+
+
   
 }
