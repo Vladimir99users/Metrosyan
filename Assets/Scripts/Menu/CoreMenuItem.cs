@@ -18,12 +18,13 @@ public class CoreMenuItem : MenuItem<Core>
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClick);
+
+        _image.sprite = _item.Sprite; 
     }
 
     private void OnButtonClick()
     {
         _selected?.Invoke(this);
-
     }
 }
 
