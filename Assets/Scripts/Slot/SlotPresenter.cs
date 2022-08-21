@@ -11,6 +11,11 @@ public class SlotPresenter : MonoBehaviour
     private void Awake()
     {
         _slot = GetComponent<ISlotNotification>();
+
+        if (_slot.CurrentItem != null)
+        {
+            _slotImage.sprite = _slot.CurrentItem.Sprite;
+        }
     }
 
     private void OnEnable()
@@ -34,4 +39,3 @@ public class SlotPresenter : MonoBehaviour
         _slotImage.sprite = null;
     }
 }
-
