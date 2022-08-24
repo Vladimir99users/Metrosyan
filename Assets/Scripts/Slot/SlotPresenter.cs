@@ -14,7 +14,7 @@ public class SlotPresenter : MonoBehaviour
 
         if (_slot.CurrentItem != null)
         {
-            _slotImage.sprite = _slot.CurrentItem.Sprite;
+            _slotImage.sprite = _slot.CurrentItem.Sprite; 
         }
     }
 
@@ -29,12 +29,12 @@ public class SlotPresenter : MonoBehaviour
         _slot.Added -= OnAdded;
         _slot.Removing -= OnRemoving;
     }
-    protected virtual void OnAdded(Entity entity)
+    protected virtual void OnAdded(CraftEntity entity)
     {
         _slotImage.sprite = entity.Sprite;
     }
 
-    protected virtual void OnRemoving(Entity entity)
+    protected virtual void OnRemoving(CraftEntity entity)
     {
         _slotImage.sprite = null;
     }

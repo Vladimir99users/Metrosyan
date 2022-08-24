@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoreMenu : Menu
 {
-    [SerializeField] private List<CoreMenuItem> _menuItems;
+    [SerializeField] private CoreMenuItem[] _menuItems;
     [SerializeField] private CoreMenuItem _selectedItem;
 
     public Core SelectedCore => _selectedItem?.Item;
@@ -15,17 +15,25 @@ public class CoreMenu : Menu
     {
         base.OnAwake();
 
-        foreach(var item in _menuItems)
+        foreach (var item in _menuItems)
         {
             item.Init(OnItemSelected);
         }
     }
 
-    private void OnItemSelected(CoreMenuItem coreMenuItem)
+
+    private void OnItemSelected(MenuItem<Core> coreMenuItem)
     {
-        _selectedItem = coreMenuItem;
+        _selectedItem = coreMenuItem as CoreMenuItem;
         CoreSelected?.Invoke(_selectedItem.Item);
         Close();
+    }
+
+
+    [ContextMenu("FindAllMenuItems")]
+    protected void FindAllMenuItems()
+    {
+        _menuItems = GetComponentsInChildren<CoreMenuItem>();
     }
 
 }

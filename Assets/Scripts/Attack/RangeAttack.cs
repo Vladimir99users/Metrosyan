@@ -14,7 +14,6 @@ public class RangeAttack : IAttack
 
     public void Hit()
     {
-        // передача в ECS
         Debug.Log("I shoot " + _projectale.Type + " " + _projectale.Damage);
     }
 }

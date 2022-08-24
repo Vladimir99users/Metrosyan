@@ -1,4 +1,7 @@
-﻿public abstract class Spell : Entity
+﻿using System;
+using UnityEngine;
+
+public abstract class Spell
 {
     public abstract void Use();
 }

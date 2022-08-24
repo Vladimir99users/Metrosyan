@@ -2,29 +2,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
+
 public class CoreMenuItem : MenuItem<Core>
 {
-    private Button button;
-
-    private Action<CoreMenuItem> _selected;
-
-    public void Init(Action<CoreMenuItem> onSelect)
+#if UNITY_EDITOR
+    [ContextMenu("SetImageInspector")]
+    private void SetImageInspector()
     {
-        _selected = onSelect;
-    }
+        if (_item is null)
+            return;
 
-    private void Awake()
-    {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnButtonClick);
-
-        _image.sprite = _item.Sprite; 
+        _image.sprite = _item.Sprite;
     }
-
-    private void OnButtonClick()
-    {
-        _selected?.Invoke(this);
-    }
+#endif
 }
 

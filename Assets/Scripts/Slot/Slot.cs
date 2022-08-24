@@ -3,15 +3,15 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class Slot<TItem> : MonoBehaviour, ISlotNotification
-    where TItem : Entity
+    where TItem : CraftEntity
 {
-    Entity ISlotNotification.CurrentItem => _item;
+    CraftEntity ISlotNotification.CurrentItem => _item;
     public TItem Item => _item;
     
     [SerializeField] private TItem _item;
 
-    public event Action<Entity> Added;
-    public event Action<Entity> Removing;
+    public event Action<CraftEntity> Added;
+    public event Action<CraftEntity> Removing;
 
     public virtual void Add(TItem item)
     {
@@ -28,8 +28,8 @@ public abstract class Slot<TItem> : MonoBehaviour, ISlotNotification
 
 public interface ISlotNotification
 {
-    public Entity CurrentItem { get; }
+    public CraftEntity CurrentItem { get; }
 
-    public event Action<Entity> Added;
-    public event Action<Entity> Removing;
+    public event Action<CraftEntity> Added;
+    public event Action<CraftEntity> Removing;
 }
