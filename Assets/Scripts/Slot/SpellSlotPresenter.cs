@@ -6,6 +6,7 @@
 
         CoreColorFactory colorFactory = new CoreColorFactory();
         _slotImage.color = colorFactory.Get(entity.TypeCore);
+        
     }
 }
 
