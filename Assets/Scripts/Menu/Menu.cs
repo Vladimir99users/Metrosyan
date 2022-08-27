@@ -18,6 +18,9 @@ public abstract class Menu : MonoBehaviour
     [ContextMenu("Open")]
     public virtual void Open()
     {
+#if UNITY_EDITOR
+        OnAwake();
+#endif
         _canvasGroup.interactable = true;
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.alpha = 1;
@@ -26,6 +29,9 @@ public abstract class Menu : MonoBehaviour
     [ContextMenu("Close")]
     public virtual void Close()
     {
+#if UNITY_EDITOR
+        OnAwake();
+#endif
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0;

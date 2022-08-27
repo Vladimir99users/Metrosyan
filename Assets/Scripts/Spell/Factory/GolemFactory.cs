@@ -1,14 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpellFactory
+public class GolemFactory : MonoBehaviour 
 {
-    public abstract Spell Get();
-  
-}
-
-public class GolemFactory
-{
+    [SerializeField] private Golem _golem;
     public Spell Get(Core mainCore)
     {
         AttackFactoryBase _attaclFactory;
@@ -16,7 +11,9 @@ public class GolemFactory
 
         IAttack attack = _attaclFactory.Get(mainCore.Stats);
 
-        Spell golem = new Golem(attack);
+        Spell golem = _golem;
+        _golem.Init(attack, mainCore);
+
         return golem;
     }
 }

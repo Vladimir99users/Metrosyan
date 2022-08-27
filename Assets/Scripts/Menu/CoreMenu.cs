@@ -14,13 +14,16 @@ public class CoreMenu : Menu
     protected override void OnAwake()
     {
         base.OnAwake();
+        InitMenuItems();
+    }
 
+    private void InitMenuItems()
+    {
         foreach (var item in _menuItems)
         {
             item.Init(OnItemSelected);
         }
     }
-
 
     private void OnItemSelected(MenuItem<Core> coreMenuItem)
     {
