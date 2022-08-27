@@ -1,11 +1,9 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class CraftEntity : ScriptableObject
-{
-    [SerializeField] private Sprite _sprite;                                                             
+public abstract class CraftEntity : Item
+{                                                         
     [SerializeField] private EntityStats _stats;
 
     public EntityStats Stats => _stats;
-    public Sprite Sprite => _sprite;
 }
+

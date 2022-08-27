@@ -2,16 +2,21 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class Slot<TItem> : MonoBehaviour, ISlotNotification
-    where TItem : CraftEntity
+/// <summary>
+/// Слот для хранения сущности крафта. 
+/// Например, слот для крафта
+/// </summary>
+/// <typeparam name="TItem">Тип хранимый элемент</typeparam>
+public abstract class Slot<TItem> : MonoBehaviour, ISlotNotification<TItem>
+    where TItem : Item
 {
-    CraftEntity ISlotNotification.CurrentItem => _item;
-    public TItem Item => _item;
-    
+    public TItem CurrentItem => _item;
+
     [SerializeField] private TItem _item;
 
-    public event Action<CraftEntity> Added;
-    public event Action<CraftEntity> Removing;
+    public event Action<TItem> Added;
+
+    public event Action<TItem> Removing;
 
     public virtual void Add(TItem item)
     {
@@ -26,10 +31,10 @@ public abstract class Slot<TItem> : MonoBehaviour, ISlotNotification
     }
 }
 
-public interface ISlotNotification
+public interface ISlotNotification<TItem>
 {
-    public CraftEntity CurrentItem { get; }
+    public TItem CurrentItem { get; }
 
-    public event Action<CraftEntity> Added;
-    public event Action<CraftEntity> Removing;
+    public event Action<TItem> Added;
+    public event Action<TItem> Removing;
 }
