@@ -17,4 +17,4 @@ MonoBehaviour:
     _damage: 10
     _type: 1
     _name: "\u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0435\u0431\u0443\u043D"
-  _color: {r: 1, g: 1, b: 1, a: 1}
+  _color: {r: 0.8301887, g: 0.7322891, b: 0.7322891, a: 1}
