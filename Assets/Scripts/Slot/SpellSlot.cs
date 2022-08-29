@@ -1,7 +1,9 @@
-﻿public class SpellSlot : Slot<Spell>
+﻿using TMPro;
+
+public class SpellSlot : Slot<Spell>
 {
     public void UseSpell()
     {
-        CurrentItem.Use();
+        CurrentItem.Use(transform.position, transform.forward);
     }
 }

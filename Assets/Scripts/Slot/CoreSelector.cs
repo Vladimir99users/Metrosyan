@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class CoreSelector : MonoBehaviour
 {
+
+
+    public UnityEvent CoreSelected;
+
     [SerializeField] private CoreSlot _coreSlot;
     [SerializeField] private CoreMenu _coreChooseMenu;
 
@@ -15,6 +20,6 @@ public class CoreSelector : MonoBehaviour
     {
         _coreSlot.Add(core);
         _coreChooseMenu.CoreSelected -= OnCoreSelected;
+        CoreSelected?.Invoke();
     }
-
 }

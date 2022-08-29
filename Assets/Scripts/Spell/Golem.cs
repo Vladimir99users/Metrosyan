@@ -12,9 +12,10 @@ public class Golem : Spell
         TypeCore = typeCore;
     }
 
-    public override void Use()
+    public override void Use(Vector3 castPosition, Vector3 direction)
     {
         Debug.Log($"Spawn golem");
+        Instantiate(_spellPrefab, castPosition, Quaternion.identity);
         Attack();
     }
 

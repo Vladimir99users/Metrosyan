@@ -1,24 +1,35 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GolemCraftMenu : Menu
 {
+    public SpellUnityEvent SpellCrafted;
+    public SpellUnityEvent SpellAdding;
+
     [SerializeField] private CoreSlot _typeSlot;
     [SerializeField] private CoreSlot _extraSlot;
-    [SerializeField] private SpellSlot _spellSlot;
     [SerializeField] private GolemFactory _golemFactory;
-    [SerializeField] private CoreMenu _menu;
 
-    private AttackFactoryBase _attackFactory = new RangeAttackFactory();
+    private Spell _craftedGolem;
 
     public void Craft()
     {
         if (_typeSlot.CurrentItem is null)
             return;
-        
-        Spell golem = _golemFactory.Get(_typeSlot.CurrentItem);
 
-        _spellSlot.Add(golem);
+        _craftedGolem  = _golemFactory.Get(_typeSlot.CurrentItem);
+        SpellCrafted?.Invoke(_craftedGolem);
+    }
+
+    public void AddToSlot()
+    {
+        if(_craftedGolem is null)
+        {
+            return;
+        }
+
+        SpellAdding?.Invoke(_craftedGolem);
     }
 
     public override void Open()
@@ -33,3 +44,6 @@ public class GolemCraftMenu : Menu
         base.Close();
     }
 }
+
+[System.Serializable]
+public class SpellUnityEvent : UnityEvent<Spell> { }
