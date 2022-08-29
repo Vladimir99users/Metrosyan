@@ -2,8 +2,7 @@
 {
     protected override void OnAdded(Spell entity)
     {
-        CoreColorFactory colorFactory = new CoreColorFactory();
-        _slotImage.color = colorFactory.Get(entity.TypeCore);
+        _slotImage.color = entity.TypeCore.Color;
 
         base.OnAdded(entity);
 
