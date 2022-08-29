@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GolemCrafter : Menu
+public class GolemCraftMenu : Menu
 {
     [SerializeField] private CoreSlot _typeSlot;
     [SerializeField] private CoreSlot _extraSlot;
@@ -19,5 +19,17 @@ public class GolemCrafter : Menu
         Spell golem = _golemFactory.Get(_typeSlot.CurrentItem);
 
         _spellSlot.Add(golem);
+    }
+
+    public override void Open()
+    {
+        gameObject.SetActive(true);
+        base.Open();
+    }
+
+    public override void Close()
+    {
+        gameObject.SetActive(false);
+        base.Close();
     }
 }
