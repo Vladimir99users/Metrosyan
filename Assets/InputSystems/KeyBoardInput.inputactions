@@ -1,0 +1,235 @@
+{
+    "name": "KeyBoardInput",
+    "maps": [
+        {
+            "name": "KeyBoardContoller",
+            "id": "08fea444-e043-44f7-931c-6da5580a01d6",
+            "actions": [
+                {
+                    "name": "WASD",
+                    "type": "Value",
+                    "id": "5e53001a-680f-4c7b-82c4-ec42657ba331",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "CraftMenu",
+                    "type": "Button",
+                    "id": "cf8cce78-e1e5-43e0-a9ea-abdb05f781cb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "c416ec56-abcd-44dc-b1f3-5dc5dcb32dec",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RadialMenu",
+                    "type": "Button",
+                    "id": "21ca911a-20e3-4338-ace5-688e79dd791c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LookMouse",
+                    "type": "Value",
+                    "id": "57f4e174-0cab-488e-88fa-5765e5e9a14c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "91f284d1-5170-43a2-ae31-fbf167c5fb33",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "CraftMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17fb070d-c092-49aa-aa78-ea302009ba70",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "RadialMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c2a4fca-84ac-4bbb-9c38-a47daa43de09",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "WASD",
+                    "id": "73b01328-e486-473c-97c7-d3cdc45e349e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WASD",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "febfeaf5-c350-4a35-80c3-97551dc016fb",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "89f356e3-2cc9-4c4b-8171-033dca27f017",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "2a30ea9c-8288-40be-9a57-115ecb124f3d",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c32c370b-d6a0-4868-925d-2edb301a6040",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Arrow",
+                    "id": "9057964e-32cc-4a67-8734-5e7d45370db4",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WASD",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "af9a2bde-d560-43ef-999e-8a85eef80ebe",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "3e716d59-fc01-400b-b61b-0d2ecd0b2f3c",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "c9fff2c6-5987-4a76-b47a-75606ee14b69",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "2b503717-0448-45de-b466-6ffe5a1f01e8",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "08a48483-f7de-4254-9577-802346ce9afe",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MovePlayer_KeyBoard_And_Mouse",
+                    "action": "LookMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UIController",
+            "id": "3b6994b1-0a23-4664-8e5e-7bb04261f0ef",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "c0030d2f-587e-47e7-b0b4-8233901bf3da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "MovePlayer_KeyBoard_And_Mouse",
+            "bindingGroup": "MovePlayer_KeyBoard_And_Mouse",
+            "devices": []
+        }
+    ]
+}

@@ -2,6 +2,7 @@ using UnityEngine;
 
 sealed class CameraMoveThirdPerson : MonoBehaviour
 {
+
     [SerializeField] private GameObject _target;
     private Vector3 offset;
 
@@ -16,6 +17,9 @@ sealed class CameraMoveThirdPerson : MonoBehaviour
     void Start()
     {
         offset = transform.position - _target.transform.position;
+
+        transform.position = new Vector3
+            (_target.transform.position.x + _xOffset, _target.transform.position.y + _yOffset,_target.transform.position.z + _zOffset);
     }
 
     
