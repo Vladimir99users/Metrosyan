@@ -1168,6 +1168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TypeSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 8537935307059178811, guid: 966b1a932b5e0ff43862bce42734d400, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8537935307059178805, guid: 966b1a932b5e0ff43862bce42734d400, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 966b1a932b5e0ff43862bce42734d400, type: 3}
@@ -1318,7 +1322,7 @@ MonoBehaviour:
       m_Calls: []
   _typeSlot: {fileID: 1083565868}
   _extraSlot: {fileID: 1556316985}
-  _spellSlot: {fileID: 0}
+  _spellSlot: {fileID: 1394499780406909442}
   _golemFactory: {fileID: 1192746827}
   _menu: {fileID: 572074015}
 --- !u!4 &1192746825
@@ -1497,7 +1501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb7ec4e4e3d0e74e8ef0611636b82b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _item: {fileID: 0}
 --- !u!4 &1487370565
 Transform:
   m_ObjectHideFlags: 0
@@ -1615,6 +1618,10 @@ PrefabInstance:
     - target: {fileID: 8537935307059178811, guid: 966b1a932b5e0ff43862bce42734d400, type: 3}
       propertyPath: m_Name
       value: ExtraCoreSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537935307059178811, guid: 966b1a932b5e0ff43862bce42734d400, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8537935307059178805, guid: 966b1a932b5e0ff43862bce42734d400, type: 3}
@@ -1915,6 +1922,7 @@ GameObject:
   - component: {fileID: 1394499780406909424}
   - component: {fileID: 1394499780406909441}
   - component: {fileID: 1394499780406909442}
+  - component: {fileID: 1394499780406909443}
   m_Layer: 0
   m_Name: SpellSlot
   m_TagString: Untagged
@@ -1966,7 +1974,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1394499780406909442}
         m_TargetAssemblyTypeName: SpellSlot, Assembly-CSharp
         m_MethodName: UseSpell
         m_Mode: 1
@@ -1991,6 +1999,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item: {fileID: 0}
+--- !u!114 &1394499780406909443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394499780406909439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dc3a72e570eda46b11e1517d14639f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotImage: {fileID: 1394499779923545199}
 --- !u!114 &1444659806974862237
 MonoBehaviour:
   m_ObjectHideFlags: 0

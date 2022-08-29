@@ -6,7 +6,8 @@ public class CoreColorFactory
     
         core.Stats.Type switch
         {
-            ElementType.Fire => new Color(255, 0, 0, 0),
+            ElementType.Fire => new Color(200, 0, 0, 255),
+            ElementType.Ice => new Color(0, 0, 200, 255),
             _ => new Color(0, 0, 0, 255),
         };
 
