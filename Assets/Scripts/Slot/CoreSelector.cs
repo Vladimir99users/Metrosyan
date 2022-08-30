@@ -3,8 +3,6 @@ using UnityEngine.Events;
 
 public class CoreSelector : MonoBehaviour
 {
-
-
     public UnityEvent CoreSelected;
 
     [SerializeField] private CoreSlot _coreSlot;
