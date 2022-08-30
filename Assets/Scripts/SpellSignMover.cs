@@ -1,7 +1,7 @@
 using UnityEngine;
 
 //Ќарисовать прицел дл€ каста заклинани€
-public class SpellSignDrawer : MonoBehaviour
+public class SpellSignMover : MonoBehaviour
 {
 
     //Ќарисовать место куда будет закастовано заклинание
@@ -24,11 +24,13 @@ public class SpellSignDrawer : MonoBehaviour
     public void Enable()
     {
         _enabled = true;
+        _sign.Show();
     }
 
     public void Disable()
     {
         _enabled = false;
+        _sign.Hide();
     }
 
     private void LateUpdate()
@@ -47,6 +49,7 @@ public class SpellSignDrawer : MonoBehaviour
         if(TryGetSignPosition(mousePosition, out Vector3 signPosition))
         {
             _sign.Move(signPosition);    
+            _mouseLastPosition = mousePosition;
         }
     }
 
