@@ -1,21 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 //Ќарисовать прицел дл€ каста заклинани€
 public class SpellSignMover : MonoBehaviour
 {
 
     //Ќарисовать место куда будет закастовано заклинание
-    [SerializeField] private InputManager _inputManager;
+    [SerializeField] private InputActionReference _cursorInput;
     [SerializeField] private SpellSign _sign;
 
     private Camera _camera;
-    private Vector3 _mouseLastPosition = Vector3.zero;
+    private Vector2 _mouseLastPosition = Vector2.zero;
 
     private bool _enabled = false;
 
     private void Awake()
     {
-        _mouseLastPosition = _inputManager.MousePosition;
+        _mouseLastPosition = _cursorInput.action.ReadValue<Vector2>();
         _camera = Camera.main;
 
         Enable();
@@ -24,12 +25,14 @@ public class SpellSignMover : MonoBehaviour
     public void Enable()
     {
         _enabled = true;
+        _cursorInput.action.Enable();
         _sign.Show();
     }
 
     public void Disable()
     {
         _enabled = false;
+        _cursorInput.action.Disable();
         _sign.Hide();
     }
 
@@ -39,9 +42,9 @@ public class SpellSignMover : MonoBehaviour
         {
             return;
         }
-        var mousePosition = _inputManager.MousePosition;
+        var mousePosition = _cursorInput.action.ReadValue<Vector2>();
 
-        if(mousePosition == _mouseLastPosition)
+        if (mousePosition == _mouseLastPosition)
         {
             return;
         }

@@ -553,20 +553,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1192746824}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GolemCraftMenu, Assembly-CSharp
         m_MethodName: Open
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpellSignDrawer, Assembly-CSharp
-        m_MethodName: Enable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1272,7 +1260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.41478634, y: -0, z: -0, w: 0.90991884}
-  m_LocalPosition: {x: 0, y: 9.67, z: -10}
+  m_LocalPosition: {x: 0, y: 36.4, z: -37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1726,8 +1714,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1192746828}
-  - component: {fileID: 1192746827}
   - component: {fileID: 1192746824}
+  - component: {fileID: 1192746827}
   - component: {fileID: 1192746826}
   m_Layer: 0
   m_Name: GolemCrafter
@@ -1751,10 +1739,34 @@ MonoBehaviour:
   _closeOnAwake: 0
   Opened:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1712713515}
+        m_TargetAssemblyTypeName: SpellSignMover, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Closed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1712713515}
+        m_TargetAssemblyTypeName: SpellSignMover, Assembly-CSharp
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   SpellCrafted:
     m_PersistentCalls:
       m_Calls:
@@ -2460,20 +2472,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1192746824}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GolemCraftMenu, Assembly-CSharp
         m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpellSignDrawer, Assembly-CSharp
-        m_MethodName: Disable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2632,8 +2632,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1712713514}
   - component: {fileID: 1712713513}
-  - component: {fileID: 1712713512}
   - component: {fileID: 1712713515}
+  - component: {fileID: 1712713512}
   m_Layer: 0
   m_Name: SpellSign
   m_TagString: Untagged
@@ -2705,6 +2705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a082fc22567a8e45afd47dbcaa813ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 1712713512}
 --- !u!4 &1712713514
 Transform:
   m_ObjectHideFlags: 0
@@ -2713,7 +2714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712713511}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2732,8 +2733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3011d442076b14b40aa71d29c0727d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputManager: {fileID: 0}
-  _sign: {fileID: 0}
+  _inputManager: {fileID: 151734555}
+  _sign: {fileID: 1712713513}
 --- !u!1 &1736436997
 GameObject:
   m_ObjectHideFlags: 0
