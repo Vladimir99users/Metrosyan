@@ -1,0 +1,82 @@
+{
+    "name": "Input",
+    "maps": [
+        {
+            "name": "Keyboard",
+            "id": "48a5ee3a-1c17-41bf-b1b9-9592aaf3b049",
+            "actions": [
+                {
+                    "name": "Cursor",
+                    "type": "Value",
+                    "id": "2648e998-6f75-4073-b168-d7627b0b2998",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SpellCast",
+                    "type": "Button",
+                    "id": "856540f9-d661-4726-b289-52253a32f27d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5fada9a0-a6e2-408f-8590-6b8c973fb0f9",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cursor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0e6ee11-f983-4604-81e7-56f704ba3aea",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpellCast",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "12793323-c642-46cb-8c75-063c7cf41e20",
+            "actions": [
+                {
+                    "name": "CraftMenu",
+                    "type": "Button",
+                    "id": "92bf1734-462d-40fb-8859-7077338d35c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dfec813b-f3f1-4e46-8afb-62b150a8f1db",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CraftMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

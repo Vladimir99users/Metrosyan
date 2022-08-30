@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class GolemCraftMenu : Menu
 {
@@ -10,6 +11,8 @@ public class GolemCraftMenu : Menu
     [SerializeField] private CoreSlot _typeSlot;
     [SerializeField] private CoreSlot _extraSlot;
     [SerializeField] private GolemFactory _golemFactory;
+
+    [SerializeField] private InputActionReference _openCloseInput;
 
     private Spell _craftedGolem;
 
@@ -42,6 +45,25 @@ public class GolemCraftMenu : Menu
     {
         gameObject.SetActive(false);
         base.Close();
+    }
+
+    protected override void OnAwake()
+    {
+        base.OnAwake();
+
+        _openCloseInput.action.Enable();
+
+        _openCloseInput.action.performed += (c) =>
+        {
+            if (IsOpen)
+            {
+                Close();
+            }
+            else
+            {
+                Open();
+            }
+        };
     }
 }
 

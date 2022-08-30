@@ -24,6 +24,8 @@ public abstract class Menu : MonoBehaviour
         _canvasGroup.interactable = true;
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.alpha = 1;
+
+        Opened?.Invoke();
     }
 
     [ContextMenu("Close")]
@@ -35,6 +37,8 @@ public abstract class Menu : MonoBehaviour
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0;
+
+        Closed?.Invoke();
     }
 
     protected virtual void OnAwake()
