@@ -25,7 +25,7 @@ public class CoreMenu : Menu
         }
     }
 
-    private void OnItemSelected(MenuItem<Core> coreMenuItem)
+    private void OnItemSelected(SelectableItem<Core> coreMenuItem)
     {
         _selectedItem = coreMenuItem as CoreMenuItem;
         CoreSelected?.Invoke(_selectedItem.Item);

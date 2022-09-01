@@ -76,6 +76,94 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SpellQuickbar",
+            "id": "2416d0aa-cdae-4d96-a8e6-0271c4c9a64d",
+            "actions": [
+                {
+                    "name": "FirstSlot",
+                    "type": "Button",
+                    "id": "f3fabf27-fccb-4d74-a6e9-5f25f329c47f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondSlot",
+                    "type": "Button",
+                    "id": "2c71ebbc-1643-42dd-8c6a-0eb7b53f8cad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ThirdSlot",
+                    "type": "Button",
+                    "id": "fa92a306-9f74-43c7-88e2-cf2d1677e8a1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FourSlot",
+                    "type": "Button",
+                    "id": "e8d9d3a7-6f7e-498b-b316-863bfd5655bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "03253709-6b1b-4924-ba7a-3300ef402fbe",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstSlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b85e91a2-4198-4337-9cfe-87c890576474",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondSlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6bb4fe46-8cbc-466e-8444-2afa98399c2d",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThirdSlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11425912-86b6-4f4f-861e-1dbc7990d727",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FourSlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
