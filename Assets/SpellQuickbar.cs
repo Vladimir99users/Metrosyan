@@ -11,9 +11,10 @@ public class SpellQuickbar : MonoBehaviour
 
     public Spell SelectedSpell => _selectedSlot?.SpellSlot.CurrentItem ?? null;
 
-    private void Awake()
+
+    private void OnEnable()
     {
-        foreach(var slot in _slots)
+        foreach (var slot in _slots)
         {
             slot.Selected += OnSlotSelected;
         }
@@ -24,8 +25,20 @@ public class SpellQuickbar : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        foreach (var slot in _slots)
+        {
+            slot.Selected -= OnSlotSelected;
+        }
+    }
+
     private void OnSlotSelected(QuickbarSlot slot)
     {
+        if(slot == _selectedSlot)
+        {
+            return;
+        }
         _selectedSlot?.Diselect();
         _selectedSlot = slot;
     }
