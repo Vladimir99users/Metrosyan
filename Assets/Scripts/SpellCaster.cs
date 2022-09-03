@@ -5,11 +5,22 @@ public class SpellCaster : MonoBehaviour
 {
     [SerializeField] private SpellSign _spellSign;
     [SerializeField] private InputActionReference _castInput;
-    [SerializeField] private SpellSlot _spellSlot;
+    [SerializeField] private SpellQuickbar _spellQuickbar;
+
+
+    public void Enable()
+    {
+        _castInput.action.Enable();
+    }
+
+    public void Disable()
+    {
+        _castInput.action.Disable();
+    }
 
     private void OnEnable()
     {
-        _castInput.action.Enable();
+        Enable();
         _castInput.action.performed += OnCastPressed;
     }
 
@@ -22,10 +33,12 @@ public class SpellCaster : MonoBehaviour
 
     private void OnCastPressed(InputAction.CallbackContext context)
     {
-        if (_spellSlot.CurrentItem is null)
+        if (_spellQuickbar.SelectedSpell is null)
+        {
             return;
-
-        Cast(_spellSlot.CurrentItem);
+        }
+        Spell spell = _spellQuickbar.SelectedSpell;
+        Cast(spell);
     }
 
 

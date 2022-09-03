@@ -8,6 +8,7 @@ public class QuickbarSlot : MonoBehaviour
     [SerializeField] private InputActionReference _inputAction;
     [SerializeField] private SpellSlot _spellSlot;
     [SerializeField] private Image _selectImage;
+    public SpellSlot SpellSlot => _spellSlot;
 
     public event Action<QuickbarSlot> Selected;
     public event Action<QuickbarSlot> Diselected;
@@ -17,6 +18,7 @@ public class QuickbarSlot : MonoBehaviour
         _selectImage.enabled = true;
         Selected?.Invoke(this);
     }
+
     public void Diselect()
     {
         _selectImage.enabled = false;
@@ -40,7 +42,6 @@ public class QuickbarSlot : MonoBehaviour
         _inputAction.action.Disable();
     }
 
-    public InputAction InputAction => _inputAction.action;
-    public SpellSlot SpellSlot => _spellSlot;
+
 
 }

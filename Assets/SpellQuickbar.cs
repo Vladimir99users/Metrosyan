@@ -9,8 +9,15 @@ public class SpellQuickbar : MonoBehaviour
 
     [SerializeField] private QuickbarSlot _selectedSlot;
 
-    public Spell SelectedSpell => _selectedSlot?.SpellSlot.CurrentItem ?? null;
+    [SerializeField] private Spell _selectedSpell;
 
+    public Spell SelectedSpell => _selectedSlot.SpellSlot.CurrentItem;
+
+    public void AddSpell(Spell spell)
+    {
+
+        _selectedSlot.SpellSlot.Add(spell);
+    }
 
     private void OnEnable()
     {
@@ -35,12 +42,15 @@ public class SpellQuickbar : MonoBehaviour
 
     private void OnSlotSelected(QuickbarSlot slot)
     {
-        if(slot == _selectedSlot)
+        if (slot == _selectedSlot)
         {
             return;
         }
+
         _selectedSlot?.Diselect();
+
         _selectedSlot = slot;
+        _selectedSpell = slot.SpellSlot.CurrentItem;
     }
 
 }

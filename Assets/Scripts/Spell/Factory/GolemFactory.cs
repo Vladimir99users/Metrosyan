@@ -11,8 +11,8 @@ public class GolemFactory : MonoBehaviour
 
         IAttack attack = _attaclFactory.Get(mainCore.Stats);
 
-        Spell golem = _golem;
-        _golem.Init(attack, mainCore);
+        Golem golem = Instantiate(_golem);
+        golem.Init(attack, mainCore);
 
         return golem;
     }

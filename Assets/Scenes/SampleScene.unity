@@ -1178,7 +1178,8 @@ MonoBehaviour:
   - {fileID: 589936340}
   - {fileID: 1607894652}
   - {fileID: 1627910938}
-  _selectedSlot: {fileID: 0}
+  _selectedSlotIndex: 0
+  _selectedSpell: {fileID: 0}
 --- !u!224 &668406250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2225,6 +2226,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2141776495}
+        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Closed:
     m_PersistentCalls:
       m_Calls:
@@ -2239,6 +2252,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2141776495}
+        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   SpellCrafted:
     m_PersistentCalls:
@@ -2258,9 +2283,9 @@ MonoBehaviour:
   SpellAdding:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1487370566}
-        m_TargetAssemblyTypeName: Slot`1[[Spell, Assembly-CSharp
-        m_MethodName: Add
+      - m_Target: {fileID: 668406249}
+        m_TargetAssemblyTypeName: SpellQuickbar, Assembly-CSharp
+        m_MethodName: AddSpell
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3712,7 +3737,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c6e6b4a3d8f9dd64cb8f1e969d313970, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4016,7 +4041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spellSign: {fileID: 1712713513}
   _castInput: {fileID: 2458913617926032314, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
-  _spellSlot: {fileID: 1487370566}
+  _spellQuickbar: {fileID: 668406249}
 --- !u!4 &2141776496
 Transform:
   m_ObjectHideFlags: 0
@@ -4210,19 +4235,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1394499780406909442}
-        m_TargetAssemblyTypeName: SpellSlot, Assembly-CSharp
-        m_MethodName: UseSpell
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1394499780406909442
 MonoBehaviour:
   m_ObjectHideFlags: 0
