@@ -15,7 +15,7 @@ public class DirectionMouse : MonoBehaviour
             return new Vector3(pointToLook.x,transform.position.y,pointToLook.z);
           
         }
-        Debug.LogError("Directions Mouse NONe");
+        //Debug.LogError("Directions Mouse NONe");
         return new Vector3();
     }
 }
