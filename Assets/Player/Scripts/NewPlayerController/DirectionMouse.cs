@@ -11,9 +11,11 @@ public class DirectionMouse : MonoBehaviour
         if(groundPlane.Raycast(cameraRay,out float rayLenght))
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLenght);
-            Debug.DrawLine(cameraRay.origin,pointToLook,Color.black);
+            Debug.DrawLine(cameraRay.origin,pointToLook,Color.red);
             return new Vector3(pointToLook.x,transform.position.y,pointToLook.z);
+          
         }
+        //Debug.LogError("Directions Mouse NONe");
         return new Vector3();
     }
 }

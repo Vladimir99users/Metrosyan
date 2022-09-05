@@ -5,27 +5,28 @@ public class InputManadger : MonoBehaviour
     [SerializeField] private GameObject  _controlCreature;
     private Movement _movement => _controlCreature.GetComponent<Movement>();
     private DirectionMouse _direction => _controlCreature.GetComponent<DirectionMouse>();
-    private KeyBoardInput _keyBoardInput;
-    private InputAction _movementAction;
-    private InputAction _lookMouseAction;
-
+    [SerializeField] private InputActionReference _movementAction;
+    [SerializeField] private InputActionReference _lookMouseAction;
+    //[SerializeField] private Input _keyBoardInput;
     private void Awake()
     {
-        _keyBoardInput = new KeyBoardInput();
-        Cursor.visible = false;
+       // _keyBoardInput = new Input();
+        //Cursor.visible = false;
+       // EnableInputActons();
     }
 
     private void OnEnable()
     {
-        _movementAction = _keyBoardInput.KeyBoardContoller.WASD;
-        _lookMouseAction = _keyBoardInput.KeyBoardContoller.LookMouse;
+        Debug.Log("Enable");
+       // _movementAction = _keyBoardInput.Keyboard.Movement;
+        //_lookMouseAction = _keyBoardInput.Keyboard.Cursor;
         EnableInputActons();
     }
 
     private void EnableInputActons()
     {
-        _movementAction.Enable();
-        _lookMouseAction.Enable();
+        _movementAction.action.Enable();
+        _lookMouseAction.action.Enable();
         SubscribingActionToEvent();
     }
 
@@ -36,14 +37,17 @@ public class InputManadger : MonoBehaviour
 
     private void OnDisable()
     {
-        _movementAction.Disable();
-        _lookMouseAction.Disable();
+        _movementAction.action.Disable();
+        _lookMouseAction.action.Disable();
     }
 
 
     private void Update()
     {
-        _movement.Move(_movementAction.ReadValue<Vector2>());
-        _controlCreature.transform.LookAt(_direction.DirectionMouseRotation(_lookMouseAction.ReadValue<Vector2>()));
+        _movement.Move(_movementAction.action.ReadValue<Vector2>());
+        _controlCreature.transform.LookAt(_direction.DirectionMouseRotation
+            (_lookMouseAction.action.ReadValue<Vector2>()));
     }
+
+
 }

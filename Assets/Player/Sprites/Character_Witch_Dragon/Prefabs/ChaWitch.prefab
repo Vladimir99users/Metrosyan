@@ -1350,9 +1350,10 @@ GameObject:
   - component: {fileID: 3148043007009938054}
   - component: {fileID: 1566591320339554795}
   - component: {fileID: 954646225}
+  - component: {fileID: 1838079375}
   m_Layer: 0
   m_Name: ChaWitch
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1366,7 +1367,7 @@ Transform:
   m_GameObject: {fileID: 179894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 463706}
@@ -1434,6 +1435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gravity: -9.81
+  IsGrounded: 0
 --- !u!54 &1566591320339554795
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1462,8 +1464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: ceb5550a6dc588e4c88195f1e56ec6ec, type: 3}
-  m_NotificationBehavior: 2
+  m_Actions: {fileID: -944628639613478452, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -1476,34 +1478,51 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5e53001a-680f-4c7b-82c4-ec42657ba331
-    m_ActionName: PlayerContoller/WASD[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2648e998-6f75-4073-b168-d7627b0b2998
+    m_ActionName: Keyboard/Cursor[/Mouse/position]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: cf8cce78-e1e5-43e0-a9ea-abdb05f781cb
-    m_ActionName: PlayerContoller/CraftMenu[/Keyboard/i]
+    m_ActionId: 856540f9-d661-4726-b289-52253a32f27d
+    m_ActionName: Keyboard/SpellCast[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: c416ec56-abcd-44dc-b1f3-5dc5dcb32dec
-    m_ActionName: PlayerContoller/Fire[/Mouse/leftButton]
+    m_ActionId: 413b7b34-a337-4aed-b5ca-72e6fe940d80
+    m_ActionName: Keyboard/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 21ca911a-20e3-4338-ace5-688e79dd791c
-    m_ActionName: PlayerContoller/RadialMenu[/Keyboard/f]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c0030d2f-587e-47e7-b0b4-8233901bf3da
-    m_ActionName: UIController/New action
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 57f4e174-0cab-488e-88fa-5765e5e9a14c
-    m_ActionName: KeyBoardContoller/LookMouse[/Mouse/position]
+    m_ActionId: 92bf1734-462d-40fb-8859-7077338d35c3
+    m_ActionName: UI/CraftMenu[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: MovePlayer_KeyBoard_And_Mouse
-  m_DefaultActionMap: KeyBoardContoller
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Keyboard
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!65 &1838079375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &181522
 GameObject:
   m_ObjectHideFlags: 0
