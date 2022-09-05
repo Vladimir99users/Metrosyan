@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//Нарисовать прицел для каста заклинания
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 public class SpellSignMover : MonoBehaviour
 {
 
-    //Нарисовать место куда будет закастовано заклинание
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     [SerializeField] private InputActionReference _cursorInput;
     [SerializeField] private SpellSign _sign;
 
@@ -19,17 +19,16 @@ public class SpellSignMover : MonoBehaviour
         _mouseLastPosition = _cursorInput.action.ReadValue<Vector2>();
         _camera = Camera.main;
 
-        Enable();
     }
 
-    public void Enable()
+    public void OnEnable()
     {
         _enabled = true;
         _cursorInput.action.Enable();
         _sign.Show();
     }
 
-    public void Disable()
+    public void OnDisable()
     {
         _enabled = false;
         _cursorInput.action.Disable();
@@ -43,12 +42,10 @@ public class SpellSignMover : MonoBehaviour
             return;
         }
         var mousePosition = _cursorInput.action.ReadValue<Vector2>();
-
         if (mousePosition == _mouseLastPosition)
         {
             return;
         }
-
         if(TryGetSignPosition(mousePosition, out Vector3 signPosition))
         {
             _sign.Move(signPosition);    
@@ -59,12 +56,13 @@ public class SpellSignMover : MonoBehaviour
     private bool TryGetSignPosition(Vector3 mousePosition, out Vector3 signPosition)
     {
         signPosition = Vector3.zero;
-
+    
         Ray ray = _camera.ScreenPointToRay(mousePosition);
-
+       
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
             signPosition = hit.point;
+             Debug.DrawRay(mousePosition,signPosition,Color.blue);
             return true;
         }
 
