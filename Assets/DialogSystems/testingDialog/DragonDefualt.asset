@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DragonDefualt
   m_EditorClassIdentifier: 
   _nodes:
-  - MainText: "\u041F\u0430\u043F\u043A\u0430:\n\u0418\u0434\u0438 \u043E\u0442 \u0441\u044E\u0434\u0430..."
+  - Contens: "\u041D\u0443\u043B\u0435\u0432\u043E\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440"
+    MainText: "\u041F\u0430\u043F\u043A\u0430:\n\u0418\u0434\u0438 \u043E\u0442 \u0441\u044E\u0434\u0430..."
     Responce: []

@@ -5,6 +5,7 @@ public class TriggerDialog : MonoBehaviour
     [SerializeField] private Conversation _conversation;
     [SerializeField] private Conversation _defualtConversation;
     [SerializeField] private Transform _positionDialog;
+    [SerializeField][Range(-20,20)] private float _radiusGizmo = 10f;
     private int indexConvarsation = 0;
     private void OnTriggerEnter(Collider col)
     {
@@ -19,7 +20,7 @@ public class TriggerDialog : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_positionDialog.position,8f);
+        Gizmos.DrawWireSphere(_positionDialog.position,_radiusGizmo);
     }
     private void OnTriggerExit()
     {

@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "LookAt",
+                    "type": "Value",
+                    "id": "40ead7d5-5849-4f52-a370-2cda07be6736",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -40,7 +49,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "keyborad",
                     "action": "Cursor",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -51,7 +60,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "keyborad",
                     "action": "SpellCast",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -110,6 +119,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c416f594-426e-441e-a575-904c29350542",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyborad",
+                    "action": "LookAt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -134,7 +154,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "keyborad",
                     "action": "CraftMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -189,7 +209,7 @@
                     "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "keyborad",
                     "action": "FirstSlot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -200,7 +220,7 @@
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "keyborad",
                     "action": "SecondSlot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -211,7 +231,7 @@
                     "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "keyborad",
                     "action": "ThirdSlot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -222,7 +242,7 @@
                     "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "keyborad",
                     "action": "FourSlot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -230,5 +250,11 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "keyborad",
+            "bindingGroup": "keyborad",
+            "devices": []
+        }
+    ]
 }
