@@ -4,7 +4,6 @@ using UnityEngine;
 public class SpellSign : MonoBehaviour
 {
     public Vector3 Position => transform.position;
-
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     public void Move(Vector3 position)
