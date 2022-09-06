@@ -18,6 +18,7 @@ public class GolemFactory : MonoBehaviour
     }
 }
 
+
 public interface IInputLisener
 {
     void EnableInput();
