@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class GolemCraftMenu : Menu
+public class GolemCraftMenu : Menu, IInputLisener
 {
     public SpellUnityEvent SpellCrafted;
     public SpellUnityEvent SpellAdding;
@@ -15,7 +15,7 @@ public class GolemCraftMenu : Menu
     [SerializeField] private InputActionReference _openCloseInput;
 
     private Spell _craftedGolem;
-
+    
     public void Craft()
     {
         if (_typeSlot.CurrentItem is null)
@@ -47,6 +47,17 @@ public class GolemCraftMenu : Menu
         base.Close();
     }
 
+    public void EnableInput()
+    {
+        _openCloseInput.action.Enable();
+    }
+
+    public void DisableInput()
+    {
+        _openCloseInput.action.Disable();
+    }
+
+
     protected override void OnAwake()
     {
         base.OnAwake();
@@ -65,6 +76,8 @@ public class GolemCraftMenu : Menu
             }
         };
     }
+
+
 }
 
 [System.Serializable]

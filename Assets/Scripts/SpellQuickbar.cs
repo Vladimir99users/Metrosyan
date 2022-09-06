@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SpellQuickbar : MonoBehaviour
+public class SpellQuickbar : MonoBehaviour, IInputLisener
 {
     [SerializeField] private List<QuickbarSlot> _slots;
 
@@ -17,6 +17,21 @@ public class SpellQuickbar : MonoBehaviour
     {
 
         _selectedSlot.SpellSlot.Add(spell);
+    }
+    public void EnableInput()
+    {
+        foreach(var slot in _slots)
+        {
+            slot.EnableInput();
+        }
+    }
+
+    public void DisableInput()
+    {
+        foreach (var slot in _slots)
+        {
+            slot.DisableInput();
+        }
     }
 
     private void OnEnable()
@@ -52,6 +67,7 @@ public class SpellQuickbar : MonoBehaviour
         _selectedSlot = slot;
         _selectedSpell = slot.SpellSlot.CurrentItem;
     }
+
 
 }
 

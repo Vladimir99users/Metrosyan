@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class QuickbarSlot : MonoBehaviour
+public class QuickbarSlot : MonoBehaviour, IInputLisener
 {
     [SerializeField] private InputActionReference _inputAction;
     [SerializeField] private SpellSlot _spellSlot;
@@ -24,6 +24,15 @@ public class QuickbarSlot : MonoBehaviour
         _selectImage.enabled = false;
         Diselected?.Invoke(this);
     }
+    public void EnableInput()
+    {
+        _inputAction.action.Enable();
+    }
+
+    public void DisableInput()
+    {
+        _inputAction.action.Disable();
+    }
 
     private void OnSelectButton(InputAction.CallbackContext c)
     {
@@ -33,15 +42,17 @@ public class QuickbarSlot : MonoBehaviour
     private void OnEnable()
     {
         _inputAction.action.performed += OnSelectButton;
-        _inputAction.action.Enable();
+        EnableInput();
+
+
     }
 
     private void OnDisable()
     {
         _inputAction.action.performed -= OnSelectButton;
-        _inputAction.action.Disable();
+        DisableInput();
+        
     }
-
 
 
 }

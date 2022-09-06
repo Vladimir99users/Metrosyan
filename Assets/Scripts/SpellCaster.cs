@@ -1,31 +1,44 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SpellCaster : MonoBehaviour
+public class SpellCaster : MonoBehaviour, IInputLisener
 {
     [SerializeField] private SpellSign _spellSign;
     [SerializeField] private InputActionReference _castInput;
-    [SerializeField] private SpellSlot _spellSlot;
+    [SerializeField] private SpellQuickbar _spellQuickbar;
 
     private void OnEnable()
     {
-        _castInput.action.Enable();
+        EnableInput();
         _castInput.action.performed += OnCastPressed;
+    }
+
+    private void OnDisable()
+    {
+        DisableInput();
+        _castInput.action.performed -= OnCastPressed;
     }
     private void OnCastPressed(InputAction.CallbackContext context)
     {
-        if (_spellSlot.CurrentItem is null)
+        if (_spellQuickbar.SelectedSpell is null)
             return;
         
-        Cast(_spellSlot.CurrentItem);
+        Cast(_spellQuickbar.SelectedSpell);
     }
 
     public void Cast(Spell spell)
     {
-        Debug.Log($"������ � ����� {_spellSign.Position} ���������� {spell.name}");
+        Debug.Log($"Я кастую в позицию {_spellSign.Position} заклинание {spell.name}");
         spell.Use(_spellSign.Position, Vector3.zero);
     }
 
+    public void EnableInput()
+    {
+        _castInput.action.Enable();
+    }
 
-
+    public void DisableInput()
+    {
+        _castInput.action.Disable();
+    }
 }
