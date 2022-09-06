@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 //���������� ������ ��� ����� ����������
-public class SpellSignMover : MonoBehaviour
+public class SpellSignMover : MonoBehaviour, IInputLisener
 {
 
     //���������� ����� ���� ����� ����������� ����������
@@ -14,6 +14,17 @@ public class SpellSignMover : MonoBehaviour
 
     private bool _enabled = false;
 
+
+    public void EnableInput()
+    {
+        _cursorInput.action.Enable();
+    }
+
+    public void DisableInput()
+    {
+        _cursorInput.action.Disable();
+    }
+
     private void Awake()
     {
         _mouseLastPosition = _cursorInput.action.ReadValue<Vector2>();
@@ -21,17 +32,17 @@ public class SpellSignMover : MonoBehaviour
 
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         _enabled = true;
-        _cursorInput.action.Enable();
+        EnableInput();
         _sign.Show();
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         _enabled = false;
-        _cursorInput.action.Disable();
+        DisableInput();
         _sign.Hide();
     }
 
@@ -69,9 +80,4 @@ public class SpellSignMover : MonoBehaviour
         return false;
     }
 
-    
-
-   
-    
-  
 }

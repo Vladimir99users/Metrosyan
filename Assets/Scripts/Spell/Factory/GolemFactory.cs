@@ -17,3 +17,9 @@ public class GolemFactory : MonoBehaviour
         return golem;
     }
 }
+
+public interface IInputLisener
+{
+    void EnableInput();
+    void DisableInput();
+}

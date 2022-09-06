@@ -1,45 +1,44 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SpellCaster : MonoBehaviour
+public class SpellCaster : MonoBehaviour, IInputLisener
 {
     [SerializeField] private SpellSign _spellSign;
     [SerializeField] private InputActionReference _castInput;
     [SerializeField] private SpellQuickbar _spellQuickbar;
 
+    private void OnEnable()
+    {
+        EnableInput();
+        _castInput.action.performed += OnCastPressed;
+    }
 
-    public void Enable()
+    private void OnDisable()
+    {
+        DisableInput();
+        _castInput.action.performed -= OnCastPressed;
+    }
+    private void OnCastPressed(InputAction.CallbackContext context)
+    {
+        if (_spellQuickbar.SelectedSpell is null)
+            return;
+        
+        Cast(_spellQuickbar.SelectedSpell);
+    }
+
+    public void Cast(Spell spell)
+    {
+        Debug.Log($"РЇ РєР°СЃС‚СѓСЋ РІ РїРѕР·РёС†РёСЋ {_spellSign.Position} Р·Р°РєР»РёРЅР°РЅРёРµ {spell.name}");
+        spell.Use(_spellSign.Position, Vector3.zero);
+    }
+
+    public void EnableInput()
     {
         _castInput.action.Enable();
     }
 
-    public void Disable()
+    public void DisableInput()
     {
         _castInput.action.Disable();
     }
-
-    private void OnEnable()
-    {
-        Enable();
-        _castInput.action.performed += OnCastPressed;
-    }
-
-
-    public void Cast(Spell spell)
-    {
-        Debug.Log($"Кастую в точку {_spellSign.Position} заклинание {spell.name}");
-        spell.Use(_spellSign.Position, Vector3.zero);
-    }
-
-    private void OnCastPressed(InputAction.CallbackContext context)
-    {
-        if (_spellQuickbar.SelectedSpell is null)
-        {
-            return;
-        }
-        Spell spell = _spellQuickbar.SelectedSpell;
-        Cast(spell);
-    }
-
-
 }
