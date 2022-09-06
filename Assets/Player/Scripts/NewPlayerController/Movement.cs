@@ -1,19 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Movement : MonoBehaviour
+public class Movement : MonoBehaviour,IInputLisener
 {
+    [SerializeField][Range(0f,30f)] private float _speed = 10f;
+    [SerializeField] private InputActionReference _movement;
+
+    private Vector3 _moveVector  = Vector3.zero;
+    private bool _enabled;
     private Rigidbody _rigidbody  => GetComponent<Rigidbody>();
 
-    public Rigidbody Rigidbody
+
+    private void OnEnable()
     {
-        get {return _rigidbody ;}
-        set {value = _rigidbody ;}
+        EnableInput();
     }
 
-    [SerializeField][Range(0f,30f)] private float _speed = 10f;
+    private void OnDisable()
+    {
+        DisableInput();
+    }
+    public void EnableInput()
+    {
+        _movement.action.Enable();
+        _enabled = true;
+    }
+
+    public void DisableInput()
+    {
+        _movement.action.Disable();
+        _enabled = false;
+    }
+    private void Update()
+    {
+        if(_enabled == false)
+        {
+            return;
+        }
+        _moveVector = _movement.action.ReadValue<Vector2>();
+    }
+
+    private void FixedUpdate()
+    {
+        if (_enabled == false)
+        {
+            return;
+        }
+        Move(_moveVector);
+    }
+
     public virtual void Move(Vector2 input)
     {
         var newMove = new Vector3 (input.x,0f ,input.y).normalized;

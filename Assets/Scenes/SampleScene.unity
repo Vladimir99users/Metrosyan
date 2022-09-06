@@ -1204,6 +1204,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 179894, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
   m_PrefabInstance: {fileID: 1135283016}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &571703116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+  m_PrefabInstance: {fileID: 1135283016}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571703110}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1ae41ca488674591616ca4759e847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &572074011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,11 +1752,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626633695}
   m_CullTransparentMesh: 1
---- !u!4 &661105066 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 438570, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
-  m_PrefabInstance: {fileID: 2111128729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &668406247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,10 +3425,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1814260786251551475, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: _lookMouseAction
+      value: 
+      objectReference: {fileID: 4129050044540510788, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
+    - target: {fileID: 3028083422912675005, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: -6433342410106178648, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
     - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: _input
       value: 
-      objectReference: {fileID: 2141776497}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: _movementAction
+      value: 
+      objectReference: {fileID: -6433342410106178648, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
+    - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: _lookMouseAction
+      value: 
+      objectReference: {fileID: 4129050044540510788, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
 --- !u!1 &1147163616
@@ -3629,7 +3655,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1712713515}
         m_TargetAssemblyTypeName: SpellSignMover, Assembly-CSharp
-        m_MethodName: Disable
+        m_MethodName: DisableInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3639,9 +3665,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2141776495}
-        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
-        m_MethodName: Disable
+      - m_Target: {fileID: 571703116}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: DisableAllAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3656,7 +3682,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1712713515}
         m_TargetAssemblyTypeName: SpellSignMover, Assembly-CSharp
-        m_MethodName: Enable
+        m_MethodName: EnableInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3666,9 +3692,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2141776495}
-        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
-        m_MethodName: Enable
+      - m_Target: {fileID: 571703116}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: EnableAllAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3938,68 +3964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1287632970
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1287632971}
-  - component: {fileID: 1287632973}
-  - component: {fileID: 1287632972}
-  m_Layer: 0
-  m_Name: DialogTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1287632971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287632970}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7.77}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 661105066}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1287632972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287632970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7866006c7ec801444be880385e1af3bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _conversation: {fileID: 11400000, guid: 0914fd59ef5eb8e40b9062f29691353b, type: 2}
-  _defualtConversation: {fileID: 11400000, guid: c561f5f06db92264291336de15753d42, type: 2}
-  _positionDialog: {fileID: 1287632971}
-  _radiusGizmo: 5
---- !u!135 &1287632973
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287632970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1315974043 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8537935307059178811, guid: 966b1a932b5e0ff43862bce42734d400, type: 3}
@@ -4109,9 +4073,9 @@ MonoBehaviour:
   _prefabsButton: {fileID: 5437439147963055228, guid: d184fd9caccdeb845b2461ed4cfcfe22, type: 3}
   _positionOfResponses: {fileID: 797891171}
   _timerSlider: {fileID: 1170160393}
-  _timeToThink: 5
-  _interval: 1
-  _sumInterval: 1
+  _timeToThink: 100
+  _interval: 0.05
+  _sumInterval: 0.5
 --- !u!225 &1359046457
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6327,24 +6291,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 728128891, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
-      propertyPath: _positionDialog
-      value: 
-      objectReference: {fileID: 661105066}
-    - target: {fileID: 728128891, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
-      propertyPath: _defualtConversation
-      value: 
-      objectReference: {fileID: 11400000, guid: c561f5f06db92264291336de15753d42, type: 2}
-    - target: {fileID: 728128892, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
-      propertyPath: m_Radius
-      value: 1.7607665
-      objectReference: {fileID: 0}
-    - target: {fileID: 728128892, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
-      propertyPath: m_Center.z
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 728128891, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
 --- !u!1 &2141776494
 GameObject:
@@ -6356,7 +6303,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2141776496}
   - component: {fileID: 2141776495}
-  - component: {fileID: 2141776497}
   m_Layer: 0
   m_Name: PlayerInputController
   m_TagString: Untagged
@@ -6394,20 +6340,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2141776497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141776494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f2a8898919a974cbd71ba14fd2772d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementAction: {fileID: -6433342410106178648, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
-  _lookMouseAction: {fileID: 4129050044540510788, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
 --- !u!1 &1127876469032858862
 GameObject:
   m_ObjectHideFlags: 0

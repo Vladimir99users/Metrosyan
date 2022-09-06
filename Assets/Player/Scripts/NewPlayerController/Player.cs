@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private IInputLisener _movementAction => GetComponent<Movement>();
+    [SerializeField] private IInputLisener _lookMouseAction => GetComponent<DirectionMouse>();
 
-    [SerializeField] private InputManadger _input;
-    private Movement _movement => GetComponent<Movement>();
-    private DirectionMouse _direction => GetComponent<DirectionMouse>();
-
-    void Update()
+    public void DisableAllAction()
     {
-        _movement.Move(_input.MovementAction.action.ReadValue<Vector2>());
-        gameObject.transform.LookAt(_direction.DirectionMouseRotation
-            (_input.LookMouseAction.action.ReadValue<Vector2>()));
+        _movementAction.DisableInput();
+        _lookMouseAction.DisableInput();
     }
 
-    
+    public void EnableAllAction()
+    {
+        _movementAction.EnableInput();
+        _lookMouseAction.EnableInput();
+    }
+
 }
