@@ -3419,6 +3419,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: _input
+      value: 
+      objectReference: {fileID: 2141776497}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
 --- !u!1 &1147163616
@@ -6354,7 +6358,7 @@ GameObject:
   - component: {fileID: 2141776495}
   - component: {fileID: 2141776497}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerInputController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6402,7 +6406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f2a8898919a974cbd71ba14fd2772d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controlCreature: {fileID: 571703110}
   _movementAction: {fileID: -6433342410106178648, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
   _lookMouseAction: {fileID: 4129050044540510788, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
 --- !u!1 &1127876469032858862

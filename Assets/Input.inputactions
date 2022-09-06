@@ -126,7 +126,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "keyborad",
+                    "groups": "",
                     "action": "LookAt",
                     "isComposite": false,
                     "isPartOfComposite": false
