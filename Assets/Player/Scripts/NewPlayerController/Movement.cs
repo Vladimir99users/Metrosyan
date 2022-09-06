@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour,IInputLisener
 {
     [SerializeField][Range(0f,30f)] private float _speed = 10f;
-    [SerializeField] private InputActionReference _movement;
+    [SerializeField] private InputActionReference _movementInput;
 
     private Vector3 _moveVector  = Vector3.zero;
     private bool _enabled;
@@ -23,22 +23,23 @@ public class Movement : MonoBehaviour,IInputLisener
     }
     public void EnableInput()
     {
-        _movement.action.Enable();
+        _movementInput.action.Enable();
         _enabled = true;
     }
 
     public void DisableInput()
     {
-        _movement.action.Disable();
+        _movementInput.action.Disable();
         _enabled = false;
     }
+
     private void Update()
     {
         if(_enabled == false)
         {
             return;
         }
-        _moveVector = _movement.action.ReadValue<Vector2>();
+        _moveVector = _movementInput.action.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
@@ -47,6 +48,7 @@ public class Movement : MonoBehaviour,IInputLisener
         {
             return;
         }
+
         Move(_moveVector);
     }
 

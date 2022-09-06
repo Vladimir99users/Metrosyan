@@ -1,11 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//���������� ������ ��� ����� ����������
 public class SpellSignMover : MonoBehaviour, IInputLisener
 {
 
-    //���������� ����� ���� ����� ����������� ����������
     [SerializeField] private InputActionReference _cursorInput;
     [SerializeField] private SpellSign _sign;
 

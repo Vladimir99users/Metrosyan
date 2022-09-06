@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2652,7 +2652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.41478634, y: -0, z: -0, w: 0.90991884}
-  m_LocalPosition: {x: 0, y: 25.3, z: -27}
+  m_LocalPosition: {x: 0, y: 18.1, z: -18.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3174,7 +3174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -3425,30 +3424,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1814260786251551475, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
-      propertyPath: _lookMouseAction
-      value: 
-      objectReference: {fileID: 4129050044540510788, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
-    - target: {fileID: 3028083422912675005, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
-      propertyPath: _movement
-      value: 
-      objectReference: {fileID: -6433342410106178648, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
-    - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
-      propertyPath: _input
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
-      propertyPath: _movementAction
-      value: 
-      objectReference: {fileID: -6433342410106178648, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
-    - target: {fileID: 8817189823779148213, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
-      propertyPath: _lookMouseAction
-      value: 
-      objectReference: {fileID: 4129050044540510788, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
 --- !u!1 &1147163616
