@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class SpellCaster : MonoBehaviour, IInputLisener
 {
-    [SerializeField] private SpellSign _spellSign;
+    [SerializeField] private SpellSight _spellSign;
     [SerializeField] private InputActionReference _castInput;
     [SerializeField] private SpellQuickbar _spellQuickbar;
 
