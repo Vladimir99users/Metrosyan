@@ -1,14 +1,18 @@
 using UnityEngine;
-
+using UnityEngine.AI;
+[RequireComponent(typeof(NavMeshAgent))]
 public class Skeleton : Enemy
 {
     [SerializeField][Range(0,50)] private float _patrolRadius = 25f;
     [SerializeField][Range(0,10)] private float _rangeAttacked = 3f;
+    [SerializeField][Range(0,10)] private int _damageSkeletons = 3;
     [SerializeField]private Animator _animator;
     [SerializeField] private GameObject _dotPatrol;
 
     private bool _isFindPlayer = false;
     private bool _isStoped = false;
+    private bool _isAttack = false;
+    private Player _player = null;
     public override void Init(Transform position)
     {
         var _pointer = Instantiate(_dotPatrol,position);
@@ -22,6 +26,10 @@ public class Skeleton : Enemy
        if(Physics.CheckSphere(gameObject.transform.position,_patrolRadius,_playerMask))
        {
             _isFindPlayer = true;
+            if(_player != null && Vector3.Distance(gameObject.transform.position, _player.transform.position) < _rangeAttacked)
+            {
+                _isAttack = false;
+            } else _isAttack = true;
        }         
        else _isFindPlayer = false;
 
@@ -31,6 +39,7 @@ public class Skeleton : Enemy
            _stateEnemy = StateEnemy.Idle;
            AnimatorState(_stateEnemy);
        } else _isStoped = false;
+
     }
     private void FixedUpdate()
     {
@@ -40,10 +49,15 @@ public class Skeleton : Enemy
            if(col.Length <= 0)   return;
             _stateEnemy = StateEnemy.Walking;
             AnimatorState(_stateEnemy);
-            Player _player = col[0].GetComponent<Player>();
-            if(Vector3.Distance(gameObject.transform.position, _player.transform.position) > _rangeAttacked)  MoveAgent(_player.transform);
+             _player = col[0].GetComponent<Player>();
+            if(_isAttack) 
+            {
+                _agent.isStopped = false;
+                MoveAgent(_player.transform);
+            } 
             else 
             {
+                _agent.isStopped = true;
                 _stateEnemy = StateEnemy.Attacked;
                 AnimatorState(_stateEnemy);
             }
@@ -59,6 +73,12 @@ public class Skeleton : Enemy
     public override void MoveAgent(Transform dot)
     {
         _agent.SetDestination(dot.transform.position);
+    }
+
+    public void AttackTarget()
+    {
+        _player.GetComponent<ITakeDamage>().TakeDamage( _damageSkeletons);
+        Debug.Log("Я нанёс = " + _damageSkeletons);
     }
 
     private void OnDrawGizmosSelected()

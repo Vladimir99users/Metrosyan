@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimatorCreature : MonoBehaviour
 {
-    // Start is called before the first frame update
+   private CreatureHealth _health => GetComponent<CreatureHealth>();
     void Start()
     {
         
@@ -13,6 +13,6 @@ public class AnimatorCreature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(_health.IsDie) Debug.Log("I'am Die animation");
     }
 }
