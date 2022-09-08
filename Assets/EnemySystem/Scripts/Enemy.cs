@@ -7,5 +7,5 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected NavMeshAgent _agent;
     [SerializeField] protected LayerMask _playerMask;
     public abstract void Init(Transform position);
-    public abstract void PlayerSearch(Player player);
+    public abstract void MoveAgent(Transform player);
 }
