@@ -8,7 +8,7 @@ public class SpellSight : MonoBehaviour, IInputLisener
 
     [SerializeField] private InputActionReference _cursorInput;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private float _groundOffset;
+    [SerializeField][Range(0.01f, 1f)] private float _groundOffset;
     [SerializeField] private LayerMask _groundMask;
 
     private Camera _camera;
