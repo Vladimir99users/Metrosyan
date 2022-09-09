@@ -1,6 +1,8 @@
-public enum StateEnemy
+public enum StateCreature
 {
     Idle,
     Attacked,
-    Walking
+    Walking,
+    Damage,
+    Die
 }

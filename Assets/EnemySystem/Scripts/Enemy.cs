@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] protected StateEnemy _stateEnemy = StateEnemy.Idle;
+    [SerializeField] protected StateCreature _stateEnemy = StateCreature.Idle;
     [SerializeField] protected Transform _pointAroundWhichPatrol;
     [SerializeField] protected NavMeshAgent _agent;
     [SerializeField] protected LayerMask _playerMask;
