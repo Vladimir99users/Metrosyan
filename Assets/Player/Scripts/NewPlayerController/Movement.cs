@@ -54,7 +54,14 @@ public class Movement : MonoBehaviour,IInputLisener
 
     public virtual void Move(Vector2 input)
     {
+        
+        if(input.x == 0 && input.y == 0) 
+        {
+            AnimatorCreature._onStateCreature?.Invoke(StateCreature.Idle);
+            return;
+        } 
         var newMove = new Vector3 (input.x,0f ,input.y).normalized;
+        AnimatorCreature._onStateCreature?.Invoke(StateCreature.Walking);
         _rigidbody.MovePosition(_rigidbody.position + (newMove * _speed * Time.deltaTime));
     }
 }
