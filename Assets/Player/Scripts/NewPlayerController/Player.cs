@@ -25,4 +25,10 @@ public class Player : MonoBehaviour
             lisener.DisableInput();
         }
     }
+
+    public void PlayerIsDie()
+    {
+        gameObject.layer = 6;
+       // gameObject.SetActive(false);
+    }
 }
