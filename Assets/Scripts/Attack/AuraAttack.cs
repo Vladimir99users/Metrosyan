@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AuraAttack : IAttack
+public class AuraAttack : Attack
 {
     private float _damage;
     private float _radius;
@@ -11,7 +11,7 @@ public class AuraAttack : IAttack
         _radius = radius;
     }
 
-    public void Hit()
+    public override void Hit()
     {
         Debug.Log($"Я аура я бъю {_damage} на радиус {_radius}");
     }

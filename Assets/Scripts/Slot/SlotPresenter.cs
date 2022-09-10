@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(ISlotNotification<Core>))]
 public abstract class SlotPresenter<TItem> : MonoBehaviour
-    where TItem : Item
+    where TItem : IStorable
 {
     [SerializeField] protected Image _slotImage;
 

@@ -10,17 +10,16 @@ public class Aura : Spell
 
     private AuraConfig _auraConfig;
 
-    private IAttack _auraAttack;
+    private Attack _auraAttack;
 
     private bool _enabled;
 
-    public override GameObject SpellGameObject { get; protected set; }
 
-    public void Init(IAttack auraAttack, AuraConfig auraConfig)
+    public void Init(Attack auraAttack, AuraConfig auraConfig)
     {
         _auraAttack = auraAttack;
         _auraConfig = auraConfig;
-    }
+    } 
 
     protected void Enable()
     {

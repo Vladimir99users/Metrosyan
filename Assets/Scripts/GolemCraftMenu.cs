@@ -26,10 +26,7 @@ public class GolemCraftMenu : Menu, IInputLisener
 
         if(_extraSlot.CurrentItem != null)
         {
-            var aura = _auraFactory.Get(_extraSlot.CurrentItem);
-            _craftedGolem.Used += (spell) => { 
-                aura.Use(target: spell.SpellGameObject); 
-            };
+           
         }
 
         SpellCrafted?.Invoke(_craftedGolem);

@@ -8,7 +8,7 @@ public class AuraFactory : SpellFactory
 
     public override Spell Get(Core core)
     {
-        var newAura = Instantiate(_auraPrefab);
+        var newAura = _auraPrefab;
         var attackFactory = new AuraAttackFactory();
         var attack = attackFactory.Get(core.Stats);
         newAura.Init(attack, _fireAuraConfig);
