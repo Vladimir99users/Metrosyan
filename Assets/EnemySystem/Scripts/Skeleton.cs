@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+
 [RequireComponent(typeof(NavMeshAgent))]
 sealed class Skeleton : Enemy
 {

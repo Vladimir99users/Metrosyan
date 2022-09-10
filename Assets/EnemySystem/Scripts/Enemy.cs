@@ -24,6 +24,7 @@ public abstract class Enemy : MonoBehaviour
     protected Player _player = null;
 
     public abstract void Init(Transform position);
+    
     protected virtual void MoveAgent(Transform dot)
     {
         _agent.SetDestination(dot.transform.position);
