@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 3943094372197003312}
   - component: {fileID: 3943094372197003313}
   - component: {fileID: 2021824315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DungeonSkeleton_demo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
