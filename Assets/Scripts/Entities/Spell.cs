@@ -14,7 +14,3 @@ public abstract class Spell : ScriptableObject, IStorable
     public abstract void Use(Vector3 castPosition = default(Vector3), Vector3 direction = default(Vector3), GameObject target = null);
 }
 
-public interface IItem
-{
-    public string Id { get; private set; }
-}
