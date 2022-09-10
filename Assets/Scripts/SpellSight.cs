@@ -8,6 +8,8 @@ public class SpellSight : MonoBehaviour, IInputLisener
 
     [SerializeField] private InputActionReference _cursorInput;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField][Range(0.01f, 1f)] private float _groundOffset;
+    [SerializeField] private LayerMask _groundMask;
 
     private Camera _camera;
 
@@ -28,7 +30,7 @@ public class SpellSight : MonoBehaviour, IInputLisener
 
     
 
-    private void Update()
+    private void LateUpdate()
     {
         if (_enabled == false)
         {
@@ -39,8 +41,29 @@ public class SpellSight : MonoBehaviour, IInputLisener
 
         if (TryGetSignPosition(mousePosition, out Vector3 signPosition))
         {
+            Show();
+            signPosition.y += _groundOffset;
             Move(signPosition);
         }
+        else
+        {
+            Hide();
+        }
+    }
+
+    private bool TryGetSignPosition(Vector3 mousePosition, out Vector3 signPosition)
+    {
+        signPosition = Vector3.zero;
+
+        Ray ray = _camera.ScreenPointToRay(mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _groundMask))
+        {
+            signPosition = hit.point;
+            return true;
+        }
+
+        return false;
     }
 
     private void Move(Vector3 position)
@@ -64,20 +87,7 @@ public class SpellSight : MonoBehaviour, IInputLisener
         _spriteRenderer.enabled = false;
     }
 
-    private bool TryGetSignPosition(Vector3 mousePosition, out Vector3 signPosition)
-    {
-        signPosition = Vector3.zero;
 
-        Ray ray = _camera.ScreenPointToRay(mousePosition);
-
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            signPosition = hit.point;
-            return true;
-        }
-
-        return false;
-    }
 
     private void Awake()
     {
