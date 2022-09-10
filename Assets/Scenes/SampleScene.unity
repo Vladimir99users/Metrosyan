@@ -2616,7 +2616,7 @@ Transform:
   - {fileID: 1750942970}
   - {fileID: 1004155096}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -3265,7 +3265,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1108608501
 MonoBehaviour:
@@ -3483,7 +3483,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 179894, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: m_Name
-      value: ChaWitch
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 487646, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: m_RootOrder
@@ -3585,6 +3585,18 @@ PrefabInstance:
       propertyPath: _creatureState._healthBar
       value: 
       objectReference: {fileID: 423181174}
+    - target: {fileID: 6643411641057627443, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: _castInput
+      value: 
+      objectReference: {fileID: -2228735988036076301, guid: ceb5550a6dc588e4c88195f1e56ec6ec, type: 3}
+    - target: {fileID: 6643411641057627443, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: _spellSign
+      value: 
+      objectReference: {fileID: 1712713513}
+    - target: {fileID: 6643411641057627443, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: _spellQuickbar
+      value: 
+      objectReference: {fileID: 668406249}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
 --- !u!1 &1147163616
@@ -4112,7 +4124,7 @@ GameObject:
   - component: {fileID: 1314810695}
   - component: {fileID: 1314810694}
   - component: {fileID: 1314810693}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5697,7 +5709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cursorInput: {fileID: 2960426773207092260, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
   _spriteRenderer: {fileID: 1712713512}
-  _groundOffset: 1
+  _groundOffset: 0.29
   _groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -6469,7 +6481,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 197210, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
       propertyPath: m_Name
-      value: ChaDragon
+      value: Dragon
       objectReference: {fileID: 0}
     - target: {fileID: 438570, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
       propertyPath: m_RootOrder
@@ -6773,7 +6785,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1729914359778460218, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729914359778460218, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729914359778460218, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729914359778460218, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1729914359778460218, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
       propertyPath: m_LocalPosition.x

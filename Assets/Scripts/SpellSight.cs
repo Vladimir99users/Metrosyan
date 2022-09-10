@@ -41,8 +41,13 @@ public class SpellSight : MonoBehaviour, IInputLisener
 
         if (TryGetSignPosition(mousePosition, out Vector3 signPosition))
         {
+            Show();
             signPosition.y += _groundOffset;
             Move(signPosition);
+        }
+        else
+        {
+            Hide();
         }
     }
 
