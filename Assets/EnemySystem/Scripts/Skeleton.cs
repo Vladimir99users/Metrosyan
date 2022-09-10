@@ -45,7 +45,6 @@ public class Skeleton : Enemy
     }
     private void FixedUpdate()
     {
-        Debug.Log("Player = " + _isFindPlayer + " stoping = " + _isStoped);
         if(_isFindPlayer == true)
         {
            Collider[] col = Physics.OverlapSphere(gameObject.transform.position,_patrolRadius,_playerMask);

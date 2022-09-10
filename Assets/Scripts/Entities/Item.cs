@@ -7,3 +7,7 @@ public class Item : ScriptableObject
     public Sprite Sprite => _sprite;
 }
 
+public interface IStorable
+{
+    public Sprite Sprite { get; }
+}

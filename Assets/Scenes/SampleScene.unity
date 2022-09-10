@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 789885976}
   m_HandleRect: {fileID: 789885975}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3777,6 +3777,7 @@ GameObject:
   - component: {fileID: 1192746828}
   - component: {fileID: 1192746824}
   - component: {fileID: 1192746827}
+  - component: {fileID: 1192746829}
   - component: {fileID: 1192746826}
   m_Layer: 0
   m_Name: GolemCrafter
@@ -3885,6 +3886,7 @@ MonoBehaviour:
   _typeSlot: {fileID: 1083565868}
   _extraSlot: {fileID: 1556316985}
   _golemFactory: {fileID: 1192746827}
+  _auraFactory: {fileID: 0}
   _openCloseInput: {fileID: -7789872023719835274, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
 --- !u!225 &1192746826
 CanvasGroup:
@@ -3934,6 +3936,20 @@ RectTransform:
   m_AnchoredPosition: {x: 3, y: 0}
   m_SizeDelta: {x: 180, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1192746829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192746823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e06dedba8d969994c8919ed301b5258e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _auraPrefab: {fileID: 0}
+  _fireAuraConfig: {fileID: 0}
 --- !u!1 &1210523155
 GameObject:
   m_ObjectHideFlags: 0
@@ -6547,6 +6563,63 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &1329616631236815267
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.91284
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.916443
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.705696
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035320792419862611, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660853023362590607, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
+      propertyPath: m_Name
+      value: FireEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
 --- !u!222 &1394499779923545184
 CanvasRenderer:
   m_ObjectHideFlags: 0

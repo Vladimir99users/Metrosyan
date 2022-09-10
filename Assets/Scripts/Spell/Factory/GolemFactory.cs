@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GolemFactory : MonoBehaviour 
+public class GolemFactory : SpellFactory
 {
     [SerializeField] private Golem _golem;
-    public Spell Get(Core mainCore)
+    public override Spell Get(Core mainCore)
     {
         AttackFactoryBase _attaclFactory;
         _attaclFactory = new RangeAttackFactory();
@@ -16,11 +16,4 @@ public class GolemFactory : MonoBehaviour
 
         return golem;
     }
-}
-
-
-public interface IInputLisener
-{
-    void EnableInput();
-    void DisableInput();
 }
