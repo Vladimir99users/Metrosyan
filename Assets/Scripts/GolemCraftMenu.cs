@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -12,7 +11,7 @@ public class GolemCraftMenu : Menu, IInputLisener
     [SerializeField] private CoreSlot _typeSlot;
     [SerializeField] private CoreSlot _extraSlot;
     [SerializeField] private GolemFactory _golemFactory;
-    [SerializeField] private AuraFactory _auraFactory;
+
     [SerializeField] private InputActionReference _openCloseInput;
 
     private Spell _craftedGolem;
@@ -23,12 +22,6 @@ public class GolemCraftMenu : Menu, IInputLisener
             return;
 
         _craftedGolem  = _golemFactory.Get(_typeSlot.CurrentItem);
-
-        if(_extraSlot.CurrentItem != null)
-        {
-           
-        }
-
         SpellCrafted?.Invoke(_craftedGolem);
     }
 

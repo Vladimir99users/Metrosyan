@@ -1,34 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GolemFactory : SpellFactory
+public class GolemFactory : MonoBehaviour 
 {
-    [SerializeField] private Golem _fireGolem;
-    [SerializeField] private Golem _iceGolem;
-
-    [SerializeField] private GolemCast _golemCastPrefab;
-
-    [SerializeField] private GolemCaster _golemCaster;
-
-    public override Spell Get(Core mainCore)
+    [SerializeField] private Golem _golem;
+    public Spell Get(Core mainCore)
     {
-        AttackFactoryBase _attackFactory;
-        _attackFactory = new RangeAttackFactory();
+        AttackFactoryBase _attaclFactory;
+        _attaclFactory = new RangeAttackFactory();
 
-        Attack attack = _attackFactory.Get(mainCore.Stats);
+        IAttack attack = _attaclFactory.Get(mainCore.Stats);
 
-        var golem = GetGolemByType(mainCore);
+        Golem golem = Instantiate(_golem);
+        golem.Init(attack, mainCore);
 
-        GolemCast golemCast = Instantiate(_golemCastPrefab);
-        golemCast.Init(golem, attack, _golemCaster);
-        
-        return golemCast;
+        return golem;
     }
+}
 
-    private Golem GetGolemByType(Core core) => core.Stats.Type switch
-    {
-        ElementType.Fire => _fireGolem,
-        ElementType.Ice => _iceGolem,
-        _ => _fireGolem,
-    };
+
+public interface IInputLisener
+{
+    void EnableInput();
+    void DisableInput();
 }

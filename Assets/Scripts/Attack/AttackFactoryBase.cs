@@ -3,5 +3,5 @@
 /// </summary>
 public abstract class AttackFactoryBase
 {
-    public abstract Attack Get(EntityStats stats);
+    public abstract IAttack Get(EntityStats stats);
 }

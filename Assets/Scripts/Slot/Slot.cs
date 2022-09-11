@@ -8,7 +8,7 @@ using UnityEngine.Events;
 /// </summary>
 /// <typeparam name="TItem">Тип хранимый элемент</typeparam>
 public abstract class Slot<TItem> : MonoBehaviour, ISlotNotification<TItem>
-    where TItem : IStorable
+    where TItem : Item
 {
     public TItem CurrentItem => _item;
 
@@ -26,8 +26,8 @@ public abstract class Slot<TItem> : MonoBehaviour, ISlotNotification<TItem>
 
     public virtual void Remove()
     {
-        _item = default(TItem);
-        Removing?.Invoke(_item);
+        _item = null;
+        Removing?.Invoke(null);
     }
 }
 
