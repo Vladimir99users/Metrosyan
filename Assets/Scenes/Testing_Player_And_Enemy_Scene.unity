@@ -2462,7 +2462,7 @@ Transform:
   - {fileID: 1750942970}
   - {fileID: 1004155096}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -3740,6 +3740,8 @@ GameObject:
   - component: {fileID: 1192746824}
   - component: {fileID: 1192746827}
   - component: {fileID: 1192746826}
+  - component: {fileID: 1192746829}
+  - component: {fileID: 1192746830}
   m_Layer: 0
   m_Name: GolemCrafter
   m_TagString: Untagged
@@ -3847,6 +3849,7 @@ MonoBehaviour:
   _typeSlot: {fileID: 1083565868}
   _extraSlot: {fileID: 1556316985}
   _golemFactory: {fileID: 1192746827}
+  _auraFactory: {fileID: 1192746829}
   _openCloseInput: {fileID: -7789872023719835274, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
 --- !u!225 &1192746826
 CanvasGroup:
@@ -3872,7 +3875,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1146b1af29da80e44a639afe261760c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _golem: {fileID: 11400000, guid: f84ec34a98dd52a42b9ebf8c959572b5, type: 2}
+  _fireGolem: {fileID: 5939800934945472140, guid: bcee1f3140f5c95418f1768fa03c48bb, type: 3}
+  _iceGolem: {fileID: 5095026482336094648, guid: f4b675483785e8b46843b683fc84eff1, type: 3}
+  _golemCastPrefab: {fileID: 11400000, guid: 962f9a479ef1ad24a9f82972f37c0912, type: 2}
+  _golemCaster: {fileID: 1192746830}
 --- !u!224 &1192746828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3896,6 +3902,32 @@ RectTransform:
   m_AnchoredPosition: {x: 3, y: 0}
   m_SizeDelta: {x: 180, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1192746829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192746823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e06dedba8d969994c8919ed301b5258e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _auraPrefab: {fileID: 11400000, guid: e9b2a65a5d96cc2479f71c40441bfc86, type: 2}
+  _fireAuraConfig: {fileID: 11400000, guid: 9240d25acfefe8e4b9219664d4157daf, type: 2}
+--- !u!114 &1192746830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192746823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d16291ddda96846b676bde063ed727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1210523155
 GameObject:
   m_ObjectHideFlags: 0
@@ -5419,7 +5451,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1736436997
 GameObject:
@@ -6291,7 +6323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 438570, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 438570, guid: 1ad34b5cd1046bc44b507dfdf6b9a6d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6595,7 +6627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1729914359778460218, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1729914359778460218, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
       propertyPath: m_LocalPosition.x

@@ -51,4 +51,24 @@ public class Aura : Spell
         _auraAttack.Hit();
         Hitting?.Invoke();
     }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override bool Equals(object other)
+    {
+        return base.Equals(other);
+    }
+
+    public override string ToString()
+    {
+        return base.ToString();
+    }
+
+    public override void Use(Vector3 castPosition, Vector3 direction)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -15,10 +15,15 @@ public class GolemCast : Spell
         _golemCaster = golemCaster;
     }
     
-    public override void Use(Vector3 castPosition, Vector3 direction, GameObject target)
+    public override void Use(Vector3 castPosition, Vector3 direction)
     {
         var golem = _golemCaster.CastAndDisable(_prefab, castPosition, direction);
         golem.Init(_attack);
         golem.gameObject.SetActive(true);
+    }
+
+    public override void Use(Vector3 castPosition, Vector3 direction, GameObject target)
+    {
+        throw new System.NotImplementedException();
     }
 }
