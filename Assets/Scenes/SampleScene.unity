@@ -1504,6 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8631ce7e575c89d4ebe2c2a17ffb6aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _item: {fileID: 0}
 --- !u!114 &589936340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,6 +1798,7 @@ MonoBehaviour:
   - {fileID: 1607894652}
   - {fileID: 1627910938}
   _selectedSlot: {fileID: 0}
+  _selectedSpell: {fileID: 0}
 --- !u!224 &668406250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4668,6 +4670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8631ce7e575c89d4ebe2c2a17ffb6aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _item: {fileID: 0}
 --- !u!114 &1487370567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5196,6 +5199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8631ce7e575c89d4ebe2c2a17ffb6aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _item: {fileID: 0}
 --- !u!1 &1625765574
 GameObject:
   m_ObjectHideFlags: 0
@@ -5412,6 +5416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8631ce7e575c89d4ebe2c2a17ffb6aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _item: {fileID: 0}
 --- !u!1 &1679389733
 GameObject:
   m_ObjectHideFlags: 0
@@ -6286,6 +6291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fireGolem: {fileID: 5939800934945472140, guid: bcee1f3140f5c95418f1768fa03c48bb, type: 3}
   _iceGolem: {fileID: 5095026482336094648, guid: f4b675483785e8b46843b683fc84eff1, type: 3}
+  _golemCastPrefab: {fileID: 11400000, guid: 962f9a479ef1ad24a9f82972f37c0912, type: 2}
   _golemCaster: {fileID: 1962265315}
 --- !u!4 &1962265314
 Transform:
@@ -6790,6 +6796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8631ce7e575c89d4ebe2c2a17ffb6aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _item: {fileID: 0}
 --- !u!114 &1394499780406909443
 MonoBehaviour:
   m_ObjectHideFlags: 0
