@@ -758,19 +758,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0f46d440174aa449ab186083cb88d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _patrolRadius: 25
+  _patrolColor: {r: 0, g: 0, b: 1, a: 1}
+  _rangeAttacked: 6
+  _rangeColor: {r: 0, g: 1, b: 0, a: 1}
+  _rangeIdleState: 10
+  _rangeIdleColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  _damageSkeletons: 25
+  _attackSpeed: 0
+  _animator: {fileID: 3943094372197003314}
+  _dotPatrol: {fileID: 3849755483724739915, guid: 407c94daa72487c40b4cda07c29d1fa9, type: 3}
   _stateEnemy: 0
   _pointAroundWhichPatrol: {fileID: 0}
   _agent: {fileID: 3943094372197003313}
-  _playerMask:
+  _attackedMask:
     serializedVersion: 2
     m_Bits: 128
-  _patrolRadius: 25
-  _rangeAttacked: 6
-  _damageSkeletons: 25
-  _rangeIdleState: 10
-  _attackSpeed: 10
-  _animator: {fileID: 3943094372197003314}
-  _dotPatrol: {fileID: 3849755483724739915, guid: 407c94daa72487c40b4cda07c29d1fa9, type: 3}
 --- !u!54 &3943094372197003312
 Rigidbody:
   m_ObjectHideFlags: 0

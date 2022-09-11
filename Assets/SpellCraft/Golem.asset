@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: eebbdb3fe30aa01418ac36d92c211c2c, type: 3}
   _spellPrefab: {fileID: 3979569420243177224, guid: bcee1f3140f5c95418f1768fa03c48bb, type: 3}
+  _meshRenderer: {fileID: 3733068027474374250, guid: bcee1f3140f5c95418f1768fa03c48bb, type: 3}

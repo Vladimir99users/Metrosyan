@@ -15,7 +15,7 @@ public class Golem : Spell
     public override void Use(Vector3 castPosition, Vector3 direction)
     {
         var golem = Instantiate(_spellPrefab, castPosition, Quaternion.identity);
-        golem.GetComponent<MeshRenderer>().material.color = TypeCore.Color;
+        _meshRenderer.material.color = TypeCore.Color;
 
         Attack();
     }

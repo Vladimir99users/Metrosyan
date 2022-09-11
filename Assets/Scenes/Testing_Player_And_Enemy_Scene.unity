@@ -1080,6 +1080,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead1ae41ca488674591616ca4759e847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &571703126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571703110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea9cd4e5d6b17146b98d26ea4570def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dashAction: {fileID: -3088816599562817186, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
+  _dashTime: 2.5
+  _dashingTime: 0.2
+  _dashingPower: 24
 --- !u!1 &572074011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,6 +3452,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1566591320339554795, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2433346178066198965, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: _creatureState._healthBar
       value: 
@@ -5382,6 +5402,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cursorInput: {fileID: 2960426773207092260, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
   _spriteRenderer: {fileID: 1712713512}
+  _groundOffset: 0
+  _groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1712713514
 Transform:
   m_ObjectHideFlags: 0
@@ -6563,7 +6587,7 @@ PrefabInstance:
       objectReference: {fileID: 3943094372197003315, guid: 3a61ab6976398a043848c41dd9b73f10, type: 3}
     - target: {fileID: 1729914359778460217, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
       propertyPath: _quantityEnemies
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1729914359778460217, guid: a7e33ab4ce3ddc7498385513e20e4b68, type: 3}
       propertyPath: _rangeSpawnEnemy
