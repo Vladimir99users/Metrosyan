@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
           
             Vector3 positionSpawn = new Vector3
                 (_rand.Next((int)_drawPosition.position.x + 1,_rangeSpawnEnemy + (int)_drawPosition.position.x),
-                 Vector3.zero.y,
+                 transform.position.y,
                 _rand.Next((int)_drawPosition.position.z + 1,_rangeSpawnEnemy + (int)_drawPosition.position.z)
                 );
         return positionSpawn;
