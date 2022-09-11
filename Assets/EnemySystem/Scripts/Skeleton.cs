@@ -45,7 +45,7 @@ public class Skeleton : Enemy
     }
     private void FixedUpdate()
     {
-        Debug.Log("Player = " + _isFindPlayer + " stoping = " + _isStoped);
+     
         if(_isFindPlayer == true)
         {
            Collider[] col = Physics.OverlapSphere(gameObject.transform.position,_patrolRadius,_playerMask);
@@ -66,6 +66,7 @@ public class Skeleton : Enemy
 
         } else if(_isFindPlayer == false && _isStoped == false) 
         {      
+             _agent.isStopped = false;
             LookRotationTarget(_pointAroundWhichPatrol);
             AnimatorState(StateCreature.Walking);
             MoveAgent(_pointAroundWhichPatrol);
@@ -129,3 +130,4 @@ public class Skeleton : Enemy
         }
     }
 }
+
