@@ -2,10 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class RangeAttack : IAttack
+public class RangeAttack : Attack
 { 
     private Projectale _projectale;
-
 
     ///<param name="projectale">Снаряд, которым будет производиться атака</param>
     public RangeAttack(Projectale projectale)
@@ -13,7 +12,7 @@ public class RangeAttack : IAttack
         _projectale = projectale;
     }
     
-    public void Hit()
+    public override void Hit()
     {
         Debug.Log("I shoot " + _projectale.Type + " " + _projectale.Damage);
     }

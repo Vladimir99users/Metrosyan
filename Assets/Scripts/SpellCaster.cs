@@ -28,7 +28,7 @@ public class SpellCaster : MonoBehaviour, IInputLisener
 
     public void Cast(Spell spell)
     {
-        Debug.Log($"Я кастую в позицию {_spellSign.Position} заклинание {spell.name}");
+        Debug.Log($"Я кастую в позицию {_spellSign.Position} заклинание");
         spell.Use(_spellSign.Position, Vector3.zero);
     }
 
