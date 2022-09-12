@@ -1264,7 +1264,7 @@ MonoBehaviour:
     Health: 50
     _healthBar: {fileID: 6404711701097113394}
   _canvas: {fileID: 2817981279663580019}
-  _speedRotation: 4
+  _speedRotation: 10
 --- !u!114 &4734582156664124827
 MonoBehaviour:
   m_ObjectHideFlags: 0
