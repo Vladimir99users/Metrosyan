@@ -12,6 +12,6 @@ public class RangeAttackAI : MonoBehaviour
 
     public bool TryAttacked(Transform obj)
     {
-        return Vector3.Distance(gameObject.transform.position, obj.position) < _rangeAttacked;
+        return (Vector3.Distance(gameObject.transform.position, obj.position) < _rangeAttacked);
     }
 }

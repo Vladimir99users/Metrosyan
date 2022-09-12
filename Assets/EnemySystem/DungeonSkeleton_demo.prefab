@@ -697,7 +697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3943094372189478892}
   - component: {fileID: 3943094372197003314}
-  - component: {fileID: 3943094372197003315}
+  - component: {fileID: 3701067974532516806}
   - component: {fileID: 3943094372197003312}
   - component: {fileID: 3943094372197003313}
   - component: {fileID: 7093407688835587763}
@@ -705,7 +705,8 @@ GameObject:
   - component: {fileID: 1931407846868870462}
   - component: {fileID: 196452376}
   - component: {fileID: 196452377}
-  m_Layer: 0
+  - component: {fileID: 500576226}
+  m_Layer: 9
   m_Name: DungeonSkeleton_demo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +751,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3943094372197003315
+--- !u!114 &3701067974532516806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -759,19 +760,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3943094372189701004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0f46d440174aa449ab186083cb88d9, type: 3}
+  m_Script: {fileID: 11500000, guid: dd835a7c6836b494e9fd821bcb5c53f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _pointAroundWhichPatrol: {fileID: 0}
   _state: 0
-  _damageSkeletons: 25
-  _rangeIdleState: 2
-  _attackSpeed: 10
-  _playerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _animator: {fileID: 3943094372197003314}
   _dotPatrol: {fileID: 3849755483724739915, guid: 407c94daa72487c40b4cda07c29d1fa9, type: 3}
+  _damageSkeletons: 25
+  _rangeIdleState: 3
+  _attackSpeed: 1
+  _whatCanBeAttackedMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _animator: {fileID: 3943094372197003314}
 --- !u!54 &3943094372197003312
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -878,7 +879,20 @@ MonoBehaviour:
     Health: 50
     _healthBar: {fileID: 986919957}
   _canvas: {fileID: 1262436370}
-  _speedRotation: 4
+  _speedRotation: 6
+--- !u!65 &500576226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3943094372189701004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.7432555, z: 0}
 --- !u!1 &3943094372189701006
 GameObject:
   m_ObjectHideFlags: 0

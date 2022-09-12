@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(LookTargetAI),typeof(MoveAI))]
+[RequireComponent(typeof(LookTargetAI),typeof(MoveAI),typeof(RangeAttackAI))]
 public class EntitySearchAI : MonoBehaviour
 {
     [SerializeField][Range(0,50)] private float _patrolRadius = 25f;

@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 1729914359778460219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -24.61, y: -0.06, z: 22.402803}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1729914359439786688}
@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97caeab1e946b24c81807e9f511af51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}
+  _enemy: {fileID: 3943094372197003315, guid: 3a61ab6976398a043848c41dd9b73f10, type: 3}
   _drawPosition: {fileID: 1729914359439786688}
-  _rangeSpawnEnemy: 0
-  _quantityEnemies: 0
+  _rangeSpawnEnemy: 15
+  _quantityEnemies: 2
+  _dotPatrol: {fileID: 3849755483724739915, guid: 407c94daa72487c40b4cda07c29d1fa9, type: 3}

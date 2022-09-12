@@ -1,16 +1,16 @@
 using UnityEngine;
-using UnityEngine.AI;
-[RequireComponent(typeof(NavMeshAgent))]
-public class Skeleton : Enemy
+
+[RequireComponent(typeof(EntitySearchAI),typeof(CreatureHealthAI))]
+public class AI : Enemy
 {
    
     [SerializeField] private StateCreature _state = StateCreature.Idle;
-    [SerializeField][Range(0,50)] private int _damageSkeletons = 25;
+    [SerializeField] private GameObject _dotPatrol;
+    [SerializeField][Range(0,50)] private int _damageAI = 25;
     [SerializeField][Range(0,10)] private int _rangeIdleState = 3;
     [SerializeField][Range(0,10)] private float _attackSpeed = 1f;
-    [SerializeField] protected LayerMask _playerMask;
+    [SerializeField] protected LayerMask _whatCanBeAttackedMask;
     [SerializeField]private Animator _animator;
-    [SerializeField] private GameObject _dotPatrol;
 
     private float _attackCooldown = 0f;
     private bool _isFindPlayer = false;
@@ -25,15 +25,16 @@ public class Skeleton : Enemy
     private RangeAttackAI _rangeArrakedAI => GetComponent<RangeAttackAI>();
     public override void Init(Transform position)
     {
-        var _pointer = Instantiate(_dotPatrol,position);
-        _pointAroundWhichPatrol = _pointer.transform;
-        _pointer.transform.parent = null;
+        var pointer = Instantiate(_dotPatrol,position);
+        _pointAroundWhichPatrol = pointer.transform;
+        pointer.transform.parent = null;
     }
 
 
     private void Update()
     {
-        _isFindPlayer = _searchAttaked.TryCheckPlayer(_playerMask);
+        _isFindPlayer = _searchAttaked.TryCheckPlayer(_whatCanBeAttackedMask);
+  
         _isAttack = !(_creatureHealth != null && _rangeArrakedAI.TryAttacked(_creatureHealth.transform));
 
         _attackCooldown -= Time.deltaTime;
@@ -47,22 +48,22 @@ public class Skeleton : Enemy
         if(_isFindPlayer == true && _isAttack == true)    _state = StateCreature.Walking;
 
 
-        AnimatorState(_state);
+        
     }
    private void FixedUpdate()
     {
      
         if(_isFindPlayer == true)
         {
-           Collider[] col = Physics.OverlapSphere(gameObject.transform.position,_searchAttaked.PatrolRadius,_playerMask);
+           Collider[] col = Physics.OverlapSphere(gameObject.transform.position,_searchAttaked.PatrolRadius,_whatCanBeAttackedMask);
+           
+
            if(col.Length <= 0)   return;
  
             _creatureHealth = col[0].GetComponent<ITakeDamage>() as CreatureHealth;
-         
             _lookAI.LookRotationTarget(_creatureHealth.transform);
             if(_isAttack) 
             {
-               // _agent.isStopped = false;
                 _moveAI.MoveAgent(_creatureHealth.transform);
             } 
             else 
@@ -79,14 +80,18 @@ public class Skeleton : Enemy
 
     }
 
+    private void LateUpdate()
+    {
+        AnimatorState(_state);
+    }
     public void AttackTarget()
     {
         if(_attackCooldown <= 0)
         {
             if(_creatureHealth is ITakeDamage)
             {
-                _creatureHealth.TakeDamage( _damageSkeletons);
-                Debug.Log("Я нанёс = " + _damageSkeletons);
+                _creatureHealth.TakeDamage( _damageAI);
+                Debug.Log("Я нанёс = " + _damageAI);
                 _attackCooldown = 1f / _attackSpeed;
             }
         }
@@ -98,7 +103,7 @@ public class Skeleton : Enemy
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(gameObject.transform.position,_rangeIdleState);
     }
-    private void AnimatorState(StateCreature state)
+    public void AnimatorState(StateCreature state)
     {
         switch (state)
         {
@@ -116,6 +121,9 @@ public class Skeleton : Enemy
                 _animator.ResetTrigger("move");
                 _animator.ResetTrigger("Idle");
                 _animator.SetTrigger("attacked");
+                break;
+            case StateCreature.Die:
+                _animator.SetBool("IsDie", true);
                 break;
             default: Debug.LogError("None trigger");
             break;

@@ -3,7 +3,7 @@ using UnityEngine;
 public class CreatureHealth : MonoBehaviour, ITakeDamage
 {
   
-    [Tooltip("все показания игрока")][SerializeField] private CreatureStates _creatureState;
+    [Tooltip("все показания игрока")][SerializeField] protected CreatureStates _creatureState;
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class CreatureHealth : MonoBehaviour, ITakeDamage
         _creatureState._healthBar.maxValue = _creatureState.Health;
         _creatureState._healthBar.value = _creatureState._healthBar.maxValue;
     }
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
        _creatureState.Health -= damage;
        _creatureState._healthBar.value = _creatureState.Health;
