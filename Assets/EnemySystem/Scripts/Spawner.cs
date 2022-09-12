@@ -6,6 +6,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform _drawPosition;
     [SerializeField][Range(0f,100f)] public int _rangeSpawnEnemy = 10;
     [SerializeField] private int _quantityEnemies = 2;
+
+
     
 
     private void OnDrawGizmosSelected()
@@ -19,6 +21,7 @@ public class Spawner : MonoBehaviour
         for(int i = 0; i < _quantityEnemies;i++)
         {
             var enemy = Instantiate(_enemy,RandomCirclePositionEnemy(),Quaternion.identity) as Enemy;
+        
             enemy.Init(enemy.transform);
         }
     }
@@ -29,7 +32,7 @@ public class Spawner : MonoBehaviour
           
             Vector3 positionSpawn = new Vector3
                 (_rand.Next((int)_drawPosition.position.x + 1,_rangeSpawnEnemy + (int)_drawPosition.position.x),
-                 Vector3.zero.y,
+                 transform.position.y,
                 _rand.Next((int)_drawPosition.position.z + 1,_rangeSpawnEnemy + (int)_drawPosition.position.z)
                 );
         return positionSpawn;
