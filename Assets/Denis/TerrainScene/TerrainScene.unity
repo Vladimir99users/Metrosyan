@@ -5939,17 +5939,17 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
   m_OverrideTileSize: 1
-  m_TileSize: 168
+  m_TileSize: 512
   m_OverrideVoxelSize: 1
-  m_VoxelSize: 1.8
+  m_VoxelSize: 0.1
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 8dd43eb9632206642b0b2833a2e9c68d, type: 2}
 --- !u!1001 &1835930944
 PrefabInstance:
   m_ObjectHideFlags: 0
