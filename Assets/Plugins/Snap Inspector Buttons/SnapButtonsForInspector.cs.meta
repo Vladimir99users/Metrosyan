@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c29a89e4ce171c744afafc900bd68040
+timeCreated: 1512591499
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - SnapImage: {fileID: 2800000, guid: 3a1886fe6db2f1f4ea26c5e904428717, type: 3}
+  - SurfaceImage: {fileID: 2800000, guid: dd340dcb36f271d41a49f6f3fb15fce0, type: 3}
+  - NormalImage: {fileID: 2800000, guid: 9f445075d1b2b2241a56d6d026966911, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,34 +6,42 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 0204015656535f5e090b5a7b47210844424f4c7d7e70706878781b61b7e4613d
-      flags: 0
-    RecentlyUsedSceneGuid-1:
       value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
       flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 0753570754515c580e595d7b13765944104e197f292d23602e2b4867b2e1613d
+      flags: 0
     RecentlyUsedSceneGuid-2:
-      value: 5a05065455530b0e5e0a5e2341725e444f15482f7a7e22337d714a6ab5b8303d
-
-
+      value: 0003045f55545e0f59080d21147a5a44154e1c2f7c2a75652f7b4567b1e56c69
       flags: 0
     RecentlyUsedSceneGuid-3:
-      value: 0006560053055b5d0e5b097044200c444f154d7c282d74637c7b4437b6b93161
+      value: 0505000051505b0e0808592044250644134f4c78747a25347f7b1864b0b9646e
       flags: 0
-
     RecentlyUsedSceneGuid-4:
-      value: 0753570754515c580e595d7b13765944104e197f292d23602e2b4867b2e1613d
-
+      value: 0250075355530d0a5d59542649700d44174e407b7e2e7f357b7c4f35e7b43060
       flags: 0
-    vcSharedLogLevel:
-      value: 0d5e400f0650
+    RecentlyUsedSceneGuid-5:
+      value: 5250565107065e595457597315705b4413154e78747874687d7e196bb4b06160
+      flags: 0
+    RecentlyUsedSceneGuid-6:
+      value: 575257560601500a0c5b0e7240775e424e15197f7a2a7265297d4c30bae4306e
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 550803025d0c500b5d5d0a2015225d44434f41787d7c2036752c4a66e1b1356c
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 575301025006595d5c560e7611770f48104f4d79797024607f2d4867e1b26760
+      flags: 0
+    RecentlyUsedSceneGuid-9:
+      value: 5a05065455530b0e5e0a5e2341725e444f15482f7a7e22337d714a6ab5b8303d
       flags: 0
   m_VCAutomaticAdd: 1
   m_VCDebugCom: 0
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
-  m_DesiredImportWorkerCount: 1
-  m_StandbyImportWorkerCount: 1
+  m_DesiredImportWorkerCount: 2
+  m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
   m_VCOverwriteFailedCheckoutAssets: 1
