@@ -4,43 +4,40 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class GolemCraftMenu : Menu, IInputLisener
+public class GolemCraftMenu : DefaultSpellCraftMenu, IInputLisener
 {
-    public SpellUnityEvent SpellCrafted;
     public SpellUnityEvent SpellAdding;
 
-    [SerializeField] private CoreSlot _typeSlot;
-    [SerializeField] private CoreSlot _extraSlot;
-    [SerializeField] private GolemCastFactory _golemFactory;
-    [SerializeField] private AuraFactory _auraFactory;
     [SerializeField] private InputActionReference _openCloseInput;
 
-    private Spell _craftedGolem;
-    
-    public void Craft()
+    public override Spell CraftedSpell { get; protected set; }
+
+    public override bool IsSpellCrafted { get; protected set; }
+    public override void TryCraft()
     {
         if (_typeSlot.CurrentItem is null)
             return;
 
-        _craftedGolem  = _golemFactory.Get(_typeSlot.CurrentItem);
+        CraftedSpell = _typeSlotSpellFactory.Get(_typeSlot.CurrentItem);
 
         if(_extraSlot.CurrentItem != null)
         {
-            var aura = _auraFactory.Get(_extraSlot.CurrentItem);
-            (_craftedGolem as GolemCast).SetStartBuffs(new[] { aura });
+            var aura = _extraSlotSpellFactory.Get(_extraSlot.CurrentItem);
+            (CraftedSpell as GolemCast).SetStartBuffs(new[] { aura });
         }
 
-        SpellCrafted?.Invoke(_craftedGolem);
+        SpellCrafted?.Invoke(CraftedSpell);
+        IsSpellCrafted = true;
     }
 
     public void AddToSlot()
     {
-        if(_craftedGolem is null)
+        if(CraftedSpell is null)
         {
             return;
         }
 
-        SpellAdding?.Invoke(_craftedGolem);
+        SpellAdding?.Invoke(CraftedSpell);
     }
 
     public override void Open()
