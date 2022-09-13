@@ -19,8 +19,6 @@ public class Golem : Unit
         }
     }
 
-
-
     private void Attack()
     {
         _attackHandler.Hit();
