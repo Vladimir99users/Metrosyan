@@ -35,7 +35,7 @@ public class BuoyantObject : MonoBehaviour
 
     private Rigidbody rb;
     private Vector3[] effectorProjections;
-     
+
     void Awake()
     {
         // Get wave properties from water

@@ -3,7 +3,7 @@
 // https://alexander-ameye.gitbook.io/stylized-water/
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━	
 
-
+#if UNIVERSAL_RENDERER
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -494,3 +494,4 @@ namespace StylizedWater
         public float[] GetWaveDirections() => new float[] { waveDirection1, waveDirection2, waveDirection3, waveDirection4 };
     }
 }
+#endif
