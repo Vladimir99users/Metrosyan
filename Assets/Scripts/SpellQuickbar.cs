@@ -1,20 +1,23 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class SpellQuickbar : MonoBehaviour, IInputLisener
 {
+    public bool IsSpellSelected => _selectedSlot != null;
+    public Spell SelectedSpell => _selectedSlot.SpellSlot.CurrentItem;
+
     [SerializeField] private List<QuickbarSlot> _slots;
 
     [SerializeField] private QuickbarSlot _selectedSlot;
 
-    [SerializeField] private Spell _selectedSpell;
-
-    public Spell SelectedSpell => _selectedSlot.SpellSlot.CurrentItem;
 
     public void AddSpell(Spell spell)
     {
+        if (_selectedSlot is null)
+            return;
 
         _selectedSlot.SpellSlot.Add(spell);
     }
@@ -39,11 +42,7 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
         foreach (var slot in _slots)
         {
             slot.Selected += OnSlotSelected;
-        }
-
-        if (_slots.Count > 0)
-        {
-            _slots[0].Select();
+            slot.Diselected += OnSlotDiselected;
         }
     }
 
@@ -52,6 +51,7 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
         foreach (var slot in _slots)
         {
             slot.Selected -= OnSlotSelected;
+            slot.Diselected -= OnSlotDiselected;
         }
     }
 
@@ -64,10 +64,26 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
 
         _selectedSlot?.Diselect();
 
-        _selectedSlot = slot;
-        _selectedSpell = slot.SpellSlot.CurrentItem;
+        SetSelectedSlot(slot);
     }
 
+    private void OnSlotDiselected(QuickbarSlot slot)
+    {
+        if (slot == _selectedSlot)
+        {
+            ClearSelectedSlot();
+        }
+    }
+
+    private void SetSelectedSlot(QuickbarSlot slot)
+    {
+        _selectedSlot = slot;
+    }
+
+    private void ClearSelectedSlot()
+    {
+        _selectedSlot = null;
+    }
 
 }
 

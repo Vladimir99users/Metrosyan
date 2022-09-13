@@ -11,7 +11,7 @@ public class GolemCraftMenu : Menu, IInputLisener
 
     [SerializeField] private CoreSlot _typeSlot;
     [SerializeField] private CoreSlot _extraSlot;
-    [SerializeField] private GolemFactory _golemFactory;
+    [SerializeField] private GolemCastFactory _golemFactory;
     [SerializeField] private AuraFactory _auraFactory;
     [SerializeField] private InputActionReference _openCloseInput;
 
@@ -26,7 +26,8 @@ public class GolemCraftMenu : Menu, IInputLisener
 
         if(_extraSlot.CurrentItem != null)
         {
-           
+            var aura = _auraFactory.Get(_extraSlot.CurrentItem);
+            (_craftedGolem as GolemCast).SetStartBuffs(new[] { aura });
         }
 
         SpellCrafted?.Invoke(_craftedGolem);

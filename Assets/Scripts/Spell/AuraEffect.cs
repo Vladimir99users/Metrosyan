@@ -2,46 +2,40 @@
 
 public class AuraEffect : MonoBehaviour
 {
-    private Aura _aura;
+    private Attack _attack;
     private ParticleSystem _particleSystem;
+    private bool _enabled;
 
-    public void Init(Aura aura, AuraConfig auraConfig)
+    public void Init(Attack attack, AuraConfig auraConfig)
     {
-        _aura = aura;
         _particleSystem = Instantiate(auraConfig.ParticleSystem, transform);
-        Enable();
+        _attack = attack;
     }
 
-    private void Enable()
+    public void EnableAura()
     {
-        if(_aura is null)
+        _particleSystem.Play();
+        _enabled = true;
+    }
+
+
+    public void DisableEffect()
+    {
+        _enabled = false;
+        _particleSystem.Stop();
+    }
+
+    private void Update()
+    {
+        if(_enabled == false)
         {
             return;
         }
 
-        _aura.Enabled += OnAuraEnabled;
-        _aura.Disabled += OnAuraDisabled;
+        _attack.Hit();
     }
 
-    private void OnAuraEnabled()
-    {
-        _particleSystem.Play();
-    }
 
-    private void OnAuraDisabled()
-    {
-        _particleSystem.Stop();
-    }
 
-    private void OnEnable()
-    {
-        Enable();
-    }
-
-    private void OnDisable()
-    {
-        _aura.Enabled -= OnAuraEnabled;
-        _aura.Disabled -= OnAuraDisabled;
-    }
 
 }
