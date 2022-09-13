@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,34 +9,35 @@ public class GolemCraftMenu : DefaultSpellCraftMenu, IInputLisener
 
     [SerializeField] private InputActionReference _openCloseInput;
 
-    public override Spell CraftedSpell { get; protected set; }
-
-    public override bool IsSpellCrafted { get; protected set; }
-    public override void TryCraft()
+    private Spell _craftedSpell;
+    public override bool TryCraft(out Spell craftedSpell)
     {
-        if (_typeSlot.CurrentItem is null)
-            return;
-
-        CraftedSpell = _typeSlotSpellFactory.Get(_typeSlot.CurrentItem);
+        if (TypeSlotCraft(out craftedSpell) == false)
+            return false;
+            
 
         if(_extraSlot.CurrentItem != null)
         {
             var aura = _extraSlotSpellFactory.Get(_extraSlot.CurrentItem);
-            (CraftedSpell as GolemCast).SetStartBuffs(new[] { aura });
+            (craftedSpell as GolemCast).SetStartBuffs(new[] { aura });
         }
 
-        SpellCrafted?.Invoke(CraftedSpell);
-        IsSpellCrafted = true;
+        SpellCrafted?.Invoke(craftedSpell);
+        return true;
     }
 
-    public void AddToSlot()
+    private void Awake()
     {
-        if(CraftedSpell is null)
-        {
-            return;
-        }
+        _typeSlot.Added += OnSlotFilled;
+        _extraSlot.Added += OnSlotFilled;
+    }
 
-        SpellAdding?.Invoke(CraftedSpell);
+    private void OnSlotFilled(Core core)
+    {
+        if(TryCraft(out Spell spell))
+        {
+            _craftedSpell = spell;
+        }
     }
 
     public override void Open()
