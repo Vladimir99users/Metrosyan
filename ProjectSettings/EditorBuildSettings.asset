@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Denis/TerrainScene/MainMenu.unity
+    guid: aa350fd1078d9324a9812f9e652fe4d8
+  - enabled: 1
+    path: Assets/Denis/TerrainScene/TerrainScene.unity
+    guid: 94220fb53d2a11a49b0e66dc087978de
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: feeb868ff4c7a974a977c79dc15e3268, type: 2}
