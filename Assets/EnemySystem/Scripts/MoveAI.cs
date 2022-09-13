@@ -9,4 +9,9 @@ public class MoveAI : MonoBehaviour
     {
         _agent.SetDestination(dot.transform.position);
     }
+
+    public void TryStopedAgent(bool flag)
+    {
+        _agent.isStopped = flag;
+    }
 }

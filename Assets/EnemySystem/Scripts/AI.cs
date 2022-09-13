@@ -23,6 +23,11 @@ public class AI : Enemy
     private LookTargetAI _lookAI => GetComponent<LookTargetAI>();
     private EntitySearchAI _searchAttaked => GetComponent<EntitySearchAI>();
     private RangeAttackAI _rangeArrakedAI => GetComponent<RangeAttackAI>();
+
+    private void Start()
+    {
+        Init(gameObject.transform);
+    }
     public override void Init(Transform position)
     {
         var pointer = Instantiate(_dotPatrol,position);
@@ -64,15 +69,19 @@ public class AI : Enemy
             _lookAI.LookRotationTarget(_creatureHealth.transform);
             if(_isAttack) 
             {
+                _moveAI.TryStopedAgent(false);
                 _moveAI.MoveAgent(_creatureHealth.transform);
             } 
             else 
             {
+                _moveAI.TryStopedAgent(true);
                 _state = StateCreature.Attacked;
             }
 
         } else if(_isFindPlayer == false && _isStoped == false) 
         {      
+            _moveAI.TryStopedAgent(false);
+            _creatureHealth = null;
             _lookAI.LookRotationTarget(_pointAroundWhichPatrol);
             _state = StateCreature.Walking;
             _moveAI.MoveAgent(_pointAroundWhichPatrol);
