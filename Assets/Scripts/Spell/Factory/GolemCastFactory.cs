@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GolemFactory : SpellFactory
+public class GolemCastFactory : SpellFactory
 {
     [SerializeField] private Golem _fireGolem;
     [SerializeField] private Golem _iceGolem;

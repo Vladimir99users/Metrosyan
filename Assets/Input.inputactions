@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "SpellSight",
+                    "type": "Button",
+                    "id": "df6f6083-2582-4468-8d1d-5e4f7abb86e1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "SpellCast",
                     "type": "Button",
                     "id": "856540f9-d661-4726-b289-52253a32f27d",
@@ -128,6 +137,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "LookAt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8cfe7a06-6d3c-4e33-b897-94964b4c23e1",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpellSight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

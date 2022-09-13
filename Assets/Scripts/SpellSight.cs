@@ -19,12 +19,10 @@ public class SpellSight : MonoBehaviour, IInputLisener
     public void EnableInput()
     {
         _cursorInput.action.Enable();
-        Show();
     }
 
     public void DisableInput()
     {
-        Hide();
         _cursorInput.action.Disable();
     }
 
@@ -41,13 +39,8 @@ public class SpellSight : MonoBehaviour, IInputLisener
 
         if (TryGetSignPosition(mousePosition, out Vector3 signPosition))
         {
-            Show();
             signPosition.y += _groundOffset;
             Move(signPosition);
-        }
-        else
-        {
-            Hide();
         }
     }
 
@@ -77,12 +70,12 @@ public class SpellSight : MonoBehaviour, IInputLisener
     }
 
 
-    private void Show()
+    public void Show()
     {
         _spriteRenderer.enabled = true;
     }
 
-    private void Hide()
+    public void Hide()
     {
         _spriteRenderer.enabled = false;
     }

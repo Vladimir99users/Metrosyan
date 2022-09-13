@@ -59,8 +59,8 @@ public class Movement : MonoBehaviour,IInputLisener
         {
             AnimatorCreature._onStateCreature?.Invoke(StateCreature.Idle);
             return;
-        } 
-        var newMove = new Vector3 (input.x,0f ,input.y).normalized;
+        }
+        var newMove = new Vector3 (input.x, 0f,input.y).normalized;
         AnimatorCreature._onStateCreature?.Invoke(StateCreature.Walking);
         _rigidbody.MovePosition(_rigidbody.position + (newMove * _speed * Time.deltaTime));
     }
