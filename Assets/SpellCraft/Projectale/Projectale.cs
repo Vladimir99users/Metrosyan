@@ -3,10 +3,10 @@
 public class Projectale
 {
     public float Damage;
-    public ElementType Type;
+    public CoreType Type;
     public string Appearance;
 
-    public Projectale(float damage, ElementType type, string appearance)
+    public Projectale(float damage, CoreType type, string appearance)
     {
         Damage = damage;
         Type = type;

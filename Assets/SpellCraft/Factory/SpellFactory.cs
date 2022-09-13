@@ -24,8 +24,8 @@ public class MagicBallCastFactory : SpellFactory
     private MagicBall GetMagicBall(Core core) =>
         core.Stats.Type switch
         {
-            ElementType.Fire => _fireBallPrefab,
-            ElementType.Ice => _iceBallPrefab,
+            CoreType.Fire => _fireBallPrefab,
+            CoreType.Ice => _iceBallPrefab,
             _ => _fireBallPrefab,
         };
     

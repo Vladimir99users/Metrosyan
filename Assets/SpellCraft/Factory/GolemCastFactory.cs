@@ -27,8 +27,8 @@ public class GolemCastFactory : SpellFactory
 
     private Golem GetGolemByType(Core core) => core.Stats.Type switch
     {
-        ElementType.Fire => _fireGolem,
-        ElementType.Ice => _iceGolem,
+        CoreType.Fire => _fireGolem,
+        CoreType.Ice => _iceGolem,
         _ => _fireGolem,
     };
 }

@@ -18,8 +18,8 @@ public class AuraFactory : SpellFactory
 
     public AuraConfig GetAuraConfig(Core core) => core.Stats.Type switch
     {
-        ElementType.Fire => _fireAuraConfig,
-        ElementType.Ice => _iceAuraConfig,
+        CoreType.Fire => _fireAuraConfig,
+        CoreType.Ice => _iceAuraConfig,
         _ => _fireAuraConfig,
     };
 
