@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GolemCast
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: eebbdb3fe30aa01418ac36d92c211c2c, type: 3}
+  _castType: 1

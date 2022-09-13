@@ -39,8 +39,17 @@ public class SpellCaster : MonoBehaviour, IInputLisener
     {
         if (_spellQuickbar.IsSpellSelected == false)
             return;
-        
-        Cast(_spellQuickbar.SelectedSpell);
+
+        var spell = _spellQuickbar.SelectedSpell;
+
+        switch(spell.CastType){
+            case CastType.Call:
+                spell.Use(_spellSign.Position, Vector3.zero);
+                break;
+            case CastType.Shoot:
+                spell.Use(transform.position, _spellSign.transform.position - transform.position);
+                break;
+        }
     }
 
     public void Cast(Spell spell)

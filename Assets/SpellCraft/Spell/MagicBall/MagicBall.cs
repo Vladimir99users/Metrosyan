@@ -19,8 +19,8 @@ public class MagicBall : MonoBehaviour
             return;
 
 
-        var launchDirection = direction.normalized * _speed;
-        _rigidbody.velocity = launchDirection;
+        var launchDirection = direction.normalized * _speed; 
+        _rigidbody.AddForce(launchDirection, ForceMode.Acceleration);
 
         _launched = true;
     }
