@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11714d49e288a76438f6780fc228e25b, type: 3}
-  m_Name: IceAuraConfig
+  m_Script: {fileID: 11500000, guid: 77375fe01ebeec444b01dbea5b6a8391, type: 3}
+  m_Name: MagicBallCast
   m_EditorClassIdentifier: 
-  _particleSystemPrefab: {fileID: 1899550475708298335, guid: fab8b2a73b9f74b48b71896fcd6dba1c, type: 3}
+  _sprite: {fileID: -1523599127, guid: 9282b55035d14ea45ab48bb19b18a54a, type: 3}

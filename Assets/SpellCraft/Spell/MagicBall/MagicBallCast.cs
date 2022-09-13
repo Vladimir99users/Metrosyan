@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+[CreateAssetMenu(fileName = "MagicBallCast", menuName = "Spell/MagicBallCast")]
 public class MagicBallCast : Spell
 {
     private MagicBall _ballPrevab;
