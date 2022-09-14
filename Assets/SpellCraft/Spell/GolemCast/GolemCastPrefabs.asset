@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePrefab: {fileID: 5939800934945472140, guid: bcee1f3140f5c95418f1768fa03c48bb, type: 3}
   _waterPrefab: {fileID: 5095026482336094648, guid: f4b675483785e8b46843b683fc84eff1, type: 3}
-  _earthPrefab: {fileID: 0}
-  _airPrefab: {fileID: 0}
-  _darkPrefab: {fileID: 0}
-  _lightPrefab: {fileID: 0}
+  _earthPrefab: {fileID: 5939800934945472140, guid: d5f3cf7334ca0754dab15139f0b06bd3, type: 3}
+  _airPrefab: {fileID: 5939800934945472140, guid: 59ec4ef0d1f502948aeee34900a44a0f, type: 3}
+  _darkPrefab: {fileID: 5939800934945472140, guid: 5946a35d0ee47a24aa1e12c2b8763c91, type: 3}
+  _lightPrefab: {fileID: 5939800934945472140, guid: 34ed9c6235d8f7c4fa26e74763d8c37b, type: 3}

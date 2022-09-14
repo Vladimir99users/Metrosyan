@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897593c097d9cdb4d8d9070adc34f3a3, type: 3}
   m_Name: MagicBallFactoryPrefabs
   m_EditorClassIdentifier: 
-  _firePrefab: {fileID: 0}
-  _waterPrefab: {fileID: 0}
+  _firePrefab: {fileID: 247462793247472723, guid: 157bed8f84c99174daccf7b2d443c44e, type: 3}
+  _waterPrefab: {fileID: 247462793247472723, guid: 0fe44a0f48a04f546a50d85965fecf93, type: 3}
   _earthPrefab: {fileID: 0}
   _airPrefab: {fileID: 0}
   _darkPrefab: {fileID: 0}
