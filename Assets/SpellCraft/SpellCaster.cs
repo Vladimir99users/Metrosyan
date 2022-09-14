@@ -49,6 +49,12 @@ public class SpellCaster : MonoBehaviour, IInputLisener
             case CastType.Shoot:
                 spell.Use(transform.position, _spellSign.transform.position - transform.position);
                 break;
+            case CastType.Target:
+                spell.Use(transform.position, Vector3.zero, gameObject);
+                    break;
+            default:
+                spell.Use(transform.position, _spellSign.transform.position - transform.position);
+                break;
         }
     }
 
