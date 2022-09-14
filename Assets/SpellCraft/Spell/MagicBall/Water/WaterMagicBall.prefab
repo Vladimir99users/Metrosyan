@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5356410329861086852}
   - component: {fileID: 247462793247472723}
   m_Layer: 0
-  m_Name: IceMagicBall
+  m_Name: WaterMagicBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
