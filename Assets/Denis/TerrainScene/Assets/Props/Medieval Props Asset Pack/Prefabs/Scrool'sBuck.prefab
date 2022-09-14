@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6537967839141864172}
+  - component: {fileID: 7490116015515808299}
   m_Layer: 0
   m_Name: Scrool'sBuck
   m_TagString: Untagged
@@ -37,6 +38,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7490116015515808299
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489975147281115205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.47411227
+  m_Height: 2.1393623
+  m_Direction: 1
+  m_Center: {x: -0.05243802, y: -0.38404274, z: -0.11666918}
 --- !u!1001 &3745009234365418606
 PrefabInstance:
   m_ObjectHideFlags: 0

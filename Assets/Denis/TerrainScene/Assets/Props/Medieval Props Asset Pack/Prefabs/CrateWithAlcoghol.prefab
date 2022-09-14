@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6947583356734773203}
+  - component: {fileID: 3650248256266135960}
   m_Layer: 0
   m_Name: CrateWithAlcoghol
   m_TagString: Untagged
@@ -47,6 +48,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3650248256266135960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6947583356734773200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6677856, y: 0.6286278, z: 1}
+  m_Center: {x: 0.03262329, y: 0.2718029, z: 0}
 --- !u!1001 &6947583355590195702
 PrefabInstance:
   m_ObjectHideFlags: 0

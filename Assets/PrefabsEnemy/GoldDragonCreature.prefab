@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatureState:
-    Health: 60
+    Health: 100
     _healthBar: {fileID: 4282280936980688196}
   _canvas: {fileID: 4282280935609326052}
   _speedRotation: 10
@@ -1932,7 +1932,7 @@ MonoBehaviour:
   _attackSpeed: 1
   _whatCanBeAttackedMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 128
   _animator: {fileID: 4282280937475253218}
 --- !u!135 &4282280937475253146
 SphereCollider:

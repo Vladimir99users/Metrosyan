@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3713006470454589527}
+  - component: {fileID: 8705882180252242384}
   m_Layer: 0
   m_Name: AlchemistStorage
   m_TagString: Untagged
@@ -36,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8705882180252242384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3713006470454589524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9449463, y: 2.5458336, z: 3.2843628}
+  m_Center: {x: 0.81103516, y: -0.029882431, z: -2.9727936}
 --- !u!1001 &3713006468767891527
 PrefabInstance:
   m_ObjectHideFlags: 0
