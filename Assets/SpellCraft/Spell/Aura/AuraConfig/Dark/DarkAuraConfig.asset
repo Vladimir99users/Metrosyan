@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11714d49e288a76438f6780fc228e25b, type: 3}
-  m_Name: IceAuraConfig
+  m_Name: DarkAuraConfig
   m_EditorClassIdentifier: 
-  _particleSystemPrefab: {fileID: 1899550475708298335, guid: fab8b2a73b9f74b48b71896fcd6dba1c, type: 3}
+  _particleSystemPrefab: {fileID: 3321396875896619982, guid: 7048afa1c58111e4eb771801adaf7619, type: 3}
