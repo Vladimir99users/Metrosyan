@@ -1347,7 +1347,6 @@ GameObject:
   - component: {fileID: 9530184}
   - component: {fileID: 8817189823779148213}
   - component: {fileID: 6643411641057627443}
-  - component: {fileID: 3028083422912675005}
   - component: {fileID: 1814260786251551475}
   - component: {fileID: 1838079375}
   - component: {fileID: 5052214292886872428}
@@ -1426,20 +1425,6 @@ MonoBehaviour:
   _spellSign: {fileID: 0}
   _castInput: {fileID: 0}
   _spellQuickbar: {fileID: 0}
---- !u!114 &3028083422912675005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9054ebb88f12bb43ab648dc34e28f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
-  _movementInput: {fileID: -6433342410106178648, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
 --- !u!114 &1814260786251551475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,7 +1478,6 @@ MonoBehaviour:
   _creatureState:
     Health: 100
     _healthBar: {fileID: 0}
-  IsDie: 0
 --- !u!54 &1566591320339554795
 Rigidbody:
   m_ObjectHideFlags: 0
