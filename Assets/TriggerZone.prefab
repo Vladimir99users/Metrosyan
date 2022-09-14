@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 8138430793790385551}
   - component: {fileID: 8138430793790385554}
   - component: {fileID: 8138430793790385555}
-  - component: {fileID: 8138430793790385552}
-  - component: {fileID: 8138430793790385550}
   m_Layer: 0
   m_Name: TriggerZone
   m_TagString: Untagged
@@ -71,7 +69,7 @@ MonoBehaviour:
   ZoneEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8138430793790385552}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MessageShowInteraction, Assembly-CSharp
         m_MethodName: ShowMessage
         m_Mode: 1
@@ -83,7 +81,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8138430793790385550}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShowImageInteraction, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
@@ -98,7 +96,7 @@ MonoBehaviour:
   ZoneExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8138430793790385552}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MessageShowInteraction, Assembly-CSharp
         m_MethodName: HideMessage
         m_Mode: 1
@@ -110,7 +108,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8138430793790385550}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShowImageInteraction, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
@@ -126,30 +124,3 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &8138430793790385552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8138430793790385556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dedcf31c8a46914ab9bef28d674f2d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uiMessage: {fileID: 0}
-  _text: "\u041F\u0440\u0438\u0432\u0435\u0442"
---- !u!114 &8138430793790385550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8138430793790385556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7d432fc293ef847a262415a896c395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _image: {fileID: 0}
