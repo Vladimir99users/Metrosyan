@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd0444d93e16f442a73c7b348aaac91, type: 3}
   m_Name: WaterCore
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 581405853, guid: 9282b55035d14ea45ab48bb19b18a54a, type: 3}
   _stats:
     _damage: 989
     _type: 1
     _name: "\u0412\u043E\u0434\u0430 \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043B\u0435\u0434"
   _color: {r: 0.20825918, g: 0.23140994, b: 0.6792453, a: 1}
+  _sprite: {fileID: 21300000, guid: 53e8f768a3de88540a0284a905a9f83e, type: 3}

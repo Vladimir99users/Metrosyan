@@ -17,4 +17,4 @@ MonoBehaviour:
     _type: 0
     _name: Fire
   _color: {r: 0.735849, g: 0.12148449, b: 0.12148449, a: 1}
-  _sprite: {fileID: 21300000, guid: e747e8679b4ab894082999c0e2165d7f, type: 3}
+  _sprite: {fileID: 21300000, guid: 6d9b2b8543f260f4ca1a65650e094935, type: 3}
