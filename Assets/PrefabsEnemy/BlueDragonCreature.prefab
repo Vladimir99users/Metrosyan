@@ -943,7 +943,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 25
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1027,12 +1027,12 @@ MonoBehaviour:
   _pointAroundWhichPatrol: {fileID: 0}
   _state: 0
   _dotPatrol: {fileID: 484795149747618168, guid: db2e5e4a4cf7b0f4c8c6de6f61e9d996, type: 3}
-  _damageAI: 25
+  _damageAI: 10
   _rangeIdleState: 3
-  _attackSpeed: 1
+  _attackSpeed: 3
   _whatCanBeAttackedMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   _animator: {fileID: 1939769396910610271}
 --- !u!135 &1939769396910610263
 SphereCollider:
