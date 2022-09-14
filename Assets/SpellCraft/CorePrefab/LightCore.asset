@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bd0444d93e16f442a73c7b348aaac91, type: 3}
-  m_Name: FireCore
+  m_Name: LightCore
   m_EditorClassIdentifier: 
   _stats:
-    _damage: 0.1
-    _type: 0
-    _name: Fire
-  _color: {r: 0.735849, g: 0.12148449, b: 0.12148449, a: 1}
-  _sprite: {fileID: 21300000, guid: e747e8679b4ab894082999c0e2165d7f, type: 3}
+    _damage: 1
+    _type: 4
+    _name: Light
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _sprite: {fileID: 0}

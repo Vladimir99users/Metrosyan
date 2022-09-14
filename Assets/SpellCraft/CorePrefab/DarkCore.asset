@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bd0444d93e16f442a73c7b348aaac91, type: 3}
-  m_Name: MironovCore
+  m_Name: DarkCore
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: 4c1db682371f9714594e2f8be77590b3, type: 3}
   _stats:
-    _damage: 10
-    _type: 1
-    _name: "\u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0435\u0431\u0443\u043D"
-  _color: {r: 0, g: 0, b: 0, a: 1}
+    _damage: 0
+    _type: 5
+    _name: Dark
+  _color: {r: 0, g: 0, b: 0, a: 0}
+  _sprite: {fileID: 0}
