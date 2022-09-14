@@ -206,8 +206,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70012193}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 5, z: 5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.91, y: 5, z: -6.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -260,11 +260,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 47187481}
-  _xOffset: -15
+  _xOffset: 0
   _yOffset: 15
-  _zOffset: 0
-  _angelX: 45
-  _angelY: 90
+  _zOffset: -10
+  _angelX: 60
+  _angelY: 0
   _angelZ: 0
 --- !u!1001 &809553028
 PrefabInstance:
@@ -295,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4529878967516176, guid: 1b78331b52629c7479714da987b1a28b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4529878967516176, guid: 1b78331b52629c7479714da987b1a28b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -303,7 +303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4529878967516176, guid: 1b78331b52629c7479714da987b1a28b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4529878967516176, guid: 1b78331b52629c7479714da987b1a28b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4529878967516176, guid: 1b78331b52629c7479714da987b1a28b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4529878967516176, guid: 1b78331b52629c7479714da987b1a28b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -590,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487646, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 0.9100001
       objectReference: {fileID: 0}
     - target: {fileID: 487646, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -598,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487646, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: -6.09
       objectReference: {fileID: 0}
     - target: {fileID: 487646, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -693,7 +693,7 @@ MonoBehaviour:
   intersectionEffectsExpanded: 0
   planarReflectionsExpanded: 0
   reflectionStrength: 0.944
-  reflectionFresnel: 2.5
+  reflectionFresnel: 2.43
   useColorGradient: 0
   colorGradient:
     serializedVersion: 2
@@ -726,36 +726,36 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.6313726, b: 1, a: 1}
-  deepColor: {r: 0, g: 0.42745084, b: 0.6784314, a: 1}
+  deepColor: {r: 0, g: 0.42745072, b: 0.6784314, a: 1}
   colorDepth: 2.59
-  horizonColor: {r: 0, g: 0.22745085, b: 0.8, a: 1}
+  horizonColor: {r: 0, g: 0.22745073, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 0
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30196065, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.3019605, a: 0}
   shoreStrength: 0
   shoreBlend: 0
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.2039216, g: 0.3098039, b: 0.5176471, a: 0}
+  underwaterColor: {r: 0.20392147, g: 0.30980378, b: 0.517647, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.116
-  surfaceFoamTexture: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
-  surfaceFoamSampling: {x: 0.623, y: 0.27}
-  surfaceFoamCutoff: 0.623
-  surfaceFoamDistortion: 0.27
-  surfaceFoamBlend: 0.417
+  surfaceFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
+  surfaceFoamSampling: {x: 0.748, y: 0}
+  surfaceFoamCutoff: 0.748
+  surfaceFoamDistortion: 0
+  surfaceFoamBlend: 0.429
   surfaceFoamColor1: {r: 1, g: 1, b: 1, a: 0.3215686}
   surfaceFoamColor2: {r: 1, g: 1, b: 1, a: 0.7294118}
-  surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
-  surfaceFoamDirection1: 0.7
+  surfaceFoamMovement: {x: 0.581, y: 0, z: 0.47, w: 0.01}
+  surfaceFoamDirection1: 0.581
   surfaceFoamDirection2: 0.47
   surfaceFoamSpeed1: 0
   surfaceFoamSpeed2: 0.01
-  surfaceFoamTilingAndOffset: {x: -1, y: -1, z: 0.57, w: 0.22}
+  surfaceFoamTilingAndOffset: {x: -1, y: -1, z: 0.213, w: 0.005}
   surfaceFoamOffsetX: -1
   surfaceFoamOffsetY: -1
-  surfaceFoamScale1: 0.57
-  surfaceFoamScale2: 0.22
+  surfaceFoamScale1: 0.213
+  surfaceFoamScale2: 0.005
   enableSurfaceFoam: 0
   surfaceFoamHeightMask: 0
   surfaceFoamHeightMaskSmoothness: 0
@@ -767,11 +767,11 @@ MonoBehaviour:
   foamMovement: 0
   intersectionFoamDepth: 0
   intersectionFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
-  intersectionFoamColor: {r: 0, g: 0, b: 0, a: 0}
+  intersectionFoamColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 0}
   intersectionFoamMovement: {x: 0, y: 0}
   intersectionFoamDirection: 0
   intersectionFoamSpeed: 0
-  intersectionFoamScale: 0
+  intersectionFoamScale: 0.005
   intersectionFoamSampling: {x: 0, y: 0}
   intersectionFoamCutoff: 0
   intersectionFoamDistortion: 0
@@ -790,12 +790,12 @@ MonoBehaviour:
   lightingHardness: 0
   normalsTexture: {fileID: 2800000, guid: a41da5f5671718b47bbc71e9ef691103, type: 3}
   normalsMovement: {x: 0.04, y: 0.36}
-  normalsStrength: 0.29
+  normalsStrength: 1
   normalsScale: 0.36
   normalsSpeed: 0.04
   refractionStrength: 0.017
-  waveVisuals: {x: 0.5, y: 8.23, z: 3}
-  waveSteepness: 0.5
+  waveVisuals: {x: 0, y: 8.23, z: 3}
+  waveSteepness: 0
   waveLength: 8.23
   waveSpeed: 3
   waveDirections: {x: 0, y: 0.64, z: 1, w: 0.33}
@@ -932,10 +932,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.8445617
+  m_Height: 1.6891237
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.002415479, y: 0, z: -1.131301e-12}
 --- !u!114 &2021383879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
   _conversation: {fileID: 11400000, guid: 2cd9e909fb4fc964892922da226b7be5, type: 2}
   _defualtConversation: {fileID: 11400000, guid: 2cd9e909fb4fc964892922da226b7be5, type: 2}
   _positionDialog: {fileID: 2021383877}
-  _radiusGizmo: 1.7
+  _radiusGizmo: 2.7
 --- !u!1 &2125018635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,12 +1041,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125018635}
-  m_LocalRotation: {x: -0, y: -0.68190885, z: -0, w: 0.73143715}
-  m_LocalPosition: {x: 8.544276, y: 4, z: 1.4397128}
+  m_LocalRotation: {x: -0, y: -0.99999326, z: -0, w: 0.0036783882}
+  m_LocalPosition: {x: 1.79, y: 4, z: 7.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2021383877}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: -85.986, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.578, z: 0}
