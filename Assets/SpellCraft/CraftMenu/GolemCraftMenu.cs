@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class GolemCraftMenu : DefaultSpellCraftMenu, IInputLisener
+public class GolemCraftMenu : DefaultSpellCraftMenu
 {
     public SpellUnityEvent SpellAdding;
 
@@ -52,35 +52,7 @@ public class GolemCraftMenu : DefaultSpellCraftMenu, IInputLisener
         base.Close();
     }
 
-    public void EnableInput()
-    {
-        _openCloseInput.action.Enable();
-    }
 
-    public void DisableInput()
-    {
-        _openCloseInput.action.Disable();
-    }
-
-
-    protected override void OnAwake()
-    {
-        base.OnAwake();
-
-        _openCloseInput.action.Enable();
-
-        _openCloseInput.action.performed += (c) =>
-        {
-            if (IsOpen)
-            {
-                Close();
-            }
-            else
-            {
-                Open();
-            }
-        };
-    }
 
 
 }
