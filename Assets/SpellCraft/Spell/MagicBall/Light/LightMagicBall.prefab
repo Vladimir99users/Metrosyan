@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 7240864145769581035}
   - component: {fileID: 4208419274454646250}
   - component: {fileID: 7928410871804230036}
-  - component: {fileID: 8008355012668337559}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8008355012668337559
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739566832422844847}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6372028006507339456
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +94,8 @@ GameObject:
   - component: {fileID: 4850601178471467159}
   - component: {fileID: 5356410329861086852}
   - component: {fileID: 247462793247472723}
-  m_Layer: 0
+  - component: {fileID: 6182210835672908018}
+  m_Layer: 10
   m_Name: LightMagicBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 6372028006507339456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7240864145769581035}
@@ -159,4 +146,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03061cfa5295edc41a066631d0bbadda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hit:
+    m_PersistentCalls:
+      m_Calls: []
   _speed: 1000
+--- !u!135 &6182210835672908018
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372028006507339456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
