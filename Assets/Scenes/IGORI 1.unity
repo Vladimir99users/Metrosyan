@@ -1840,6 +1840,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead1ae41ca488674591616ca4759e847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &571703117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571703110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ffb45fbe77334c80deef59ad13235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  _maxSpeed: 10
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _input: {fileID: -6433342410106178648, guid: 1687728fce4df4a4f9b2a9accd63a91c, type: 3}
 --- !u!1 &572074011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3070,7 +3109,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: eb8f1b856826bf34a88a75aff623c933, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4640,6 +4679,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1566591320339554795, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2433346178066198965, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
       propertyPath: _creatureState._healthBar
       value: 
@@ -4656,7 +4699,8 @@ PrefabInstance:
       propertyPath: _spellQuickbar
       value: 
       objectReference: {fileID: 668406249}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3028083422912675005, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33cf96e7c28302643ace35c3d203f5e0, type: 3}
 --- !u!1 &1147163616
 GameObject:

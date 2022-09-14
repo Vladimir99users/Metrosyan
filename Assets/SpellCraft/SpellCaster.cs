@@ -55,6 +55,7 @@ public class SpellCaster : MonoBehaviour, IInputLisener
             default:
                 spell.Use(transform.position, _spellSign.transform.position - transform.position);
                 break;
+                break;
         }
     }
 

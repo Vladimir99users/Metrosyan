@@ -62,6 +62,7 @@ public class Movement : MonoBehaviour,IInputLisener
         }
         var newMove = new Vector3 (input.x, 0f,input.y).normalized;
         AnimatorCreature._onStateCreature?.Invoke(StateCreature.Walking);
-        _rigidbody.MovePosition(_rigidbody.position + (newMove * _speed * Time.deltaTime));
+        _rigidbody.MovePosition(_rigidbody.position + (newMove * _speed * Time.fixedDeltaTime));
+
     }
 }
