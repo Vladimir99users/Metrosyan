@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97caeab1e946b24c81807e9f511af51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}
+  _enemy: {fileID: 4282280937475253145, guid: 11e11599383799546af53ddc759c1161, type: 3}
   _drawPosition: {fileID: 2693822911209964323}
   _rangeSpawnEnemy: 15
-  _quantityEnemies: 2
+  _quantityEnemies: 5
 --- !u!1 &2693822911209964322
 GameObject:
   m_ObjectHideFlags: 0
