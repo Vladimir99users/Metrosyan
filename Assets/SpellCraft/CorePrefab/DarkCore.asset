@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DarkCore
   m_EditorClassIdentifier: 
   _stats:
-    _damage: 100
+    _damage: 9999
     _type: 5
     _name: Dark
   _color: {r: 0, g: 0, b: 0, a: 0}

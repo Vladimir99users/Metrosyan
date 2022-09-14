@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireCore
   m_EditorClassIdentifier: 
   _stats:
-    _damage: 0.1
+    _damage: 25
     _type: 0
     _name: Fire
   _color: {r: 0.735849, g: 0.12148449, b: 0.12148449, a: 1}

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class MagicBall : MonoBehaviour
 {
     public CollisionUnityEvent Hit;
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed; 
     private Rigidbody _rigidbody;
 
     private int _damage;
@@ -42,11 +42,13 @@ public class MagicBall : MonoBehaviour
         {
             target.TakeDamage(_damage);
             Hit?.Invoke(collision);
-            Destroy(gameObject);
+
         }
 
+        Destroy(gameObject);
     }
 }
+
 
 [Serializable]
 public class CollisionUnityEvent : UnityEvent<Collision>

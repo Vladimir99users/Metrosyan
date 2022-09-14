@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EarthCore
   m_EditorClassIdentifier: 
   _stats:
-    _damage: 1
+    _damage: 10
     _type: 3
     _name: 
   _color: {r: 0.509434, g: 0.10747798, b: 0, a: 0}
