@@ -1,6 +1,9 @@
 ﻿public enum CoreType
 {
     Fire,
-    Ice,
-    Bullet
+    Water,
+    Air,
+    Earth,
+    Light,
+    Dark
 }

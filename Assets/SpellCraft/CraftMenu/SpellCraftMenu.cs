@@ -4,3 +4,4 @@
 
     public abstract bool TryCraft(out Spell craftedSpell);
 }
+

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6710a639d727a4785afbadacbbdd46, type: 3}
+  m_Name: GolemCastPrefabs
+  m_EditorClassIdentifier: 
+  _firePrefab: {fileID: 5939800934945472140, guid: bcee1f3140f5c95418f1768fa03c48bb, type: 3}
+  _waterPrefab: {fileID: 5095026482336094648, guid: f4b675483785e8b46843b683fc84eff1, type: 3}
+  _earthPrefab: {fileID: 0}
+  _airPrefab: {fileID: 0}
+  _darkPrefab: {fileID: 0}
+  _lightPrefab: {fileID: 0}

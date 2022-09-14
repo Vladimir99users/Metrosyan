@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[System.Serializable]
 public abstract class DefaultSpellCraftMenu : SpellCraftMenu
 {
     [SerializeField] protected CoreSlot _typeSlot;
@@ -18,8 +19,5 @@ public abstract class DefaultSpellCraftMenu : SpellCraftMenu
         craftedSpell = _typeSlotSpellFactory.Get(_typeSlot.CurrentItem);
         return true;
     }
-
-    
-
 
 }

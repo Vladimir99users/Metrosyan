@@ -3,13 +3,8 @@ using UnityEngine;
 
 public class GolemCastFactory : SpellFactory
 {
-    [SerializeField] private Golem _fireGolem;
-    [SerializeField] private Golem _iceGolem;
-
     [SerializeField] private GolemCast _golemCastPrefab;
-
-    [SerializeField] private GolemCaster _golemCaster;
-
+    [SerializeField] private GolemCastFactoryPrefabs _prefabs;
     public override Spell Get(Core mainCore)
     {
         AttackFactoryBase _attackFactory;
@@ -17,18 +12,12 @@ public class GolemCastFactory : SpellFactory
 
         Attack attack = _attackFactory.Get(mainCore.Stats);
 
-        var golem = GetGolemByType(mainCore);
+        Golem golem = _prefabs.GetPrefab(mainCore);
 
         GolemCast golemCast = Instantiate(_golemCastPrefab);
-        golemCast.Init(golem, attack, _golemCaster);
+        golemCast.Init(golem, attack);
         
         return golemCast;
     }
 
-    private Golem GetGolemByType(Core core) => core.Stats.Type switch
-    {
-        CoreType.Fire => _fireGolem,
-        CoreType.Ice => _iceGolem,
-        _ => _fireGolem,
-    };
 }
