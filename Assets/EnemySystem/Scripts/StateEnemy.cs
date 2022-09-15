@@ -4,5 +4,6 @@ public enum StateCreature
     Attacked,
     Walking,
     Damage,
-    Die
+    Die,
+    Alive
 }

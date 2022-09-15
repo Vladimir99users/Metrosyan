@@ -57,7 +57,7 @@ public class Movement : MonoBehaviour,IInputLisener
     public virtual void Move(Vector2 input)
     {
         
-        if(input.x == 0 && input.y == 0) 
+        if(input == Vector2.zero) 
         {
             AnimatorCreature._onStateCreature?.Invoke(StateCreature.Idle);
             return;
@@ -65,6 +65,7 @@ public class Movement : MonoBehaviour,IInputLisener
         var newMove = new Vector3 (input.x, 0f,input.y).normalized;
         _rigidbody.MovePosition(_rigidbody.position + (newMove * _speed * Time.fixedDeltaTime));
         AnimatorCreature._onStateCreature?.Invoke(StateCreature.Walking);
+
 
     }
 }
@@ -74,3 +75,4 @@ public class FloatUnityEvenet : UnityEvent<float>
 {
 
 }
+   
