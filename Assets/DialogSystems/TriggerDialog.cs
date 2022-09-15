@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class TriggerDialog : MonoBehaviour
 {
     [SerializeField] private Conversation _conversationFirst;
@@ -11,6 +10,7 @@ public class TriggerDialog : MonoBehaviour
     {
         if(_conversationFirst is null) Debug.LogError("НЕТ ДИАЛОГА ДЕНИС БЛЯДЬ");
     }
+
 
     private void OnTriggerExit()
     {
