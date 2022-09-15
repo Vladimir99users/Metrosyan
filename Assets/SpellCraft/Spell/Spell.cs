@@ -10,7 +10,6 @@ public abstract class Spell : ScriptableObject, IStorable
     public Action<Spell> Used;
     public CastType CastType => _castType;
     public Core Core => _core;
-
     Sprite IStorable.Sprite => _sprite;
     [SerializeField] private Sprite _sprite;
     [SerializeField] private CastType _castType;
