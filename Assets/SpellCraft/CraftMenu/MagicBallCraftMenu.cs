@@ -9,7 +9,7 @@
         {
             return false;
         }
-
+         
         SpellCrafted?.Invoke(craftedSpell);
         return true;
 
@@ -18,7 +18,6 @@
     private void Awake()
     {
         _typeSlot.Added += OnSlotFilled;
-        _extraSlot.Added += OnSlotFilled;
     }
 
     private void OnSlotFilled(Core core)
