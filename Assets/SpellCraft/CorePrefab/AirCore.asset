@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: AirCore
   m_EditorClassIdentifier: 
   _stats:
-    _damage: 1
+    _damage: 5
     _type: 2
     _name: Air
+    _reloadTime: 0.2
   _color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 0.627451}
   _sprite: {fileID: 21300000, guid: b123467b5d7e34d4fb0f141bd9728167, type: 3}

@@ -149,7 +149,7 @@ MonoBehaviour:
   Hit:
     m_PersistentCalls:
       m_Calls: []
-  _speed: 1000
+  _speed: 500
 --- !u!135 &7244640279654475041
 SphereCollider:
   m_ObjectHideFlags: 0

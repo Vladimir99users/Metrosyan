@@ -16,5 +16,6 @@ MonoBehaviour:
     _damage: 15
     _type: 1
     _name: "\u0412\u043E\u0434\u0430 \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043B\u0435\u0434"
+    _reloadTime: 2
   _color: {r: 0.20825918, g: 0.23140994, b: 0.6792453, a: 1}
   _sprite: {fileID: 21300000, guid: 53e8f768a3de88540a0284a905a9f83e, type: 3}
