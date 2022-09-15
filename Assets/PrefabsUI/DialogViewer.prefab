@@ -546,7 +546,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4667195879339182078}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3200742
+  m_Size: 0.49315435
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1543,6 +1543,9 @@ MonoBehaviour:
   Closed:
     m_PersistentCalls:
       m_Calls: []
+  OnDialogEnd:
+    m_PersistentCalls:
+      m_Calls: []
   _dialogTextMeshPro: {fileID: 4667195880443485763}
   _prefabsButton: {fileID: 7606102392060244125, guid: 0e3c51eea356ee24ebffdba7bb5ba4bf, type: 3}
   _positionOfResponses: {fileID: 4667195879348218250}
@@ -2063,6 +2066,10 @@ PrefabInstance:
     - target: {fileID: 7606102392930170346, guid: 0e3c51eea356ee24ebffdba7bb5ba4bf, type: 3}
       propertyPath: m_text
       value: xxxxxx
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606102392930170346, guid: 0e3c51eea356ee24ebffdba7bb5ba4bf, type: 3}
+      propertyPath: m_fontSize
+      value: 67.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e3c51eea356ee24ebffdba7bb5ba4bf, type: 3}
