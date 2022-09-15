@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -7,7 +8,7 @@ using UnityEngine.InputSystem;
 public class SpellQuickbar : MonoBehaviour, IInputLisener
 {
     public bool IsSpellSelected => _selectedSlot != null;
-    public Spell SelectedSpell => _selectedSlot.SpellSlot.CurrentItem;
+    public Spell SelectedSpell => _selectedSlot?.SpellSlot.CurrentItem ?? null;
 
     [SerializeField] private List<QuickbarSlot> _slots;
 
@@ -17,8 +18,11 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
     public void AddSpell(Spell spell)
     {
         if (_selectedSlot is null)
-            return;
-
+        {
+            _selectedSlot = _slots.Where(slot => slot.SpellSlot.CurrentItem == null).FirstOrDefault() ?? _slots[0];
+            _selectedSlot.Select();
+        }
+       
         _selectedSlot.SpellSlot.Add(spell);
     }
     public void EnableInput()

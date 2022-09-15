@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Denis/TerrainScene/MainMenu.unity
     guid: aa350fd1078d9324a9812f9e652fe4d8
   - enabled: 1
+    path: Assets/Denis/TerrainScene/StarterScene.unity
+    guid: dbca1d5cc719c5f4f9a5eee0cb540a5e
+  - enabled: 1
     path: Assets/Denis/TerrainScene/TerrainScene.unity
     guid: 94220fb53d2a11a49b0e66dc087978de
   m_configObjects:

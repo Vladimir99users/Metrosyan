@@ -3,7 +3,6 @@
     protected override void OnAdded(Spell entity)
     {
         base.OnAdded(entity);
-
     }
 }
 

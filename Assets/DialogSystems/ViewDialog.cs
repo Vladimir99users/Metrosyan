@@ -4,9 +4,11 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Events;
 
 public class ViewDialog : Menu
 {
+    public UnityEvent OnDialogEnd;
     [Header("Компоненты для визуального отображения диалога")]
     [SerializeField] private TextMeshProUGUI _dialogTextMeshPro;
     [SerializeField] private Button _prefabsButton;
@@ -87,7 +89,8 @@ public class ViewDialog : Menu
         }
         else
         {
-           StartCoroutine(CloseDialogPanel());
+            Close();
+            OnDialogEnd?.Invoke();
         }
     }
 

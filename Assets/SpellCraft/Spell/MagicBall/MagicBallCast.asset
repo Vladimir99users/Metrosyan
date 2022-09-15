@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77375fe01ebeec444b01dbea5b6a8391, type: 3}
   m_Name: MagicBallCast
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -1523599127, guid: 9282b55035d14ea45ab48bb19b18a54a, type: 3}
+  _sprite: {fileID: 21300000, guid: 5c710cf1ad851194f997e99d10edabaf, type: 3}
+  _castType: 0

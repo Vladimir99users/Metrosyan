@@ -29,17 +29,21 @@ public class SpellCaster : MonoBehaviour, IInputLisener
 
     private void OnCastStart(InputAction.CallbackContext obj)
     {
-        if (_spellQuickbar.IsSpellSelected == false)
-            return;
+        //if (_spellQuickbar.IsSpellSelected == false)
+        //    return;
 
         _spellSign.Show();
     }
 
     private void OnCastPressed(InputAction.CallbackContext context)
     {
-        if (_spellQuickbar.IsSpellSelected == false)
-            return;
+        //if (_spellQuickbar.IsSpellSelected == false)
+        //    return;
 
+        if(_spellQuickbar.SelectedSpell is null)
+        {
+            return;
+        }
         var spell = _spellQuickbar.SelectedSpell;
 
         switch(spell.CastType){

@@ -9,6 +9,13 @@ public class AnimatorCreature : MonoBehaviour
     private Animator _animator => GetComponent<Animator>();
 
     public static Action<StateCreature> _onStateCreature;
+    public static Action<float> SpeedChanged;
+
+
+    private void OnSpeedChanged(float speed)
+    {
+        _animator.SetFloat("Speed", speed);
+    }
 
     private void OnEnable()
     {
@@ -18,6 +25,8 @@ public class AnimatorCreature : MonoBehaviour
     {
         _onStateCreature -= AnimatorState;
     }
+
+
     private void AnimatorState(StateCreature state)
     {
         switch (state)
@@ -27,6 +36,7 @@ public class AnimatorCreature : MonoBehaviour
                 break;
             case StateCreature.Idle:
                 _animator.SetTrigger("Idle");
+
                 break;
             case StateCreature.Attacked:
                 _animator.SetTrigger("Attacked");
@@ -36,8 +46,10 @@ public class AnimatorCreature : MonoBehaviour
                 break;
              case StateCreature.Die:
                   _animator.SetBool("IsDie",true);
-                  GetComponent<Player>().DisableAllAction();
-                  break; 
+                  break;
+            case StateCreature.Alive:
+                _animator.SetBool("IsDie", false);
+                break;
             default: Debug.LogError("None trigger");
             break;
         }

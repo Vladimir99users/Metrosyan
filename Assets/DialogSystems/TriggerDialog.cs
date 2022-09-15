@@ -1,36 +1,33 @@
 using UnityEngine;
-
 public class TriggerDialog : MonoBehaviour
 {
-    [SerializeField] private Conversation _conversation;
-    [SerializeField] private Conversation _defualtConversation;
+    [SerializeField] private Conversation _conversationFirst;
+    [SerializeField] private Conversation _conversationSecond;
     [SerializeField] private Transform _positionDialog;
-    [SerializeField][Range(-20,20)] private float _radiusGizmo = 10f;
     private int indexConvarsation = 0;
-    private void OnTriggerEnter(Collider col)
+
+    private void Start()
     {
-        if(col.gameObject.tag == "Player")
-        {    
-            //if(_conversation.Length <= indexConvarsation) indexConvarsation = _conversation.Length-1;  
-            ViewDialog.OnStartConfigurationDialog?.Invoke(_conversation.Nodes);
-           
-        }
+        if(_conversationFirst is null) Debug.LogError("НЕТ ДИАЛОГА ДЕНИС БЛЯДЬ");
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_positionDialog.position,_radiusGizmo);
-    }
+
     private void OnTriggerExit()
     {
-        _conversation = _defualtConversation;
+        if(_conversationSecond is null) return;
+
+        _conversationFirst = _conversationSecond;
         ViewDialog.OnCloseConfigurationDialog?.Invoke();
+    }
+
+    public void OnFirstConversationEnter()
+    {
+         ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst.Nodes);
     }
 
     public void AssignmentComplete(Conversation complete)
     {
-        _conversation = complete;
+        _conversationFirst = complete;
         Debug.Log("Assignments complete");
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -31,4 +32,12 @@ public class Player : MonoBehaviour
         gameObject.layer = 6;
        // gameObject.SetActive(false);
     }
+}
+
+public class MovementAnimationController : MonoBehaviour
+{
+    [SerializeField] private string _moveVarName;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private InputActionReference _moveAction;
+
 }
