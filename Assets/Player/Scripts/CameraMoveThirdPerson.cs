@@ -26,9 +26,8 @@ sealed class CameraMoveThirdPerson : MonoBehaviour
     void LateUpdate()
     {
         Vector3 desiredPosition = _target.transform.position + offset;
-        transform.position = new Vector3(desiredPosition.x + _xOffset,
-        desiredPosition.y + _yOffset, desiredPosition.z + _zOffset);
+        transform.position = desiredPosition;
 
-        transform.localEulerAngles = new Vector3(_angelX,_angelY,_angelZ);
+        //transform.localEulerAngles = new Vector3(_angelX,_angelY,_angelZ);
     }
 }
