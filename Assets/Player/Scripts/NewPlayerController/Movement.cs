@@ -1,12 +1,14 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour,IInputLisener
 {
+    public FloatUnityEvenet Moving;
     [SerializeField][Range(0f,30f)] private float _speed = 10f;
     [SerializeField] private InputActionReference _movementInput;
-
     private Vector3 _moveVector  = Vector3.zero;
     private bool _enabled;
     private Rigidbody _rigidbody  => GetComponent<Rigidbody>();
@@ -61,8 +63,14 @@ public class Movement : MonoBehaviour,IInputLisener
             return;
         }
         var newMove = new Vector3 (input.x, 0f,input.y).normalized;
-        AnimatorCreature._onStateCreature?.Invoke(StateCreature.Walking);
         _rigidbody.MovePosition(_rigidbody.position + (newMove * _speed * Time.fixedDeltaTime));
+        AnimatorCreature._onStateCreature?.Invoke(StateCreature.Walking);
 
     }
+}
+
+[Serializable]
+public class FloatUnityEvenet : UnityEvent<float>
+{
+
 }
