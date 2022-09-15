@@ -4,6 +4,7 @@ public class Dialog : MonoBehaviour
 {
     [SerializeField] private Conversation _conversationFirst;
     [SerializeField] private Conversation _conversationSecond;
+
     private int indexConvarsation = 0;
 
     private void Start()
