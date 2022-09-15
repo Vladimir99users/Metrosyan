@@ -8,6 +8,23 @@ public class SpellCaster : MonoBehaviour, IInputLisener
     [SerializeField] private InputActionReference _castInput;
     [SerializeField] private SpellQuickbar _spellQuickbar;
 
+    private float _reloadTimer;
+
+    public void Cast(Spell spell)
+    {
+       
+          spell.Use(_spellSign.Position, Vector3.zero);
+          
+       
+    }
+      
+    private void Update()
+    {
+        if(_reloadTimer > 0f)
+        {
+            _reloadTimer -= Time.deltaTime;
+        }
+    }
     private void OnEnable()
     {
         EnableInput();
@@ -29,24 +46,24 @@ public class SpellCaster : MonoBehaviour, IInputLisener
 
     private void OnCastStart(InputAction.CallbackContext obj)
     {
-        //if (_spellQuickbar.IsSpellSelected == false)
-        //    return;
-
         _spellSign.Show();
     }
 
     private void OnCastPressed(InputAction.CallbackContext context)
     {
-        //if (_spellQuickbar.IsSpellSelected == false)
-        //    return;
+        if (_reloadTimer > 0f)
+        {
+            return;
+        }
 
-        if(_spellQuickbar.SelectedSpell is null)
+        if (_spellQuickbar.SelectedSpell is null)
         {
             return;
         }
         var spell = _spellQuickbar.SelectedSpell;
 
-        switch(spell.CastType){
+        switch (spell.CastType)
+        {
             case CastType.Call:
                 spell.Use(_spellSign.Position, Vector3.zero);
                 break;
@@ -55,19 +72,17 @@ public class SpellCaster : MonoBehaviour, IInputLisener
                 break;
             case CastType.Target:
                 spell.Use(transform.position, Vector3.zero, gameObject);
-                    break;
+                break;
             default:
                 spell.Use(transform.position, _spellSign.transform.position - transform.position);
                 break;
-                break;
         }
+
+        _reloadTimer = spell.Core.Stats.ReloadTime;
+        
     }
 
-    public void Cast(Spell spell)
-    {
-        Debug.Log($"Я кастую в позицию {_spellSign.Position} заклинание");
-        spell.Use(_spellSign.Position, Vector3.zero);
-    }
+
 
     public void EnableInput()
     {

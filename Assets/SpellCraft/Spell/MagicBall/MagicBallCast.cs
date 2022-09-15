@@ -6,10 +6,11 @@ public class MagicBallCast : Spell
 {
     private MagicBall _ballPrevab;
     private int _damage;
-    public void Init(MagicBall magicBall, int damage)
+    public void Init(MagicBall magicBall, int damage, Core core)
     {
         _ballPrevab = magicBall;
         _damage = damage;
+        _core = core;
     }
     public override void Use(Vector3 castPosition = default, Vector3 direction = default, GameObject target = null)
     {

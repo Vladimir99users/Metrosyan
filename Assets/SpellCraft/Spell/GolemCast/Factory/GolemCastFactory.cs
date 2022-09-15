@@ -15,7 +15,7 @@ public class GolemCastFactory : SpellFactory
         Golem golem = _prefabs.GetPrefab(mainCore);
 
         GolemCast golemCast = Instantiate(_golemCastPrefab);
-        golemCast.Init(golem, attack);
+        golemCast.Init(golem, attack, mainCore);
         
         return golemCast;
     }

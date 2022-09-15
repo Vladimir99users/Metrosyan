@@ -12,7 +12,6 @@ public class MagicBall : MonoBehaviour
     private int _damage;
 
     private bool _launched = false;
-      
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -42,7 +41,6 @@ public class MagicBall : MonoBehaviour
         {
             target.TakeDamage(_damage);
             Hit?.Invoke(collision);
-
         }
 
         Destroy(gameObject);

@@ -11,7 +11,7 @@ public class MagicBallCastFactory : SpellFactory
         MagicBallCast spell = Instantiate(_magicBallCastPrefab);
         MagicBall magicBall = _prefabs.GetPrefab(core);
 
-        spell.Init(magicBall, Convert.ToInt32(core.Stats.Damage));
+        spell.Init(magicBall, Convert.ToInt32(core.Stats.Damage), core);
 
         return spell;
     }
