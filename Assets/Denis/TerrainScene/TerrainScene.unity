@@ -6944,7 +6944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiMessage: {fileID: 1950424013}
-  _text: "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0437\u0430\u043A\u043B\u0438\u043D\u0430\u043D\u0438\u0435"
+  _text: Create Spell
 --- !u!1 &1186943754
 GameObject:
   m_ObjectHideFlags: 0
@@ -11732,7 +11732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiMessage: {fileID: 1950424013}
-  _text: "\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C"
+  _text: Talk
 --- !u!114 &1956313321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12033,7 +12033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85d35362f0c06d479be5e80ef5f0a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conversationFirst: {fileID: 11400000, guid: 4ac26156a7a52ab44bcd00b4cc58a175, type: 2}
+  _conversationFirst: {fileID: 11400000, guid: 37ceb399a77a5ce43813510acebedfa5, type: 2}
   _conversationSecond: {fileID: 11400000, guid: ad546097bf115d946a81df4abb0bdf1c, type: 2}
 --- !u!4 &1999788109 stripped
 Transform:
