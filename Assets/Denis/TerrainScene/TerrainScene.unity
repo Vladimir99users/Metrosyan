@@ -3763,7 +3763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935791303952091901, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.48996
+      value: -25.474663
       objectReference: {fileID: 0}
     - target: {fileID: 6935791303960863881, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3783,10 +3783,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935791304282428347, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6935791304282428347, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
-      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6935791304789714333, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
@@ -3903,7 +3899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935791305387259613, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 6935791305465211798, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4289,6 +4285,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7601287019380721450, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8346558
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601287019380721450, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
+      propertyPath: m_Size.y
+      value: 3.9743347
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601287019380721450, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
+      propertyPath: m_Size.z
+      value: 3.6885986
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601287019380721450, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
+      propertyPath: m_Center.x
+      value: -0.28231812
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601287019380721450, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.9235306
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601287019380721450, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
+      propertyPath: m_Center.z
+      value: 0.6558533
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601287019380721450, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9030499720192731361, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -5194,7 +5218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main core
+  m_text: "0\u0441\u043D\u043E\u0432\u043D\u043E\u0435 \u044F\u0434\u0440\u043E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7212,7 +7236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1194612529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8035,7 +8059,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press on slot to select  core
+  m_text: "\u041D\u0430\u0436\u043C\u0438 \u043D\u0430 \u0441\u043B\u043E\u0442 \u0434\u043B\u044F
+    \u0432\u044B\u0431\u043E\u0440\u0430 \u044F\u0434\u0440\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8869,7 +8894,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -135}
   m_SizeDelta: {x: 200, y: 71.998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433299349
@@ -11363,9 +11388,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865107269}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1001 &1932732383
 PrefabInstance:
@@ -12592,7 +12617,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9030499720192731362, guid: adc0012b0c92a6b4286b4a5eb85c681a, type: 3}
   m_PrefabInstance: {fileID: 590082780}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2104409881
+--- !u!114 &2104409884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12601,25 +12626,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2104409878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed7ea5582125d14283e101433d46d88, type: 3}
+  m_Script: {fileID: 11500000, guid: 822ccb323826d194da3a31f2e52a7a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _quest:
+    TextQuestDescription: Find the provisions stolen by the dragons
   Assignment:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 952927896}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 952927898}
+        m_TargetAssemblyTypeName: Quest, Assembly-CSharp
+        m_MethodName: DeleteQuest
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _conversation: {fileID: 11400000, guid: 7f53652f233942e4db4f2069cdf052e6, type: 2}
 --- !u!1 &1162533887628626
 GameObject:
   m_ObjectHideFlags: 0
@@ -15337,7 +15363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close
+  m_text: "3\u0430\u043A\u0440\u044B\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15595,7 +15621,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Add
+  m_text: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15964,9 +15990,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391272385949339179}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &391272385949339176
 MonoBehaviour:
@@ -15983,34 +16009,10 @@ MonoBehaviour:
   _closeOnAwake: 1
   Opened:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8817189823137894811}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: DisableAllAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   Closed:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8817189823137894811}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: EnableAllAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   SpellCrafted:
     m_PersistentCalls:
       m_Calls:
