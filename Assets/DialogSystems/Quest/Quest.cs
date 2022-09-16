@@ -39,7 +39,7 @@ public class Quest : MonoBehaviour
         if(_questView.text == string.Empty )UpdateUI();
     }
 
-    private void DeleteQuest(QuestDescription Quest)
+    public void DeleteQuest(QuestDescription Quest)
     {
         if(Quest is null) return;
         if(!_dictionaryQuest.ContainsKey(Quest.TextQuestDescription)) return;
