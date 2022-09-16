@@ -1,6 +1,7 @@
+
 [System.Serializable]
 public class Responces
 {
-    public string TextChoise;
-    public string ChoiseString;    
+    public string Id;    
+    public string Name;
 }

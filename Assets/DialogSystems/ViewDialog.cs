@@ -75,6 +75,8 @@ public class ViewDialog : Menu
 
         _nextNode = _currentNode;
 
+        
+
         _dialogTextMeshPro.text = _currentNode.MainText;
         if(_currentNode.Responce.Length != 0)
         {
@@ -83,12 +85,18 @@ public class ViewDialog : Menu
             {
                 Button button = Instantiate(_prefabsButton,_positionOfResponses) as Button;
                 var passage = _currentNode.Responce[i];
-                button.GetComponentInChildren<TextMeshProUGUI>().text = passage.TextChoise;
-                button.onClick.AddListener(delegate { SelectedNode(passage.ChoiseString.ToLower()); });
+                button.GetComponentInChildren<TextMeshProUGUI>().text = passage.Name;
+                button.onClick.AddListener(delegate { SelectedNode(passage.Id.ToLower()); });
+               
             }
         }
         else
         {
+            if(_currentNode.QuestDescription.TextQuestDescription != String.Empty)
+            {
+                Quest.OnAddQuest(_currentNode.QuestDescription);
+            } 
+
             Close();
             OnDialogEnd?.Invoke();
         }
@@ -120,7 +128,7 @@ public class ViewDialog : Menu
         {
             if(_timerSlider.value == _timerSlider.minValue)
             {
-                SelectedNode(_nextNode.Responce[_nextNode.Responce.Length-1].ChoiseString.ToLower());
+                SelectedNode(_nextNode.Responce[_nextNode.Responce.Length-1].Id.ToLower());
                 yield return null;
             }
             _timerSlider.value -= _sumInterval;
