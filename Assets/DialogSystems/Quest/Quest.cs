@@ -27,7 +27,7 @@ public class Quest : MonoBehaviour
     private void AddQuest(QuestDescription Quest)
     {
         if(Quest is null) return;
-
+        if(_questView.text == string.Empty )UpdateUI();
         if(_dictionaryQuest.ContainsKey(Quest.TextQuestDescription)) return;
 
         QuestView _view = new QuestView();
