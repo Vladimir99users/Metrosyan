@@ -85,13 +85,13 @@ public class SpellSight : MonoBehaviour, IInputLisener
     private void Awake()
     {
         _camera = Camera.main;
+        Hide();
     }
 
     private void OnEnable()
     {
         _enabled = true;
         EnableInput();
-        Show();
     }
 
     private void OnDisable()

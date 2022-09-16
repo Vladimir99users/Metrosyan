@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class SpellCaster : MonoBehaviour, IInputLisener
 {
-
+    public UnityEvent NotEnouthStamina;
     [SerializeField] private SpellSight _spellSign;
     [SerializeField] private InputActionReference _castInput;
     [SerializeField] private SpellQuickbar _spellQuickbar;
@@ -16,28 +16,36 @@ public class SpellCaster : MonoBehaviour, IInputLisener
         {
             spell.Use(castPosition, direction, target);
         }
+        else
+        {
+            NotEnouthStamina?.Invoke();
+        }
+    }
+
+    private void Awake()
+    { 
+        _spellSign.Hide();
     }
       
     private void OnEnable()
     {
         EnableInput();
-        _castInput.action.started += OnCastStart;
         _castInput.action.performed += OnCastPressed;
-
-        _spellSign.Hide();
+        _spellQuickbar.SpellSelected += _spellSign.Show;
+        _spellQuickbar.SpelDiselected += _spellSign.Hide;
 
     }
     private void OnDisable()
     {
         DisableInput();
         _castInput.action.performed -= OnCastPressed;
-        _castInput.action.started -= OnCastStart;
+        _spellQuickbar.SpellSelected -= _spellSign.Show;
+        _spellQuickbar.SpelDiselected -= _spellSign.Hide;
 
     }
-    private void OnCastStart(InputAction.CallbackContext obj)
-    {
-        _spellSign.Show();
-    }
+
+
+
     private void OnCastPressed(InputAction.CallbackContext context)
     {
 
@@ -45,6 +53,7 @@ public class SpellCaster : MonoBehaviour, IInputLisener
         {
             return;
         }
+
         var spell = _spellQuickbar.SelectedSpell;
 
         switch (spell.CastType)

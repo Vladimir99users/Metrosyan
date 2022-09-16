@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 
 public class SpellQuickbar : MonoBehaviour, IInputLisener
 {
+    public event Action SpellSelected;
+    public event Action SpelDiselected;
+
     public bool IsSpellSelected => _selectedSlot != null;
     public Spell SelectedSpell => _selectedSlot?.SpellSlot.CurrentItem ?? null;
 
@@ -69,6 +72,8 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
         _selectedSlot?.Diselect();
 
         SetSelectedSlot(slot);
+
+        
     }
 
     private void OnSlotDiselected(QuickbarSlot slot)
@@ -82,11 +87,17 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
     private void SetSelectedSlot(QuickbarSlot slot)
     {
         _selectedSlot = slot;
+
+        if (_selectedSlot.SpellSlot.CurrentItem is null)
+            return;
+
+        SpellSelected?.Invoke();
     }
 
     private void ClearSelectedSlot()
     {
         _selectedSlot = null;
+        SpelDiselected?.Invoke();
     }
 
 }
