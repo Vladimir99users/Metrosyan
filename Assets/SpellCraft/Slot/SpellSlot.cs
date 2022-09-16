@@ -4,3 +4,5 @@ public class SpellSlot : Slot<Spell>
 {
 
 }
+
+

@@ -1,30 +1,19 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class SpellCaster : MonoBehaviour, IInputLisener
 {
-    public event Action<float> TimerTick;
 
     [SerializeField] private SpellSight _spellSign;
     [SerializeField] private InputActionReference _castInput;
     [SerializeField] private SpellQuickbar _spellQuickbar;
-
-    private float _reloadTimer;
 
     public void Cast(Spell spell)
     {
           spell.Use(_spellSign.Position, Vector3.zero);
     }
       
-    private void Update()
-    {
-        if(_reloadTimer > 0f)
-        {
-            _reloadTimer -= Time.deltaTime;
-        }
-    }
     private void OnEnable()
     {
         EnableInput();
@@ -47,10 +36,6 @@ public class SpellCaster : MonoBehaviour, IInputLisener
     }
     private void OnCastPressed(InputAction.CallbackContext context)
     {
-        if (_reloadTimer > 0f)
-        {
-            return;
-        }
 
         if (_spellQuickbar.SelectedSpell is null)
         {
@@ -74,7 +59,6 @@ public class SpellCaster : MonoBehaviour, IInputLisener
                 break;
         }
 
-        _reloadTimer = spell.Core.Stats.ReloadTime;
         
     }
     public void EnableInput()
@@ -89,5 +73,4 @@ public class SpellCaster : MonoBehaviour, IInputLisener
         _spellSign.DisableInput();
     }
 }
-
 

@@ -16,5 +16,6 @@ public abstract class Spell : ScriptableObject, IStorable
 
     protected Core _core;
 
+
     public abstract void Use(Vector3 castPosition = default(Vector3), Vector3 direction = default(Vector3), GameObject target = null);
 }
