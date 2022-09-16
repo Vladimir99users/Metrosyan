@@ -16,6 +16,7 @@ public class Dialog : MonoBehaviour
     {
         OnFirstConversationEnter();
     }
+
     public void OnFirstConversationEnter()
     {
         ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst.Nodes);

@@ -12,7 +12,13 @@ public class SpellCaster : MonoBehaviour, IInputLisener
 
     public void Cast(Spell spell, Vector3 castPosition = default(Vector3), Vector3 direction = default(Vector3), GameObject target = null)
     {
-        if (_stamina.TrySpend(spell.Core.Stats.StaminaCost))
+        float neededStamina = spell.Core.Stats.StaminaCost;
+        if (spell is GolemCast)
+        {
+            neededStamina = _stamina.MaxStamina;
+        }
+
+        if (_stamina.TrySpend(neededStamina))
         {
             spell.Use(castPosition, direction, target);
         }

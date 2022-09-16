@@ -23,7 +23,7 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
         if (_selectedSlot is null)
         {
             _selectedSlot = _slots.Where(slot => slot.SpellSlot.CurrentItem == null).FirstOrDefault() ?? _slots[0];
-            _selectedSlot.Select();
+
         }
        
         _selectedSlot.SpellSlot.Add(spell);
@@ -70,10 +70,8 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
         }
 
         _selectedSlot?.Diselect();
-
         SetSelectedSlot(slot);
 
-        
     }
 
     private void OnSlotDiselected(QuickbarSlot slot)

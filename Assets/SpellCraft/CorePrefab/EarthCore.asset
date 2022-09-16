@@ -17,5 +17,5 @@ MonoBehaviour:
     _type: 3
     _name: 
     _staminaCost: 25
-  _color: {r: 0.509434, g: 0.10747798, b: 0, a: 0}
+  _color: {r: 0.509434, g: 0.10747798, b: 0, a: 1}
   _sprite: {fileID: 21300000, guid: 6177d7e149b2a994cbdf8fa440158eb5, type: 3}
