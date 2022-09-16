@@ -22,11 +22,15 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
     {
         if (_selectedSlot is null)
         {
-            _selectedSlot = _slots.Where(slot => slot.SpellSlot.CurrentItem == null).FirstOrDefault() ?? _slots[0];
+            var s = _slots.Where(slot => slot.SpellSlot.CurrentItem == null).FirstOrDefault() ?? _slots[0];
+            SetSelectedSlot(s);
 
         }
-       
+  
         _selectedSlot.SpellSlot.Add(spell);
+
+
+
     }
     public void EnableInput()
     {
@@ -90,6 +94,7 @@ public class SpellQuickbar : MonoBehaviour, IInputLisener
             return;
 
         SpellSelected?.Invoke();
+
     }
 
     private void ClearSelectedSlot()
