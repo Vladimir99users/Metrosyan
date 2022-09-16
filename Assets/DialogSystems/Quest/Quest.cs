@@ -43,16 +43,23 @@ public class Quest : MonoBehaviour
     {
         if(Quest is null) return;
         if(!_dictionaryQuest.ContainsKey(Quest.TextQuestDescription)) return;
-
+        
         _questes.Remove(_dictionaryQuest[Quest.TextQuestDescription]);
         _dictionaryQuest.Remove(Quest.TextQuestDescription);
-       
+       UpdateUI();
     }
 
     private void UpdateUI()
     {
-        Debug.Log(_selectedQuest);
-        _questView.text = _questes[_selectedQuest].Desctiprition.TextQuestDescription;
+        if(_questes.Count != 0)
+        {
+            Debug.Log(_selectedQuest);
+            _questView.text = _questes[_selectedQuest].Desctiprition.TextQuestDescription;
+        }
+        else
+        {
+            _questView.text = System.String.Empty;
+        }
     }
 
     public void Next()
