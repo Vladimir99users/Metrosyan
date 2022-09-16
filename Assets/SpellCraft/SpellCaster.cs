@@ -8,10 +8,14 @@ public class SpellCaster : MonoBehaviour, IInputLisener
     [SerializeField] private SpellSight _spellSign;
     [SerializeField] private InputActionReference _castInput;
     [SerializeField] private SpellQuickbar _spellQuickbar;
+    [SerializeField] private Stamina _stamina;
 
-    public void Cast(Spell spell)
+    public void Cast(Spell spell, Vector3 castPosition = default(Vector3), Vector3 direction = default(Vector3), GameObject target = null)
     {
-          spell.Use(_spellSign.Position, Vector3.zero);
+        if (_stamina.TrySpend(spell.Core.Stats.StaminaCost))
+        {
+            spell.Use(castPosition, direction, target);
+        }
     }
       
     private void OnEnable()
@@ -46,16 +50,16 @@ public class SpellCaster : MonoBehaviour, IInputLisener
         switch (spell.CastType)
         {
             case CastType.Call:
-                spell.Use(_spellSign.Position, Vector3.zero);
+                Cast(spell, _spellSign.Position, Vector3.zero);
                 break;
             case CastType.Shoot:
-                spell.Use(transform.position, _spellSign.transform.position - transform.position);
+                Cast(spell, transform.position, _spellSign.transform.position - transform.position);
                 break;
             case CastType.Target:
-                spell.Use(transform.position, Vector3.zero, gameObject);
+                Cast(spell, transform.position, Vector3.zero, gameObject);
                 break;
             default:
-                spell.Use(transform.position, _spellSign.transform.position - transform.position);
+                Cast(spell, transform.position, _spellSign.transform.position - transform.position);
                 break;
         }
 
