@@ -173,6 +173,15 @@ MonoBehaviour:
     MainText: Try creating a spell on the crafting table. I'm sure you will recognize
       it easily. You will find the dragons at the first turn to the left, following
       the road.
+    Responce:
+    - Id: "\u0412\u044B\u0445\u043E\u0434"
+      Name: Ok
+    - Id: "\u0412\u044B\u0445\u043E\u0434"
+      Name: "\u041C\u043E\u043B\u0447\u0430\u043D\u0438\u0435"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u0412\u044B\u0445\u043E\u0434"
+    MainText: 
     Responce: []
     QuestDescription:
       TextQuestDescription: 
