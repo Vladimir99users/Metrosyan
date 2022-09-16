@@ -92,13 +92,12 @@ public class ViewDialog : Menu
         }
         else
         {
+            Close();
+            OnDialogEnd?.Invoke();
             if(_currentNode.QuestDescription.TextQuestDescription != String.Empty)
             {
                 Quest.OnAddQuest(_currentNode.QuestDescription);
-            } 
-
-            Close();
-            OnDialogEnd?.Invoke();
+            }         
         }
     }
 

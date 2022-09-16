@@ -13,77 +13,175 @@ MonoBehaviour:
   m_Name: FirstGil
   m_EditorClassIdentifier: 
   _nodes:
-  - Contens: 
+  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
+    MainText: No way, you finally woke up!
+    Responce:
+    - Id: "\u0427\u0442\u043E? \u0427\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442,
+        \u0433\u0434\u0435 \u043A\u0430\u043F\u0438\u0442\u0430\u043D \u041C\u043E\u0440\u0440\u0438\u0441?"
+      Name: What? What's going on, where's Captain Morris?
+    - Id: "\u0414\u0435\u0440\u0436\u0438\u0441\u044C \u043F\u043E\u0434\u0430\u043B\u044C\u0448\u0435
+        \u043E\u0442 \u043C\u0435\u043D\u044F!"
+      Name: Stay away from me!
+    - Id: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+      Name: Silence
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u0427\u0442\u043E? \u0427\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442,
+      \u0433\u0434\u0435 \u043A\u0430\u043F\u0438\u0442\u0430\u043D \u041C\u043E\u0440\u0440\u0438\u0441?"
+    MainText: Captain Morris? Oh, I'm sorry, but he probably didn't survive the crash.
+    Responce:
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: Didn't survive the crash? What kind of crash are we talking about?
+    - Id: "\u0422\u044B \u043B\u0436\u0435\u0448\u044C!"
+      Name: You're lying!
+    - Id: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C2"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C2"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C2"
+    MainText: I understand your confusion. We, too, are sorry to lose him.
+    Responce:
+    - Id: "\u0422\u044B \u043B\u0436\u0435\u0448\u044C!"
+      Name: You're lying!
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: Explain what's going on
+    - Id: "\u0427\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442?
+        \u0413\u0434\u0435 \u044F?"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u0422\u044B \u043B\u0436\u0435\u0448\u044C!"
+    MainText: I wouldn't dare! I understand your anger, but it's true. If you'll
+      allow me to tell you what happened.
+    Responce:
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: Tell
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u0414\u0435\u0440\u0436\u0438\u0441\u044C \u043F\u043E\u0434\u0430\u043B\u044C\u0448\u0435
+      \u043E\u0442 \u043C\u0435\u043D\u044F!"
+    MainText: Oh, I'm sorry. I'm just surprised you're okay. You didn't come out
+      of the coma for a month, we thought you were dead.
+    Responce:
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: A month?
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: '"We?"'
+    - Id: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C3"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C3"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+    MainText: A month ago we were caught in an incredible storm. We were wrecked
+      on this island, losing our leader, Captain Morris. By some miracle you survived,
+      but you were in a coma. For a month we endured attacks from the natives and
+      the beasts. We had to build an entire fort!
+    Responce:
+    - Id: "\u042D\u0442\u043E \u0436\u0435 \u043D\u0435\u043E\u0431\u0438\u0442\u0430\u0435\u043C\u044B\u0439
+        \u043E\u0441\u0442\u0440\u043E\u0432. \u041E \u043A\u0430\u043A\u0438\u0445
+        \u043C\u0435\u0441\u0442\u043D\u044B\u0445 \u0436\u0438\u0442\u0435\u043B\u044F\u0445
+        \u0440\u0435\u0447\u044C?"
+      Name: It's a desert island. What locals are we talking about?
+    - Id: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C4"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C4"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+    MainText: Are you all right?
+    Responce:
+    - Id: "\u0427\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442?
+        \u0413\u0434\u0435 \u044F?"
+      Name: What's going on? Where am I?
+    - Id: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C3"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C3"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u0427\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442?
+      \u0413\u0434\u0435 \u044F?"
+    MainText: Let me tell you everything.
+    Responce:
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: Ok
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C3"
+    MainText: I know you don't trust me. But let me explain the situation to you.
+    Responce:
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: All right, tell me.
+    - Id: "\u041E \u043A\u0440\u0443\u0448\u0435\u043D\u0438\u0438"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u042D\u0442\u043E \u0436\u0435 \u043D\u0435\u043E\u0431\u0438\u0442\u0430\u0435\u043C\u044B\u0439
+      \u043E\u0441\u0442\u0440\u043E\u0432. \u041E \u043A\u0430\u043A\u0438\u0445
+      \u043C\u0435\u0441\u0442\u043D\u044B\u0445 \u0436\u0438\u0442\u0435\u043B\u044F\u0445
+      \u0440\u0435\u0447\u044C?"
+    MainText: It turned out that no. Perhaps you and the captain could negotiate
+      with them, but we are simple workers. The inhabitants are not particularly
+      happy about our desire to colonize them.
+    Responce:
+    - Id: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C4"
+      Name: So now I have to take the reins?
+    - Id: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C4"
+    MainText: Now, you're in charge of this fort. To tell you the truth, I've heard
+      that you've shown tremendous success during your internship. I hope you can
+      help us out of this situation.
+    Responce:
+    - Id: "\u0414\u043E\u043B\u043E\u0436\u0438\u0442\u044C \u043E\u0431\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0443"
+      Name: To report back
+    - Id: "\u042F \u0434\u0435\u043B\u0430\u044E \u044D\u0442\u043E \u043D\u0435
+        \u0440\u0430\u0434\u0438 \u0432\u0430\u0441"
+      Name: I'm not doing it for you.
+    - Id: "\u0414\u043E\u043B\u043E\u0436\u0438\u0442\u044C \u043E\u0431\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0443"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C7"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u042F \u0434\u0435\u043B\u0430\u044E \u044D\u0442\u043E \u043D\u0435
+      \u0440\u0430\u0434\u0438 \u0432\u0430\u0441"
+    MainText: It doesn't matter. If you make life on the island better, we don't
+      care about your motives.
+    Responce:
+    - Id: "\u0414\u043E\u043B\u043E\u0436\u0438\u0442\u044C \u043E\u0431\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0443"
+      Name: Good
+    - Id: "\u0414\u043E\u043B\u043E\u0436\u0438\u0442\u044C \u043E\u0431\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0443"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u0414\u043E\u043B\u043E\u0436\u0438\u0442\u044C \u043E\u0431\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0443"
+    MainText: So, the first problem is stolen resources. A pack of dragons has stolen
+      our supplies and is keeping them in the forest. We're not warriors, and we're
+      afraid to go outside the fence.
+    Responce:
+    - Id: "\u0423 \u043C\u0435\u043D\u044F \u043D\u0435\u0442 \u043E\u0440\u0443\u0436\u0438\u044F"
+      Name: I don't have a weapon.
+    - Id: "\u0423 \u043C\u0435\u043D\u044F \u043D\u0435\u0442 \u043E\u0440\u0443\u0436\u0438\u044F"
+      Name: I'll take care of them.
+    - Id: "\u0423 \u043C\u0435\u043D\u044F \u043D\u0435\u0442 \u043E\u0440\u0443\u0436\u0438\u044F"
+      Name: "\u041F\u0440\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u0423 \u043C\u0435\u043D\u044F \u043D\u0435\u0442 \u043E\u0440\u0443\u0436\u0438\u044F"
+    MainText: Try creating a spell on the crafting table. I'm sure you will recognize
+      it easily. You will find the dragons at the first turn to the left, following
+      the road.
+    Responce:
+    - Id: "\u0412\u044B\u0445\u043E\u0434"
+      Name: Ok
+    - Id: "\u0412\u044B\u0445\u043E\u0434"
+      Name: "\u041C\u043E\u043B\u0447\u0430\u043D\u0438\u0435"
+    QuestDescription:
+      TextQuestDescription: 
+  - Contens: "\u0412\u044B\u0445\u043E\u0434"
     MainText: 
-    Responce:
-    - TextChoise: 
-      ChoiseString: 
-    - TextChoise: 
-      ChoiseString: 
-    - TextChoise: 
-      ChoiseString: 
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
-  - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
-    MainText: sdds
-    Responce:
-    - TextChoise: "\u0432\u0444\u044B\u0432"
-      ChoiseString: "\u0444\u044B\u0432\u0444\u044B"
+    Responce: []
+    QuestDescription:
+      TextQuestDescription: Find the provisions stolen by the dragons
