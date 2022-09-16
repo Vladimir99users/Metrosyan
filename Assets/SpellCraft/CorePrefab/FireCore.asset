@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireCore
   m_EditorClassIdentifier: 
   _stats:
-    _damage: 100
+    _damage: 25
     _type: 0
     _name: Fire
     _staminaCost: 10

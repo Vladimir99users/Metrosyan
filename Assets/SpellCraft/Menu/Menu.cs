@@ -32,7 +32,7 @@ public abstract class Menu : MonoBehaviour
     public virtual void Close()
     {
 #if UNITY_EDITOR
-        OnAwake();
+        //OnAwake();
 #endif
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
