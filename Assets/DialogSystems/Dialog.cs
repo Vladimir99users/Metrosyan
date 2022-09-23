@@ -2,8 +2,8 @@
 
 public class Dialog : MonoBehaviour
 {
-    [SerializeField] private Conversation _conversationFirst;
-    [SerializeField] private Conversation _conversationSecond;
+    [SerializeField] private LocalizationConversation _conversationFirst;
+    [SerializeField] private LocalizationConversation _conversationSecond;
 
     private int indexConvarsation = 0;
 
@@ -19,14 +19,13 @@ public class Dialog : MonoBehaviour
 
     public void OnFirstConversationEnter()
     {
-        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst.Nodes);
+        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst.GetConversation().Nodes);
         _conversationFirst = _conversationSecond;
     }
 
-    public void AssignmentComplete(Conversation complete)
+    public void AssignmentComplete(LocalizationConversation complete)
     {
         _conversationFirst = complete;
         Debug.Log("Assignments complete");
     }
-
 }

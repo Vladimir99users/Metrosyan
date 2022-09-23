@@ -15,4 +15,6 @@ EditorBuildSettings:
     path: Assets/Denis/TerrainScene/TerrainScene.unity
     guid: 94220fb53d2a11a49b0e66dc087978de
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 63570c313df1d274690dd47dac888c63, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: feeb868ff4c7a974a977c79dc15e3268, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 26b2b0367586d21438e4b0380eb6a91f, type: 2}
