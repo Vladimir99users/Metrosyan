@@ -2,8 +2,8 @@
 
 public class Dialog : MonoBehaviour
 {
-    [SerializeField] private LocalizationConversation _conversationFirst;
-    [SerializeField] private LocalizationConversation _conversationSecond;
+    [SerializeField] private LocalizationTextFile<Conversation> _conversationFirst;
+    [SerializeField] private LocalizationTextFile<Conversation> _conversationSecond;
 
     private int indexConvarsation = 0;
 
@@ -19,7 +19,7 @@ public class Dialog : MonoBehaviour
 
     public void OnFirstConversationEnter()
     {
-        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst.GetConversation().Nodes);
+        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst.GetTextFile().Nodes);
         _conversationFirst = _conversationSecond;
     }
 
