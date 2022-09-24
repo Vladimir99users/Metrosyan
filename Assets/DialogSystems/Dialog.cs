@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 public class Dialog : MonoBehaviour
 {
-    [SerializeField] private LocalizationTextFile<Conversation> _conversationFirst;
+    [SerializeField] private List<LocalizationTextFile<Conversation>> _conversationFirst;
     [SerializeField] private LocalizationTextFile<Conversation> _conversationSecond;
 
     private int indexConvarsation = 0;
@@ -19,13 +19,19 @@ public class Dialog : MonoBehaviour
 
     public void OnFirstConversationEnter()
     {
-        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst.GetTextFile().Nodes);
-        _conversationFirst = _conversationSecond;
+        if(indexConvarsation >= _conversationFirst.Count)
+        {
+            ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationSecond.GetTextFile().Nodes);
+            return;
+        }
+        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst[indexConvarsation].GetTextFile().Nodes);
+        indexConvarsation++;
     }
 
-    public void AssignmentComplete(LocalizationConversation complete)
+    public void AssignmentComplete(List<LocalizationTextFile<Conversation>> complete)
     {
         _conversationFirst = complete;
+        indexConvarsation = 0;
         Debug.Log("Assignments complete");
     }
 }
