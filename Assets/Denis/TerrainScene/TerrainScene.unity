@@ -3908,7 +3908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935791303952091901, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.489313
+      value: -25.48907
       objectReference: {fileID: 0}
     - target: {fileID: 6935791303960863881, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4048,7 +4048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935791305387259613, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 6935791305465211798, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -7417,7 +7417,7 @@ PrefabInstance:
     - target: {fileID: 2022831784, guid: 69beb7d8398acdb44b9866760561cce2, type: 3}
       propertyPath: _narration
       value: 
-      objectReference: {fileID: 11400000, guid: f85bc2473afa9d244a29206f7e9a4d83, type: 2}
+      objectReference: {fileID: 11400000, guid: bb3c596647090f240b45a9fcd24d5d86, type: 2}
     - target: {fileID: 3390743658276153202, guid: 69beb7d8398acdb44b9866760561cce2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9062,8 +9062,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7866006c7ec801444be880385e1af3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conversationFirst: {fileID: 11400000, guid: 0914fd59ef5eb8e40b9062f29691353b, type: 2}
-  _conversationSecond: {fileID: 11400000, guid: 8c443e6499f63b04fa526a34d5d37160, type: 2}
+  _conversationFirst:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _conversationSecond: {fileID: 0}
   _positionDialog: {fileID: 1344122224}
 --- !u!4 &1383688609 stripped
 Transform:
@@ -12675,8 +12678,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85d35362f0c06d479be5e80ef5f0a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conversationFirst: {fileID: 11400000, guid: 0914fd59ef5eb8e40b9062f29691353b, type: 2}
-  _conversationSecond: {fileID: 11400000, guid: 8c443e6499f63b04fa526a34d5d37160, type: 2}
+  _conversationFirst:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _conversationSecond: {fileID: 0}
 --- !u!1001 &1976887656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12879,6 +12885,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
+      propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1996012497}
@@ -12903,6 +12913,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
+      propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartDialog
       objectReference: {fileID: 0}
@@ -12916,6 +12930,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MessageShowInteraction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
+      propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: MessageShowInteraction, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
@@ -12963,8 +12981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85d35362f0c06d479be5e80ef5f0a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conversationFirst: {fileID: 11400000, guid: 37ceb399a77a5ce43813510acebedfa5, type: 2}
-  _conversationSecond: {fileID: 11400000, guid: ad546097bf115d946a81df4abb0bdf1c, type: 2}
+  _conversationFirst:
+  - {fileID: 11400000, guid: 82731f6c7b1e5794f82de431774abd63, type: 2}
+  - {fileID: 11400000, guid: ae26eea1870133b49b2839111d0b3c7c, type: 2}
+  _conversationSecond: {fileID: 11400000, guid: 82731f6c7b1e5794f82de431774abd63, type: 2}
 --- !u!4 &1999788109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4466575823954233248, guid: 0bbbf0857c99d6247888d38100141fb7, type: 3}

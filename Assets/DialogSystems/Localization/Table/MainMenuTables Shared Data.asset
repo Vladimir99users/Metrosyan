@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Key: ExitGameButton
     m_Metadata:
       m_Items: []
+  - m_Id: 1199895806332928
+    m_Key: OptionsButtonKey
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

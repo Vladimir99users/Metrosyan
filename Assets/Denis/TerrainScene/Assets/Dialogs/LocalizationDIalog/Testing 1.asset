@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e3e9975a7ff76e4baf0e6d1e0a7f702, type: 3}
-  m_Name: DwarfMasterM_StartScene
+  m_Name: Testing 1
   m_EditorClassIdentifier: 
-  _localizationRu: {fileID: 11400000, guid: 828c2be43a2544e40a164617c5362647, type: 2}
-  _localizationEng: {fileID: 11400000, guid: 471cd6c86b0578242b814a307c8c9b53, type: 2}
+  _localizationRu: {fileID: 11400000, guid: 37ceb399a77a5ce43813510acebedfa5, type: 2}
+  _localizationEng: {fileID: 11400000, guid: 37ceb399a77a5ce43813510acebedfa5, type: 2}

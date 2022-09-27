@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ddd8a6783e0423438a624d1b72f8252, type: 3}
-  m_Name: SecondGil
+  m_Name: TestingRu
   m_EditorClassIdentifier: 
   _nodes:
   - Contens: "\u0423 \u043C\u0435\u043D\u044F \u043D\u0435\u0442 \u043E\u0440\u0443\u0436\u0438\u044F"
@@ -29,4 +29,4 @@ MonoBehaviour:
     Responce: []
     QuestDescription:
       TextQuestDescription: 
-  _quest: {fileID: 11400000, guid: f49939eb484e6804fb9f4bbe3f947f23, type: 2}
+  _quest: {fileID: 11400000, guid: 0375835eda13ef14c90c3ecd0be05613, type: 2}

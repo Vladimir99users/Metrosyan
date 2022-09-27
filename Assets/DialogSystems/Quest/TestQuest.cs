@@ -1,8 +1,4 @@
-using UnityEngine.UI;
-using System.Collections.Generic;
 using UnityEngine;
-
-
 public class TestQuest : MonoBehaviour
 {
     private Quest _quest => GetComponent<Quest>();

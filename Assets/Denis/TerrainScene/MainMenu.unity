@@ -2547,6 +2547,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8664552086848629005, guid: 48cc7a81661dfa54f85df71cb97ef1bc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 344.23
+      objectReference: {fileID: 0}
     - target: {fileID: 8664552086868228496, guid: 48cc7a81661dfa54f85df71cb97ef1bc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2570,6 +2574,14 @@ PrefabInstance:
     - target: {fileID: 8664552086868228496, guid: 48cc7a81661dfa54f85df71cb97ef1bc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664552086868228498, guid: 48cc7a81661dfa54f85df71cb97ef1bc, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664552086868228498, guid: 48cc7a81661dfa54f85df71cb97ef1bc, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8664552087005968453, guid: 48cc7a81661dfa54f85df71cb97ef1bc, type: 3}
       propertyPath: m_IsActive
