@@ -37,11 +37,19 @@ public class Movement : MonoBehaviour,IInputLisener
 
     private void Update()
     {
+       
         if(_enabled == false)
         {
             return;
         }
         _moveVector = _movementInput.action.ReadValue<Vector2>();
+        if(_moveVector != Vector3.zero) 
+        { 
+            AnimatorCreature._onStateCreature?.Invoke(StateCreature.Walking);  
+        } else 
+        {
+            AnimatorCreature._onStateCreature?.Invoke(StateCreature.Idle);
+        }
     }
 
     private void FixedUpdate()
@@ -59,14 +67,10 @@ public class Movement : MonoBehaviour,IInputLisener
         
         if(input == Vector2.zero) 
         {
-            AnimatorCreature._onStateCreature?.Invoke(StateCreature.Idle);
             return;
         }
         var newMove = new Vector3 (input.x, 0f,input.y).normalized;
         _rigidbody.MovePosition(_rigidbody.position + (newMove * _speed * Time.fixedDeltaTime));
-        AnimatorCreature._onStateCreature?.Invoke(StateCreature.Walking);
-
-
     }
 }
 

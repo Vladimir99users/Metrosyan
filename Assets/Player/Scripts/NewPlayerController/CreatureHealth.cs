@@ -45,11 +45,11 @@ public class CreatureHealth : MonoBehaviour, ITakeDamage
 
     private IEnumerator Respawn()
     {
-        //AnimatorCreature._onStateCreature?.Invoke(StateCreature.Die);
+        AnimatorCreature._onStateCreature?.Invoke(StateCreature.Die);
         GetComponent<Player>().DisableAllAction();
         yield return new WaitForSeconds(3f);
         _respawn.Respawn();
-        //AnimatorCreature._onStateCreature?.Invoke(StateCreature.Alive);
+        AnimatorCreature._onStateCreature?.Invoke(StateCreature.Alive);
         _isDeath = false;
         Alive?.Invoke();  
     } 

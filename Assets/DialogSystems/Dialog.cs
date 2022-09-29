@@ -14,7 +14,6 @@ public class Dialog : MonoBehaviour
         indexConvarsation= 0;
         
         ResetAllQuest();
-        _conversationSecond = _conversationFirst[indexConvarsation];
     }
 
     private void ResetAllQuest()
@@ -59,7 +58,6 @@ public class Dialog : MonoBehaviour
         {
             return;
         }
-        _conversationSecond = _conversationFirst[indexConvarsation];
         Debug.Log("Assignments complete");
     }
 }

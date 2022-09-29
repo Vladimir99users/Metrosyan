@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
@@ -33,10 +31,11 @@ public class AnimatorCreature : MonoBehaviour
         {
             case StateCreature.Walking:
                 _animator.SetTrigger("Move");
+                _animator.ResetTrigger("Idle");
                 break;
             case StateCreature.Idle:
                 _animator.SetTrigger("Idle");
-
+                _animator.ResetTrigger("Move");
                 break;
             case StateCreature.Attacked:
                 _animator.SetTrigger("Attacked");
