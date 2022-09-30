@@ -774,10 +774,10 @@ MonoBehaviour:
   ZoneExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5791374329373783010}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2022831784}
+        m_TargetAssemblyTypeName: LOR, Assembly-CSharp
+        m_MethodName: EndLor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ee28f8424e87042af5a763bf50553b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _narration: {fileID: 11400000, guid: 2544f28191aeea04abc9e21073fb3f66, type: 2}
+  _narration: {fileID: 11400000, guid: 9d7c13a1392d7024ba995e03f96603c9, type: 2}
 --- !u!1 &6062114268515006891
 GameObject:
   m_ObjectHideFlags: 0

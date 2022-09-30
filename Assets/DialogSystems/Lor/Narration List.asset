@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51f7de69df603498eeb3f2021b8230, type: 3}
   m_Name: Narration List
   m_EditorClassIdentifier: 
-  _localizationRu: {fileID: 0}
-  _localizationEng: {fileID: 0}
+  _localizationRu: {fileID: 11400000, guid: 2544f28191aeea04abc9e21073fb3f66, type: 2}
+  _localizationEng: {fileID: 11400000, guid: 2544f28191aeea04abc9e21073fb3f66, type: 2}
