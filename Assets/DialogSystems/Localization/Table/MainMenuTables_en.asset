@@ -36,6 +36,10 @@ MonoBehaviour:
     m_Localized: Options
     m_Metadata:
       m_Items: []
+  - m_Id: 4054190164021248
+    m_Localized: It looks like you're caught in a storm
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

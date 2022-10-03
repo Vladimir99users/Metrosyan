@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ddd8a6783e0423438a624d1b72f8252, type: 3}
-  m_Name: FirstGil
+  m_Name: FirstGilENG
   m_EditorClassIdentifier: 
   _nodes:
   - Contens: "\u041D\u0430\u0447\u0430\u043B\u043E"
@@ -184,5 +184,5 @@ MonoBehaviour:
     MainText: 
     Responce: []
     QuestDescription:
-      TextQuestDescription: Find the provisions stolen by the dragons
+      TextQuestDescription: 
   _quest: {fileID: 11400000, guid: aba0c323de527f84b8cd2e89ee363f9f, type: 2}

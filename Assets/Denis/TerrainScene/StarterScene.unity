@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85d35362f0c06d479be5e80ef5f0a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conversationFirst: {fileID: 11400000, guid: 82731f6c7b1e5794f82de431774abd63, type: 2}
+  _conversationFirst:
+  - {fileID: 11400000, guid: fada69a4cfad8cb4d9056e253cf1fe85, type: 2}
   _conversationSecond: {fileID: 0}
 --- !u!224 &274676011 stripped
 RectTransform:
@@ -536,6 +537,7 @@ GameObject:
   - component: {fileID: 1314367339}
   - component: {fileID: 1314367341}
   - component: {fileID: 1314367340}
+  - component: {fileID: 1314367342}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -660,6 +662,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314367338}
   m_CullTransparentMesh: 1
+--- !u!114 &1314367342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314367338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:a11f18613ea7e454899976fe24e8a653
+    m_TableEntryReference:
+      m_KeyId: 4054190164021248
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &1344731203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -793,7 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8826052460187182450, guid: 0c6d87199f687400184146c841adf2bd, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnFirstConversationEnter
+      value: StartDialog
       objectReference: {fileID: 0}
     - target: {fileID: 8826052460187182450, guid: 0c6d87199f687400184146c841adf2bd, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1836,7 +1866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6793884790474410763, guid: 72638bd6c84369f40a88f6e19f01e147, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00012207031
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 6793884790760196720, guid: 72638bd6c84369f40a88f6e19f01e147, type: 3}
       propertyPath: Closed.m_PersistentCalls.m_Calls.Array.size
@@ -1992,7 +2022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6793884790803101483, guid: 72638bd6c84369f40a88f6e19f01e147, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.49002
+      value: -25.48999
       objectReference: {fileID: 0}
     - target: {fileID: 6793884790866703642, guid: 72638bd6c84369f40a88f6e19f01e147, type: 3}
       propertyPath: m_IsActive

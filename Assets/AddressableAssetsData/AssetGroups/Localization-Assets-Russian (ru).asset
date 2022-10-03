@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 5c440e5a09e847040a53b77a3feeb9bb
   m_SerializeEntries:
-  - m_GUID: 471cd6c86b0578242b814a307c8c9b53
-    m_Address: CapMorriganIDLE
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ru
   - m_GUID: 6d9b2b8543f260f4ca1a65650e094935
     m_Address: Fire
     m_ReadOnly: 1
