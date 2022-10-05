@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2900e778804f9684c8c0ad905513d15a, type: 3}
+  m_Name: DragonQuestENG
+  m_EditorClassIdentifier: 
+  _nameQuest: Find smth
+  _descriptionQuest: retrun smth
+  _reward:
+    XPs: 50
+    Coins: 90
+  _item: {fileID: 6702114088113060981, guid: b7c71d91f54b63342952800508c7e52c, type: 3}
+  _requiredAmount: 1
+  _currentAmount: 0

@@ -185,4 +185,4 @@ MonoBehaviour:
     Responce: []
     QuestDescription:
       TextQuestDescription: 
-  _quest: {fileID: 11400000, guid: aba0c323de527f84b8cd2e89ee363f9f, type: 2}
+  _quest: {fileID: 11400000, guid: 5d1b7a0ecceebcb40ba969b4151b2705, type: 2}
