@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3e9975a7ff76e4baf0e6d1e0a7f702, type: 3}
+  m_Name: CapMorrigan
+  m_EditorClassIdentifier: 
+  _localizationRu: {fileID: 11400000, guid: 1659022af1a42e444aad512662e9b7c6, type: 2}
+  _localizationEng: {fileID: 11400000, guid: 828c2be43a2544e40a164617c5362647, type: 2}

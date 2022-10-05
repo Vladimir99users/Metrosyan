@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 5d529af557385474c8cb5f83f3de2e0f
-  m_SerializeEntries:
-  - m_GUID: e109f225a640947439b18eaec11c71a6
-    m_Address: Assets/Denis/TerrainScene/Assets/Dialogs/CapMorriganRus.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 83a1c5be9ddf1504bb15b514d62df3c3, type: 2}
   m_SchemaSet:
