@@ -13,7 +13,7 @@ public class Dialog : MonoBehaviour
         if (_conversationFirst is null) Debug.LogError("НЕТ ДИАЛОГА ДЕНИС БЛЯДЬ");
         indexConvarsation= 0;
         
-        if(_conversationFirst[i].GetTextFile().Quest != null)
+        if(_conversationFirst[indexConvarsation].GetTextFile().Quest != null)
         {
             ResetAllQuest();
         }
