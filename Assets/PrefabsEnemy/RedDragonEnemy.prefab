@@ -711,11 +711,12 @@ GameObject:
   - component: {fileID: 8304930104545164174}
   - component: {fileID: 8304930104545164168}
   - component: {fileID: 8304930104545164170}
-  - component: {fileID: 8304930104545164180}
-  - component: {fileID: 8304930104545164182}
   - component: {fileID: 8304930104545164176}
   - component: {fileID: 8304930104545164178}
   - component: {fileID: 8304930104545164172}
+  - component: {fileID: 1975454516}
+  - component: {fileID: 1975454517}
+  - component: {fileID: 1975454518}
   m_Layer: 7
   m_Name: RedDragonEnemy
   m_TagString: Untagged
@@ -809,34 +810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70250ddcf10f21c408e88da10be324cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8304930104545164180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8304930104545060797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc9bc63b6eb6c041973ba72dab97ad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rangeAttacked: 4.5
-  _color: {r: 0.18893623, g: 1, b: 0, a: 1}
---- !u!114 &8304930104545164182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8304930104545060797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68c11de4d1fafc34b80f85c8e8bec8ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _patrolRadius: 15
-  _color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &8304930104545164176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,16 +846,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd835a7c6836b494e9fd821bcb5c53f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointAroundWhichPatrol: {fileID: 0}
-  _state: 0
   _dotPatrol: {fileID: 484795149747618168, guid: db2e5e4a4cf7b0f4c8c6de6f61e9d996, type: 3}
-  _damageAI: 25
-  _rangeIdleState: 10
-  _attackSpeed: 1
   _whatCanBeAttackedMask:
     serializedVersion: 2
     m_Bits: 320
-  _animator: {fileID: 8304930104535569535}
+  _damageAI: 25
+  _attackSpeed: 1
+  PatrolRadius: 25
+  RangeAttackedAI: 5
 --- !u!135 &8304930104545164172
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -896,6 +867,44 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1975454516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304930104545060797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3077ce051484314a9e5fa1d5c227c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1975454517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304930104545060797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c11de4d1fafc34b80f85c8e8bec8ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 0.2570963, g: 1, b: 0, a: 1}
+--- !u!114 &1975454518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304930104545060797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc9bc63b6eb6c041973ba72dab97ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &8304930104545060799
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,28 +1,37 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EntitySearchAI),typeof(CreatureHealthAI))]
+[RequireComponent(typeof(LookTargetAI),typeof(MoveAI),typeof(CreatureHealthAI))]
 public class AI : Enemy
 {
-   
-    [SerializeField] private StateCreature _state = StateCreature.Idle;
+
+    [Header("Вспомогательные объекты")]
     [SerializeField] private GameObject _dotPatrol;
-    [SerializeField][Range(0,50)] private int _damageAI = 25;
-    [SerializeField][Range(0,10)] private int _rangeIdleState = 3;
-    [SerializeField][Range(0,10)] private float _attackSpeed = 1f;
+
+    [Header("Настройки врага")]
     [SerializeField] protected LayerMask _whatCanBeAttackedMask;
-    [SerializeField]private Animator _animator;
+    [SerializeField][Range(0,50)] private int _damageAI = 25;
+    [SerializeField][Range(0,10)] private float _attackSpeed = 1f;
+    [SerializeField][Range(0,50)] internal float PatrolRadius = 25f;
+    [SerializeField][Range(3,10)] internal float RangeAttackedAI = 5f;
 
-    private float _attackCooldown = 0f;
-    private bool _isFindPlayer = false;
-    private bool _isStoped = false;
-    private bool _isAttack = false;
+    #region PrivateVariable
+        private StateCreature _state = StateCreature.Idle;
+        private Transform _pointAroundWhichPatrol;
+        private float _attackCooldown = 0f;
+        private float _rangeIdleState = 3f;
+        private bool _isFindPlayer = false;
+        private bool _isStoped = false;
+        private bool _isAttack = false;
+        private CreatureHealth _targetForPursuit = null;
+        private CreatureHealth _targetForAttacked = null;
+    #endregion
 
-    private CreatureHealth _creatureHealth = null;
+    #region GetComponentVariable
+        private Animator _animator => GetComponent<Animator>();
+        private MoveAI _moveAI => GetComponent<MoveAI>();
+        private LookTargetAI _lookAI => GetComponent<LookTargetAI>();
 
-    private MoveAI _moveAI => GetComponent<MoveAI>();
-    private LookTargetAI _lookAI => GetComponent<LookTargetAI>();
-    private EntitySearchAI _searchAttaked => GetComponent<EntitySearchAI>();
-    private RangeAttackAI _rangeArrakedAI => GetComponent<RangeAttackAI>();
+    #endregion
 
     private void Start()
     {
@@ -35,71 +44,102 @@ public class AI : Enemy
         pointer.transform.parent = null;
     }
 
-
     private void Update()
     {
-        _isFindPlayer = _searchAttaked.TryCheckPlayer(_whatCanBeAttackedMask);
+        _isFindPlayer = TryCheckPlayer(_whatCanBeAttackedMask);
   
-        _isAttack = !(_creatureHealth != null && _rangeArrakedAI.TryAttacked(_creatureHealth.transform));
+        _isAttack = !(_targetForPursuit != null && TryAttacked(_targetForPursuit.transform));
 
         _attackCooldown -= Time.deltaTime;
 
-       if(Vector3.Distance( transform.position, _pointAroundWhichPatrol.position) < _rangeIdleState) 
-       {
-           _isStoped = true;
-           _state = StateCreature.Idle;
-       } else _isStoped = false;
+        if(TryCheckIdle()) 
+        {
+            _isStoped = true;
+            _state = StateCreature.Idle;
+        } else 
+        {
+            _isStoped = false;
+        }
 
-        if(_isFindPlayer == true && _isAttack == true)    _state = StateCreature.Walking;
 
+        if(_isFindPlayer == true && _isAttack == true)  
+        {
+            _state = StateCreature.Walking;
+        } 
 
-        
+        ClampRangeAttacked();
+
+        if(_state == StateCreature.Attacked)
+        {
+            _moveAI.TryStopedAgent(true);
+        } else if(_state == StateCreature.Walking)
+        {
+            _moveAI.TryStopedAgent(false);
+        }
+
+        AnimatorState(_state);
     }
-   private void FixedUpdate()
+
+    private bool TryCheckPlayer(LayerMask foundMask)
+    {
+        return Physics.CheckSphere(gameObject.transform.position,PatrolRadius,foundMask);
+    }
+    private bool TryAttacked(Transform creature)
+    {
+        return (Vector3.Distance(gameObject.transform.position, creature.position) < RangeAttackedAI);
+    }
+    private bool TryCheckIdle()
+    {
+        return Vector3.Distance( transform.position, _pointAroundWhichPatrol.position) < _rangeIdleState;
+    }
+    private void ClampRangeAttacked()
+    {
+        RangeAttackedAI = Mathf.Clamp(RangeAttackedAI,_rangeIdleState,PatrolRadius);
+    }
+
+    private void FixedUpdate()
     {
      
         if(_isFindPlayer == true)
         {
-           Collider[] col = Physics.OverlapSphere(gameObject.transform.position,_searchAttaked.PatrolRadius,_whatCanBeAttackedMask);
+           Collider[] colPursuit = Physics.OverlapSphere(gameObject.transform.position,PatrolRadius,_whatCanBeAttackedMask);
+           Collider[] colAttacked = Physics.OverlapSphere(gameObject.transform.position,RangeAttackedAI,_whatCanBeAttackedMask);
            
-
-           if(col.Length <= 0)   return;
+           if(colPursuit.Length <= 0)   return;
  
-            _creatureHealth = col[0].GetComponent<ITakeDamage>() as CreatureHealth;
-            _lookAI.LookRotationTarget(_creatureHealth.transform);
+            _targetForPursuit = colPursuit[0].GetComponent<CreatureHealth>();
+
+            if(colAttacked.Length > 0)  
+                _targetForAttacked = colAttacked[0].GetComponent<ITakeDamage>() as CreatureHealth;
+
+            _lookAI.LookRotationTarget(_targetForPursuit.transform);
             if(_isAttack) 
             {
-                _moveAI.TryStopedAgent(false);
-                _moveAI.MoveAgent(_creatureHealth.transform);
+                _targetForAttacked = null;
+                _moveAI.MoveAgent(_targetForPursuit.transform);
             } 
             else 
             {
-                _moveAI.TryStopedAgent(true);
                 _state = StateCreature.Attacked;
             }
 
         } else if(_isFindPlayer == false && _isStoped == false) 
         {      
             _moveAI.TryStopedAgent(false);
-            _creatureHealth = null;
+            _targetForPursuit = null;
             _lookAI.LookRotationTarget(_pointAroundWhichPatrol);
             _state = StateCreature.Walking;
             _moveAI.MoveAgent(_pointAroundWhichPatrol);
         }
 
     }
-
-    private void LateUpdate()
-    {
-        AnimatorState(_state);
-    }
-    public void AttackTarget()
+    protected override void AttackTarget()
     {
         if(_attackCooldown <= 0)
         {
-            if(_creatureHealth is ITakeDamage)
+            if(_targetForAttacked is ITakeDamage)
             {
-                _creatureHealth.TakeDamage( _damageAI);
+                _targetForAttacked.TakeDamage( _damageAI);
                 Debug.Log("Я нанёс = " + _damageAI);
                 _attackCooldown = 1f / _attackSpeed;
             }

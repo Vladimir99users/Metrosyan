@@ -16,6 +16,7 @@ namespace RemakeQuest
         internal  UnityEvent OnCompleteQuest ;
         public bool _isCompleted {get; protected set;}
         protected bool _isGive = false;
+        
         public void ResetQuest()
         {
             _isGive = false;

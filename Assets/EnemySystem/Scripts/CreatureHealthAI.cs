@@ -8,7 +8,7 @@ public class CreatureHealthAI : CreatureHealth
 
     private Camera _camera;
 
-    private AI _skeleton => GetComponent<AI>();
+    private AI _enemy => GetComponent<AI>();
     public override void OnStart()
     {
         base.OnStart();
@@ -20,7 +20,7 @@ public class CreatureHealthAI : CreatureHealth
         LookRotationUI(_camera.transform);
     }
 
-    public void LookRotationUI(Transform target)
+    protected virtual void LookRotationUI(Transform target)
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x,0,direction.z));
@@ -34,7 +34,7 @@ public class CreatureHealthAI : CreatureHealth
        
        if(_creatureState.Health <= 0)
        {
-           _skeleton.AnimatorState(StateCreature.Die);
+           _enemy.AnimatorState(StateCreature.Die);
            gameObject.layer = 0;
            Destroy(gameObject,1.5f);
        } 

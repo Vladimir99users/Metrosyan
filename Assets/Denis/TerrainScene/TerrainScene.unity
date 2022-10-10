@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: _quantityEnemies
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -487,6 +491,10 @@ PrefabInstance:
     - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: _rangeSpawnEnemy
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
@@ -1130,6 +1138,10 @@ PrefabInstance:
       propertyPath: _quantityEnemies
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1516,6 +1528,10 @@ PrefabInstance:
     - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: _rangeSpawnEnemy
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
@@ -3323,6 +3339,10 @@ PrefabInstance:
       propertyPath: _rangeSpawnEnemy
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3653,164 +3673,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527712931}
   m_CullTransparentMesh: 1
---- !u!1 &531352092
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 531352100}
-  - component: {fileID: 531352099}
-  - component: {fileID: 531352098}
-  - component: {fileID: 531352097}
-  - component: {fileID: 531352096}
-  - component: {fileID: 531352095}
-  - component: {fileID: 531352094}
-  - component: {fileID: 531352093}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &531352093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531352092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd835a7c6836b494e9fd821bcb5c53f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pointAroundWhichPatrol: {fileID: 0}
-  _state: 0
-  _dotPatrol: {fileID: 0}
-  _damageAI: 25
-  _rangeIdleState: 3
-  _attackSpeed: 1
-  _whatCanBeAttackedMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _animator: {fileID: 0}
---- !u!114 &531352094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531352092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae26b10a68df2e4b95f218714b7b25f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dead:
-    m_PersistentCalls:
-      m_Calls: []
-  Alive:
-    m_PersistentCalls:
-      m_Calls: []
-  _creatureState:
-    Health: 0
-    _healthBar: {fileID: 0}
-  _respawn: {fileID: 0}
-  _canvas: {fileID: 0}
-  _speedRotation: 4
---- !u!114 &531352095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531352092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68c11de4d1fafc34b80f85c8e8bec8ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _patrolRadius: 25
-  _color: {r: 0, g: 0, b: 0, a: 1}
---- !u!114 &531352096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531352092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc9bc63b6eb6c041973ba72dab97ad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rangeAttacked: 3
-  _color: {r: 0, g: 0, b: 0, a: 1}
---- !u!114 &531352097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531352092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70250ddcf10f21c408e88da10be324cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!195 &531352098
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531352092}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &531352099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531352092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fcb34c0c12832c4ab79ac129ba76b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &531352100
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531352092}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 686.1725, y: 59.88189, z: 222.23004}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &545674935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3984,7 +3846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935791303952091901, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.48996
+      value: -25.489775
       objectReference: {fileID: 0}
     - target: {fileID: 6935791303960863881, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5995,6 +5857,10 @@ PrefabInstance:
       propertyPath: _rangeSpawnEnemy
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -6546,6 +6412,10 @@ PrefabInstance:
       propertyPath: _rangeSpawnEnemy
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6627,6 +6497,10 @@ PrefabInstance:
     - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: _rangeSpawnEnemy
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
@@ -7837,6 +7711,10 @@ PrefabInstance:
       propertyPath: _enemy
       value: 
       objectReference: {fileID: 5340464399699589542, guid: cb611f6f06fe0664bb3909bea1efae2b, type: 3}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9032,6 +8910,10 @@ PrefabInstance:
       propertyPath: _enemy
       value: 
       objectReference: {fileID: 5340464399699589542, guid: cb611f6f06fe0664bb3909bea1efae2b, type: 3}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10698,6 +10580,10 @@ PrefabInstance:
       propertyPath: _rangeSpawnEnemy
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -12243,6 +12129,10 @@ PrefabInstance:
     - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: _rangeSpawnEnemy
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693822911135123482, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
+      propertyPath: _groundMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2693822911135123483, guid: caa601d139339ab4b98ff3a5d2243d95, type: 3}
       propertyPath: m_RootOrder
