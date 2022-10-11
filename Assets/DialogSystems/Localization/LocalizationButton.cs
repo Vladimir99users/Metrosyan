@@ -7,11 +7,6 @@ public class LocalizationButton : MonoBehaviour
     private bool active = false;
     private int currentLanguage = 0;
 
-    private void Start()
-    {
-        Debug.Log("Локализация = " + LocalizationSettings.SelectedLocale);
-    }
-
     public void ChangeLocale()
     {
         if(active == true) return;
