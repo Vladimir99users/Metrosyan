@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Localization Settings
   m_EditorClassIdentifier: 
   m_StartupSelectors:
-  - rid: 789143084880363521
   - rid: 789143084880363522
-  - rid: 627515732564115464
+  - rid: 789143084880363521
   m_AvailableLocales:
     rid: 789143084880363523
   m_AssetDatabase:
@@ -30,11 +29,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 627515732564115464
-      type: {class: SpecificLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
-      data:
-        m_LocaleId:
-          m_Code: ru
     - rid: 789143084880363521
       type: {class: SystemLocaleSelector, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
     - rid: 789143084880363522

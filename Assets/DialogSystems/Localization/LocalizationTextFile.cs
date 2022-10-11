@@ -9,11 +9,12 @@ public class LocalizationTextFile<T> : ScriptableObject  where T : ScriptableObj
     {
         if(LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
         {
-            return _localizationRu;
+            return _localizationEng;
         } else if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[1])
         {
-            return _localizationEng;
+            return _localizationRu;
         }
-        return _localizationRu;
+        Debug.LogError("Нет такой локализации!");
+        return _localizationEng;
     }
 }
