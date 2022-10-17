@@ -569,8 +569,8 @@ GameObject:
   - component: {fileID: 222295535}
   - component: {fileID: 222295534}
   - component: {fileID: 222295533}
-  - component: {fileID: 222295537}
   - component: {fileID: 222295536}
+  - component: {fileID: 222295537}
   m_Layer: 0
   m_Name: Petya
   m_TagString: Untagged
@@ -593,9 +593,9 @@ MonoBehaviour:
   InteractedButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1535418871}
-        m_TargetAssemblyTypeName: RemakeQuest.GiverQuest, Assembly-CSharp
-        m_MethodName: CompleteQuestGiver
+      - m_Target: {fileID: 222295536}
+        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
+        m_MethodName: StartDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -605,9 +605,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 222295536}
-        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
-        m_MethodName: StartDialog
+      - m_Target: {fileID: 222295537}
+        m_TargetAssemblyTypeName: AssigmentsQuestTalk, Assembly-CSharp
+        m_MethodName: ReportAnAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -704,9 +704,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 222295532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a23c8230285d5f47814b300317769fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 916e0f2efadbd574da1fd62109599519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameNPC: Jojo
 --- !u!1 &245756564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,8 +2097,9 @@ GameObject:
   - component: {fileID: 1535418870}
   - component: {fileID: 1535418869}
   - component: {fileID: 1535418868}
-  - component: {fileID: 1535418871}
   - component: {fileID: 1535418872}
+  - component: {fileID: 1535418873}
+  - component: {fileID: 1535418874}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -2123,6 +2125,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1535418872}
         m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
         m_MethodName: StartDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1535418873}
+        m_TargetAssemblyTypeName: GiveQuest, Assembly-CSharp
+        m_MethodName: QuestGiveInPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1535418874}
+        m_TargetAssemblyTypeName: AssigmentsQuestTalk, Assembly-CSharp
+        m_MethodName: ReportAnAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2195,18 +2221,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1535418871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535418867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a23c8230285d5f47814b300317769fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1535418872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2220,9 +2234,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _conversationFirst:
-  - {fileID: 11400000, guid: ae26eea1870133b49b2839111d0b3c7c, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
   _conversationSecond: {fileID: 0}
+--- !u!114 &1535418873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535418867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abc1d9cea1bb1141bd8cbc8729c0e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _linaOfQuest: {fileID: 11400000, guid: a7c533ac9a36eea4b82ea70e49013b08, type: 2}
+  DebugNameQuest: 
+--- !u!114 &1535418874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535418867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916e0f2efadbd574da1fd62109599519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameNPC: Bora
 --- !u!1 &1561356997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,8 +2575,8 @@ GameObject:
   - component: {fileID: 1700405801}
   - component: {fileID: 1700405800}
   - component: {fileID: 1700405799}
-  - component: {fileID: 1700405802}
   - component: {fileID: 1700405803}
+  - component: {fileID: 1700405804}
   m_Layer: 0
   m_Name: Gnom
   m_TagString: Untagged
@@ -2558,9 +2599,9 @@ MonoBehaviour:
   InteractedButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 222295537}
-        m_TargetAssemblyTypeName: RemakeQuest.GiverQuest, Assembly-CSharp
-        m_MethodName: CompleteQuestGiver
+      - m_Target: {fileID: 1700405803}
+        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
+        m_MethodName: StartDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2570,9 +2611,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1700405803}
-        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
-        m_MethodName: StartDialog
+      - m_Target: {fileID: 1700405804}
+        m_TargetAssemblyTypeName: AssigmentsQuestTalk, Assembly-CSharp
+        m_MethodName: ReportAnAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2648,23 +2689,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 207.818, z: 0}
---- !u!114 &1700405802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700405798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58a7bfbc9859a546ab0617e38833ce2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _findItem: {fileID: 11400000, guid: f49939eb484e6804fb9f4bbe3f947f23, type: 2}
-  _dot:
-  - {fileID: 114748884}
-  - {fileID: 1567864414}
-  - {fileID: 2100127041}
 --- !u!114 &1700405803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2678,8 +2702,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _conversationFirst:
-  - {fileID: 11400000, guid: f3c9f25e53e815a4b995a9ac92838dea, type: 2}
-  _conversationSecond: {fileID: 11400000, guid: ae26eea1870133b49b2839111d0b3c7c, type: 2}
+  - {fileID: 0}
+  _conversationSecond: {fileID: 0}
+--- !u!114 &1700405804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700405798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916e0f2efadbd574da1fd62109599519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameNPC: LOLO
 --- !u!1 &1741617703
 GameObject:
   m_ObjectHideFlags: 0

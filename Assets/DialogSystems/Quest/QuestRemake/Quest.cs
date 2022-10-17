@@ -1,63 +1,192 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 
 namespace RemakeQuest
 {
-    public abstract class Quest : ScriptableObject
+    public class Quest : ScriptableObject
     {
-        [SerializeField] private string _nameQuest;
-        [SerializeField] private string _descriptionQuest;
-        [SerializeField] private Reward _reward = new Reward();
+        [System.Serializable]
+        public struct InfoQuest
+        {
+            public string _nameQuest;
+            public string _descriptionQuest;
+        }
+        
+        public InfoQuest Info = new InfoQuest();
+        
+        public string NameQuest => Info._nameQuest;
+        public string DescriptionQuest => Info._descriptionQuest;
 
-        public string NameQuest => _nameQuest;
-        public string DescriptionQuest => _descriptionQuest;
-        public Reward Reward => _reward;
-
-        internal  UnityEvent OnCompleteQuest ;
+        public  QuestCompletedEvent OnCompleteQuest ;
         public bool _isCompleted {get; protected set;}
         protected bool _isGive = false;
-        
-        public void ResetQuest()
+
+
+        public abstract class QuestGoal : ScriptableObject
         {
-            _isGive = false;
+
+            public string _description;
+            public int _currentAmount {get;protected set;}
+            public int _requiredAmount = 1;
+
+            public bool Completed {get;protected set;}
+            [HideInInspector] public UnityEvent GoalCompleted;
+
+            public virtual string GetDescription()
+            {
+                return _description;
+            }
+            public virtual void Initialize()
+            {
+                Completed = false;
+                GoalCompleted = new UnityEvent();
+            }
+
+            protected virtual void Evaluate()
+            {
+                if(_currentAmount >= _requiredAmount)
+                {
+                    Complete();
+                }
+            }
+
+            private void Complete()
+            {
+                Completed = true;
+                GoalCompleted.Invoke();
+                GoalCompleted.RemoveAllListeners();
+            }
+
+            private void RemoveQuest()
+            {
+                GoalCompleted.RemoveAllListeners();
+            }
         }
 
-        public bool TryGive()
-        {
-            return !_isGive;
-        }
+        public List<QuestGoal> Goals;
+        
         public virtual void InitializationQuest()
         {
-            if(TryGive())
+            _isCompleted = false;
+            OnCompleteQuest = new QuestCompletedEvent();
+
+            foreach (var goal in Goals)
             {
-                _isGive = true;
-                Debug.Log("Quest Init = " + _nameQuest);
-                _isCompleted = false;
-                RemakeQuest.QuestViewer.OnAddQuestViwer?.Invoke(this);
-                OnCompleteQuest.AddListener(TryDone);  
-            } else 
-            {
-                return;
-            }    
+                //goal.Initialize();
+                goal.GoalCompleted.AddListener(delegate{ChechGoals();});
+            }
         }
 
-        public virtual void CompleteQuest()
+        private void ChechGoals()
         {
-            _isCompleted = true;
-            OnCompleteQuest?.Invoke();
-        }
-
-        protected virtual void TryDone()
-        {
+            _isCompleted = Goals.All(g => g.Completed);
             if(_isCompleted)
             {
-                Debug.Log("Quest complete = " + _nameQuest);
-                RemakeQuest.QuestViewer.OnRemoveQuestViwer?.Invoke();
+                Debug.Log("Quest completed " + Info._nameQuest);
+                OnCompleteQuest?.Invoke(this);
                 OnCompleteQuest.RemoveAllListeners();
-            } 
+            }
         }
+    }
 
+    public class QuestCompletedEvent : UnityEvent<Quest> {}
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(Quest))]
+public class QuestEditor : Editor
+{
+    SerializedProperty _questInfoProperty;
+    List<string> _questGoalType;
+    SerializedProperty _questGoalListProperty;
+
+    [MenuItem("Assets/Quest",priority =0)]
+    public static void CreatQuest()
+    {
+        var newQuest = CreateInstance<Quest>();
+
+        ProjectWindowUtil.CreateAsset(newQuest,"quest.asset");
+    }
+    void OnEnable()
+    {
+        _questInfoProperty = serializedObject.FindProperty(nameof(Quest.Info));
+        _questGoalListProperty = serializedObject.FindProperty(nameof(Quest.Goals));
+        var lookup = typeof(Quest.QuestGoal);
+        _questGoalType = System.AppDomain.CurrentDomain.GetAssemblies()
+                            .SelectMany(assembly => assembly.GetTypes())
+                            .Where(x => x.IsClass && !x.IsAbstract && x.IsSubclassOf(lookup))
+                            .Select(type=>type.Name)
+                            .ToList();
+        
 
     }
+
+    public override void OnInspectorGUI()
+    {
+        var child = _questInfoProperty.Copy();
+        var depth = child.depth;
+
+        child.NextVisible(true);
+
+        EditorGUILayout.LabelField("Quest Info", EditorStyles.boldLabel);
+        while(child.depth > depth)
+        {
+            EditorGUILayout.PropertyField(child,true);
+            child.NextVisible(false);
+        }
+
+        EditorGUILayout.Space();
+
+        EditorGUILayout.LabelField("Add new Quest Goal", EditorStyles.boldLabel);
+        int choice = EditorGUILayout.Popup("Goal",-1,_questGoalType.ToArray());
+
+        if(choice != -1)
+        {
+            var newInstance = ScriptableObject.CreateInstance(_questGoalType[choice]);
+            AssetDatabase.AddObjectToAsset(newInstance,target);
+
+            _questGoalListProperty.InsertArrayElementAtIndex(_questGoalListProperty.arraySize);
+            _questGoalListProperty.GetArrayElementAtIndex(_questGoalListProperty.arraySize - 1)
+                    .objectReferenceValue = newInstance;
+        }
+
+        Editor ed = null;
+        int toDelete = -1;
+
+        for(int i =0; i < _questGoalListProperty.arraySize;++i)
+        {
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.BeginVertical();
+
+            var item = _questGoalListProperty.GetArrayElementAtIndex(i);
+            SerializedObject obj = new SerializedObject(item.objectReferenceValue);
+
+            Editor.CreateCachedEditor(item.objectReferenceValue,null,ref ed);
+
+            ed.OnInspectorGUI();
+            EditorGUILayout.EndVertical();
+            if(GUILayout.Button("X",GUILayout.Width(32)))
+            {
+                toDelete = i;
+            }
+            EditorGUILayout.EndHorizontal();
+        }
+
+        if(toDelete != -1)
+        {
+            var item = _questGoalListProperty.GetArrayElementAtIndex(toDelete).objectReferenceValue;
+            DestroyImmediate(item,true);
+
+            _questGoalListProperty.DeleteArrayElementAtIndex(toDelete);
+            _questGoalListProperty.DeleteArrayElementAtIndex(toDelete);
+        }
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+#endif
+
 }
 

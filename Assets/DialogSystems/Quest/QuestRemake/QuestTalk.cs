@@ -1,12 +1,29 @@
 using UnityEngine;
 namespace RemakeQuest
 {
-    [CreateAssetMenu(fileName = "QuestTalk", menuName = "Quest/QuestTalk")]
-    public class QuestTalk : Quest
+    public class QuestTalk : Quest.QuestGoal
     {
-        protected override void TryDone()
+        public string Name;
+        public override void Initialize()
         {
-           base.TryDone();
+            base.Initialize();
+            EventManadger.OnNPCTalk.AddListener(CompleteQuest);
+        }
+
+        public void CompleteQuest(string name)
+        {
+            if(Name == name)
+            {
+                Debug.Log("I talk with " + name);
+                Evaluate();
+            }
+        }
+
+        protected override void Evaluate()
+        {
+            EventManadger.OnNPCTalk.RemoveListener(CompleteQuest);
+            _currentAmount++;
+            base.Evaluate();
         }
     }
 }
