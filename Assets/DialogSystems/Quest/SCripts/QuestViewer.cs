@@ -24,7 +24,7 @@ namespace RemakeQuest
 
         private void ViewQuest(RemakeQuest.Quest _quest)
         {
-            _description.text = _quest.DescriptionQuest;
+            _description.text = _quest.Info._descriptionQuest;
         }
         private void RemoveQuest()
         {

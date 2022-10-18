@@ -7,6 +7,9 @@ public class AI : Enemy
     [Header("Вспомогательные объекты")]
     [SerializeField] private GameObject _dotPatrol;
 
+    [Header("Тип Врага")]
+    [SerializeField] private EnemyType _typeEnemy = EnemyType.None;
+
     [Header("Настройки врага")]
     [SerializeField] protected LayerMask _whatCanBeAttackedMask;
     [SerializeField][Range(0,50)] private int _damageAI = 25;

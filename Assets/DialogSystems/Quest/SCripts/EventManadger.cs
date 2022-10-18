@@ -3,11 +3,24 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 public class EventManadger
 {
-   public static UnityEvent<string> OnNPCTalk = new UnityEvent<string>();
-    public static void SendWithNPC(string nameNPC)
+    public static UnityEvent<CreateNewNPC> OnNPCTalk = new UnityEvent<CreateNewNPC>();
+    public static UnityEvent<EnemyType> OnKillSendMessage = new UnityEvent<EnemyType>();
+    public static UnityEvent OnComletedMEssegaQuest = new UnityEvent();
+    public static void SendWithNPC(CreateNewNPC nameNPC)
     {
         OnNPCTalk?.Invoke(nameNPC);
     }
+
+    public static void SendMessageKillEnemy(EnemyType type)
+    {
+        OnKillSendMessage?.Invoke(type);
+    }
+
+    public static void SendComletedMessegaQuest()
+    {
+        OnComletedMEssegaQuest?.Invoke();
+    }
+
 }
 
 

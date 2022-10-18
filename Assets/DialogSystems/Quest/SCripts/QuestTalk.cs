@@ -3,18 +3,18 @@ namespace RemakeQuest
 {
     public class QuestTalk : Quest.QuestGoal
     {
-        public string Name;
+        public CreateNewNPC NPC;
         public override void Initialize()
         {
             base.Initialize();
             EventManadger.OnNPCTalk.AddListener(CompleteQuest);
         }
 
-        public void CompleteQuest(string name)
+        public void CompleteQuest(CreateNewNPC npc)
         {
-            if(Name == name)
+            if(NPC.Name == npc.Name)
             {
-                Debug.Log("I talk with " + name);
+                Debug.Log("I talk with " + npc.Name);
                 Evaluate();
             }
         }

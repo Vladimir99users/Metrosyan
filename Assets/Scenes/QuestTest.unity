@@ -606,8 +606,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 222295537}
-        m_TargetAssemblyTypeName: AssigmentsQuestTalk, Assembly-CSharp
-        m_MethodName: ReportAnAction
+        m_TargetAssemblyTypeName: GiveQuest, Assembly-CSharp
+        m_MethodName: SendMessageIntheWorld
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -704,10 +704,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 222295532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916e0f2efadbd574da1fd62109599519, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a837ac9d3474a1498c5942f264918f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameNPC: Jojo
+  _quest: {fileID: 0}
+  _npc: {fileID: 11400000, guid: ec43ec4cb5d3e5a4da9840025eaa682a, type: 2}
 --- !u!1 &245756564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,7 +2100,6 @@ GameObject:
   - component: {fileID: 1535418868}
   - component: {fileID: 1535418872}
   - component: {fileID: 1535418873}
-  - component: {fileID: 1535418874}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -2136,19 +2136,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1535418873}
         m_TargetAssemblyTypeName: GiveQuest, Assembly-CSharp
-        m_MethodName: QuestGiveInPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1535418874}
-        m_TargetAssemblyTypeName: AssigmentsQuestTalk, Assembly-CSharp
-        m_MethodName: ReportAnAction
+        m_MethodName: SendMessageIntheWorld
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2246,24 +2234,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1535418867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0abc1d9cea1bb1141bd8cbc8729c0e08, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a837ac9d3474a1498c5942f264918f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _linaOfQuest: {fileID: 11400000, guid: a7c533ac9a36eea4b82ea70e49013b08, type: 2}
-  DebugNameQuest: 
---- !u!114 &1535418874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535418867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916e0f2efadbd574da1fd62109599519, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameNPC: Bora
+  _quest: {fileID: 11400000, guid: a7c533ac9a36eea4b82ea70e49013b08, type: 2}
+  _npc: {fileID: 11400000, guid: 34ce485f55261bd409a4be8ca10e2302, type: 2}
 --- !u!1 &1561356997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,7 +2551,6 @@ GameObject:
   - component: {fileID: 1700405800}
   - component: {fileID: 1700405799}
   - component: {fileID: 1700405803}
-  - component: {fileID: 1700405804}
   m_Layer: 0
   m_Name: Gnom
   m_TagString: Untagged
@@ -2602,18 +2576,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1700405803}
         m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
         m_MethodName: StartDialog
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1700405804}
-        m_TargetAssemblyTypeName: AssigmentsQuestTalk, Assembly-CSharp
-        m_MethodName: ReportAnAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2704,19 +2666,6 @@ MonoBehaviour:
   _conversationFirst:
   - {fileID: 0}
   _conversationSecond: {fileID: 0}
---- !u!114 &1700405804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700405798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916e0f2efadbd574da1fd62109599519, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameNPC: LOLO
 --- !u!1 &1741617703
 GameObject:
   m_ObjectHideFlags: 0
