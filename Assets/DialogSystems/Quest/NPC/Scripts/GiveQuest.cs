@@ -3,7 +3,7 @@ using UnityEngine;
 public class GiveQuest : MonoBehaviour
 {
     [SerializeField]
-    private RemakeQuest.Quest _quest;
+    private Quest.Quest _quest;
 
     [SerializeField]
     private CreateNewNPC _npc;

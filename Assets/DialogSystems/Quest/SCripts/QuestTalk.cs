@@ -1,5 +1,6 @@
 using UnityEngine;
-namespace RemakeQuest
+
+namespace  Quest.Goal
 {
     public class QuestTalk : Quest.QuestGoal
     {

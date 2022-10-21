@@ -2224,6 +2224,9 @@ MonoBehaviour:
   _conversationFirst:
   - {fileID: 0}
   - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
+  - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
+  - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
+  - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
   _conversationSecond: {fileID: 0}
 --- !u!114 &1535418873
 MonoBehaviour:

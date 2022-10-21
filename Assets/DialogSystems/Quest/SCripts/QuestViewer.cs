@@ -2,12 +2,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RemakeQuest
+namespace Quest
 {
     public class QuestViewer : MonoBehaviour
     {   
         [SerializeField] private TextMeshProUGUI _description;
-        public static UnityAction<RemakeQuest.Quest> OnAddQuestViwer;
+        public static UnityAction<global::Quest.Quest> OnAddQuestViwer;
         public static UnityAction OnRemoveQuestViwer;
 
         private void OnEnable()
@@ -22,7 +22,7 @@ namespace RemakeQuest
             OnAddQuestViwer -= ViewQuest;
         }
 
-        private void ViewQuest(RemakeQuest.Quest _quest)
+        private void ViewQuest(global::Quest.Quest _quest)
         {
             _description.text = _quest.Info._descriptionQuest;
         }

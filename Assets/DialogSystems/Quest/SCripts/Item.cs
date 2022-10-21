@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-namespace RemakeQuest
+namespace Quest
 {
     public class Item : MonoBehaviour
     {

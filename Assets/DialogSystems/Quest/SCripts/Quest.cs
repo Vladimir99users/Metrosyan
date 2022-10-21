@@ -4,17 +4,12 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RemakeQuest
+namespace Quest
 {
+    [CreateAssetMenu(fileName = "New Quest", menuName = "Create Quest/Quest")]
     public class Quest : ScriptableObject
     {
-        [System.Serializable]
-        public struct InfoQuest
-        {
-            public string _nameQuest;
-
-            public string _descriptionQuest;
-        }
+        
 
         public InfoQuest Info = new InfoQuest();
 
@@ -22,10 +17,12 @@ namespace RemakeQuest
 
         public bool _isCompleted { get; protected set; }
 
-        public int ID = 0;
+        [HideInInspector]public int ID = 0;
 
         public abstract class QuestGoal : ScriptableObject
         {
+
+            // Вывести в отдельную сущность и применить локализацию.
             public string _description;
 
             public int _currentAmount { get; protected set; }
@@ -117,14 +114,14 @@ namespace RemakeQuest
 
         SerializedProperty _questGoalListProperty;
 
-        [MenuItem("Assets/Quest", priority = 0)]
+        /*[MenuItem("Assets/Quest", priority = 0)]
         public static void CreatQuest()
         {
             var newQuest = CreateInstance<Quest>();
 
             ProjectWindowUtil.CreateAsset(newQuest, "quest.asset");
         }
-
+*/
         void OnEnable()
         {
             _questInfoProperty =
@@ -182,6 +179,8 @@ namespace RemakeQuest
 
             Editor ed = null;
             int toDelete = -1;
+            int toSwapUp = -1;
+            int toSwapDown = -1;
 
             for (int i = 0; i < _questGoalListProperty.arraySize; ++i)
             {
@@ -192,17 +191,29 @@ namespace RemakeQuest
                 SerializedObject obj =
                     new SerializedObject(item.objectReferenceValue);
 
-                Editor
-                    .CreateCachedEditor(item.objectReferenceValue,
-                    null,
-                    ref ed);
+                Editor.CreateCachedEditor(item.objectReferenceValue,null,ref ed);
 
                 ed.OnInspectorGUI();
+                Texture2D texture;
                 EditorGUILayout.EndVertical();
+                //GUI.backgroundColor = Color.blue;
                 if (GUILayout.Button("X", GUILayout.Width(32)))
                 {
                     toDelete = i;
                 }
+                texture = Resources.Load<Texture2D>(@"ICON/Up");
+
+                if (GUILayout.Button(texture, GUILayout.Width(32)))
+                {
+                    toSwapUp = i;
+                }
+                texture = Resources.Load<Texture2D>("Down");
+                if (GUILayout.Button(texture, GUILayout.Width(32)))
+                {
+                    Debug.Log(texture.name);
+                    toSwapDown = i;
+                }
+                //GUI.backgroundColor = Color.gray;
                 EditorGUILayout.EndHorizontal();
             }
 
@@ -214,44 +225,34 @@ namespace RemakeQuest
                         .objectReferenceValue;
                 DestroyImmediate(item, true);
 
-                _questGoalListProperty.DeleteArrayElementAtIndex(toDelete);
+                //_questGoalListProperty.DeleteArrayElementAtIndex(toDelete);
                 _questGoalListProperty.DeleteArrayElementAtIndex(toDelete);
             }
+
+            if(toSwapUp != -1)
+            {
+                var item = _questGoalListProperty.GetArrayElementAtIndex(toSwapUp)
+                                                 .objectReferenceValue;
+                _questGoalListProperty.MoveArrayElement(toSwapUp,toSwapUp-1);
+            }
+
+            if(toSwapDown != -1)
+            {
+                var item = _questGoalListProperty.GetArrayElementAtIndex(toSwapDown)
+                                                 .objectReferenceValue;
+                _questGoalListProperty.MoveArrayElement(toSwapDown,toSwapDown+1);
+            } 
 
             serializedObject.ApplyModifiedProperties();
+
+            //base.OnInspectorGUI();
         }
 
-        /*private void DrawDragAndDrop(int m)
+
+        private void SwapQuestElement(int action)
         {
-            Rect myRect =
-                GUILayoutUtility.GetRect(0, 20, GUILayout.ExpandWidth(true));
-            GUI
-                .Box(myRect,
-                "Drag and Drop Prefabs to this Box!",
-                GuistyleBoxDND);
-            if (myRect.Contains(Event.current.mousePosition))
-            {
-                if (Event.current.type == EventType.DragUpdated)
-                {
-                    DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
-                    Debug.Log("Drag Updated!");
-                    Event.current.Use();
-                }
-                else if (Event.current.type == EventType.DragPerform)
-                {
-                    Debug.Log("Drag Perform!");
-                    Debug.Log(DragAndDrop.objectReferences.Length);
-                    for (int i = 0; i < DragAndDrop.objectReferences.Length; i++
-                    )
-                    {
-                        myTarget
-                            .m_GameObjectGroups[groupIndex]
-                            .Add(DragAndDrop.objectReferences[i] as GameObject);
-                    }
-                    Event.current.Use();
-                }
-            }
-        }*/
+            
+        }
     }
 #endif
 
