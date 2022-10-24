@@ -15,14 +15,13 @@ namespace  Quest.Goal
         {
             if(NPC.Name == npc.Name)
             {
-                Debug.Log("I talk with " + npc.Name);
                 Evaluate();
             }
         }
 
         protected override void Evaluate()
         {
-            //EventManadger.OnNPCTalk.RemoveListener(CompleteQuest);
+            EventManadger.OnNPCTalk.RemoveListener(CompleteQuest);
             _currentAmount++;
             base.Evaluate();
         }

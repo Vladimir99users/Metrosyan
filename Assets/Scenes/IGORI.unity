@@ -2487,12 +2487,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3800841701812712588, guid: 8db4147b1d3c9aa499da09aada21b42e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3800841701812712588, guid: 8db4147b1d3c9aa499da09aada21b42e, type: 3}
       propertyPath: _spellSign
       value: 
       objectReference: {fileID: 1712713513}
+    - target: {fileID: 3800841701812712588, guid: 8db4147b1d3c9aa499da09aada21b42e, type: 3}
+      propertyPath: _spellQuickbar
+      value: 
+      objectReference: {fileID: 668406249}
     - target: {fileID: 5280916584487340042, guid: 8db4147b1d3c9aa499da09aada21b42e, type: 3}
       propertyPath: m_Enabled
       value: 1

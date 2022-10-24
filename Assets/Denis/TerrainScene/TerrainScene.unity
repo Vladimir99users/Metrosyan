@@ -3846,7 +3846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935791303952091901, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.489775
+      value: -25.48993
       objectReference: {fileID: 0}
     - target: {fileID: 6935791303960863881, guid: 8f6a7357a3c85624ab49973c5d5ce6a8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11807,11 +11807,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!4 &1907059919 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3609011177391543058, guid: 8f4486de48fbad846a9179022c5b64ad, type: 3}
-  m_PrefabInstance: {fileID: 3609011176060305373}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1932732383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12672,7 +12667,7 @@ PrefabInstance:
       objectReference: {fileID: 952927902}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: ZoneExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -12696,7 +12691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -12713,7 +12708,7 @@ PrefabInstance:
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 952927902}
+      objectReference: {fileID: 1996012498}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: ZoneExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.CanvasGroup, UnityEngine
@@ -12752,7 +12747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: set_alpha
+      value: SendMessageIntheWorld
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: ZoneExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
@@ -12772,7 +12767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.CanvasGroup, UnityEngine
+      value: GiveQuestInTheStartGame, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8138430793790385555, guid: c146fbdd63a7c1a4cb2e516278e1c85c, type: 3}
       propertyPath: InteractedButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
@@ -12838,7 +12833,7 @@ MonoBehaviour:
   _conversationFirst:
   - {fileID: 11400000, guid: 50b3fcab08915ff4a96b94e6be148288, type: 2}
   _conversationSecond: {fileID: 11400000, guid: 82731f6c7b1e5794f82de431774abd63, type: 2}
---- !u!114 &1996012502
+--- !u!114 &1996012498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12847,12 +12842,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1996012495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58a7bfbc9859a546ab0617e38833ce2, type: 3}
+  m_Script: {fileID: 11500000, guid: f8254f6749e5c3b47803a896f12b6728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _findItem: {fileID: 11400000, guid: b57f4f6139fc65340ae3e7e2ee7bf1d1, type: 2}
-  _dot:
-  - {fileID: 1907059919}
+  _quest: {fileID: 11400000, guid: 271b0a18a83eafe408536c89914216c6, type: 2}
+--- !u!114 &1996012499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996012495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7311a3cc6b5944496808e5bd202e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _npc: {fileID: 11400000, guid: 34ce485f55261bd409a4be8ca10e2302, type: 2}
 --- !u!4 &1999788109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4466575823954233248, guid: 0bbbf0857c99d6247888d38100141fb7, type: 3}

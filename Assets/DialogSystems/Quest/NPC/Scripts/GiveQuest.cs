@@ -1,15 +1,16 @@
 using UnityEngine;
 
+[RequireComponent(typeof(NameNPC))]
 public class GiveQuest : MonoBehaviour
 {
     [SerializeField] protected Quest.Quest _quest;
 
-    [SerializeField] protected CreateNewNPC _npc;
+    [SerializeField] protected NameNPC _npc => GetComponent<NameNPC>();
 
 
     public virtual void SendMessageIntheWorld()
     {
-        EventManadger.OnNPCTalk?.Invoke(_npc);
+        EventManadger.OnNPCTalk?.Invoke(_npc.NPC);
         GiveQuestPlayer();
     }
 
@@ -17,7 +18,6 @@ public class GiveQuest : MonoBehaviour
     {
         if (_quest != null)
         {
-            Debug.Log("NO");
             _quest.InitializationQuest();
         } 
     }

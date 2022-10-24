@@ -10,7 +10,7 @@ namespace Quest.Goal
         public override void Initialize()
         {
             base.Initialize();
-            Debug.Log("НУЖНА УБИТЬ ДРАКОНОВ С ТИПОМ " + _type.ToString() );
+
             EventManadger.OnKillSendMessage.AddListener(CompleteQuest);
         }
 
@@ -25,7 +25,9 @@ namespace Quest.Goal
 
         protected override void Evaluate()
         {
+           
             _currentAmount++;
+            if(_currentAmount >= _requiredAmount)  EventManadger.OnKillSendMessage.RemoveListener(CompleteQuest);
             base.Evaluate();
         }
     }

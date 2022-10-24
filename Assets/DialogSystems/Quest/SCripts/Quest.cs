@@ -25,7 +25,7 @@ namespace Quest
             // Вывести в отдельную сущность и применить локализацию.
             public string _description;
             public int _requiredAmount = 1;
-            public int _currentAmount { get; protected set; }
+            public int _currentAmount ;
 
             public bool Completed ;
 
@@ -39,10 +39,16 @@ namespace Quest
 
             public virtual void Initialize()
             {
-                _currentAmount = 0;
+                
                 Debug.Log("Quest Description = " + _description);
-                Completed = false;
+                ResetAllProperty();
                 GoalCompleted = new UnityEvent();
+            }
+
+            internal void ResetAllProperty()
+            {
+                _currentAmount = 0;
+                Completed = false;
             }
 
             protected virtual void Evaluate()
@@ -67,27 +73,23 @@ namespace Quest
         {
             _isCompleted = false;
             OnCompleteQuest = new QuestCompletedEvent();
-            ID = 0;
-
-            //Goals[0].Initialize();
-            // ПРОБЛЕМА ВСЕХ КВЕСТОВ В НЕ ПРАВИЛЬНОЙ ИНИЦИАЛИЗАЦИИ И ПОДПИСАНИИ МЕТОДА CHECKGOALS (при этом варианте, все работает)
-            // но не последовательно. (инициализация всего прошла и поэтому всегда есть косяк)
-            // с квестом на убийство так же, если полную инициализацию делать, всё ок, а вот без неё, голяк (при убийстве не тестил)
-            // только при инициализации.
-            // нужно попробовать сделать последовательную реализацию квестов
             foreach (var goal in Goals)
             {
-                goal.Initialize();
-                goal.GoalCompleted.AddListener(delegate ()
-                    {
-                        CheckGoals();
-                    });
+                goal.ResetAllProperty();
             }
+            Debug.Log("Вы взяли квест из линейки: "  + Info._nameQuest);
+
+            ID = 0;
+            InitializeQuestGoalUnderTheNumber(ID);
         }
 
         private void CheckGoals()
         {
             ID++;
+            if (ID < Goals.Count) 
+            {
+                InitializeQuestGoalUnderTheNumber(ID);
+            }
 
             _isCompleted = Goals.All(g => g.Completed);
             
@@ -97,8 +99,16 @@ namespace Quest
                 OnCompleteQuest?.Invoke(this);
                 OnCompleteQuest.RemoveAllListeners();
             }
-            
-            if (ID < Goals.Count) Goals[ID].Initialize();
+        }
+
+        private void InitializeQuestGoalUnderTheNumber(int indexQuest)
+        {
+            Goals[indexQuest].Initialize();
+            Goals[indexQuest].GoalCompleted.AddListener(delegate()
+            {
+                CheckGoals();
+            });
+        
         }
     }
 
