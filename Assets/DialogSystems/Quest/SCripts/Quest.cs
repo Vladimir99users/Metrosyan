@@ -15,21 +15,19 @@ namespace Quest
 
         public QuestCompletedEvent OnCompleteQuest;
 
-        public bool _isCompleted { get; protected set; }
+        public bool _isCompleted ;
 
-        [HideInInspector]public int ID = 0;
+        public int ID = 0;
 
         public abstract class QuestGoal : ScriptableObject
         {
 
             // Вывести в отдельную сущность и применить локализацию.
             public string _description;
-
+            public int _requiredAmount = 1;
             public int _currentAmount { get; protected set; }
 
-            public int _requiredAmount = 1;
-
-            public bool Completed { get; protected set; }
+            public bool Completed ;
 
             [HideInInspector]
             public UnityEvent GoalCompleted;
@@ -41,6 +39,7 @@ namespace Quest
 
             public virtual void Initialize()
             {
+                _currentAmount = 0;
                 Debug.Log("Quest Description = " + _description);
                 Completed = false;
                 GoalCompleted = new UnityEvent();
@@ -70,34 +69,36 @@ namespace Quest
             OnCompleteQuest = new QuestCompletedEvent();
             ID = 0;
 
-            Debug.Log("I get Quest name = " + Info._nameQuest);
-
-            Goals[ID].Initialize();
-
+            //Goals[0].Initialize();
+            // ПРОБЛЕМА ВСЕХ КВЕСТОВ В НЕ ПРАВИЛЬНОЙ ИНИЦИАЛИЗАЦИИ И ПОДПИСАНИИ МЕТОДА CHECKGOALS (при этом варианте, все работает)
+            // но не последовательно. (инициализация всего прошла и поэтому всегда есть косяк)
+            // с квестом на убийство так же, если полную инициализацию делать, всё ок, а вот без неё, голяк (при убийстве не тестил)
+            // только при инициализации.
+            // нужно попробовать сделать последовательную реализацию квестов
             foreach (var goal in Goals)
             {
-                goal
-                    .GoalCompleted
-                    .AddListener(delegate ()
+                goal.Initialize();
+                goal.GoalCompleted.AddListener(delegate ()
                     {
-                        ChechGoals();
+                        CheckGoals();
                     });
             }
         }
 
-        private void ChechGoals()
+        private void CheckGoals()
         {
             ID++;
 
-            if (ID < Goals.Count) Goals[ID].Initialize();
-
             _isCompleted = Goals.All(g => g.Completed);
+            
             if (_isCompleted)
             {
                 Debug.Log("Quest completed " + Info._nameQuest);
                 OnCompleteQuest?.Invoke(this);
                 OnCompleteQuest.RemoveAllListeners();
             }
+            
+            if (ID < Goals.Count) Goals[ID].Initialize();
         }
     }
 
@@ -113,15 +114,6 @@ namespace Quest
         List<string> _questGoalType;
 
         SerializedProperty _questGoalListProperty;
-
-        /*[MenuItem("Assets/Quest", priority = 0)]
-        public static void CreatQuest()
-        {
-            var newQuest = CreateInstance<Quest>();
-
-            ProjectWindowUtil.CreateAsset(newQuest, "quest.asset");
-        }
-*/
         void OnEnable()
         {
             _questInfoProperty =

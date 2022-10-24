@@ -2,22 +2,23 @@ using UnityEngine;
 
 public class GiveQuest : MonoBehaviour
 {
-    [SerializeField]
-    private Quest.Quest _quest;
+    [SerializeField] protected Quest.Quest _quest;
 
-    [SerializeField]
-    private CreateNewNPC _npc;
+    [SerializeField] protected CreateNewNPC _npc;
 
-    private void Start()
+
+    public virtual void SendMessageIntheWorld()
+    {
+        EventManadger.OnNPCTalk?.Invoke(_npc);
+        GiveQuestPlayer();
+    }
+
+    protected virtual void GiveQuestPlayer()
     {
         if (_quest != null)
         {
+            Debug.Log("NO");
             _quest.InitializationQuest();
-        }
-    }
-
-    public void SendMessageIntheWorld()
-    {
-        EventManadger.OnNPCTalk?.Invoke(_npc);
+        } 
     }
 }

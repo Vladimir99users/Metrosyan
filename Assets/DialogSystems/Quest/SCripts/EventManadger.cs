@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine.Events;
 public class EventManadger
 {
     public static UnityEvent<CreateNewNPC> OnNPCTalk = new UnityEvent<CreateNewNPC>();
     public static UnityEvent<EnemyType> OnKillSendMessage = new UnityEvent<EnemyType>();
-    public static UnityEvent OnComletedMEssegaQuest = new UnityEvent();
+    public static UnityEvent OnComletedMessegaQuest = new UnityEvent();
     public static void SendWithNPC(CreateNewNPC nameNPC)
     {
         OnNPCTalk?.Invoke(nameNPC);
@@ -18,7 +16,7 @@ public class EventManadger
 
     public static void SendComletedMessegaQuest()
     {
-        OnComletedMEssegaQuest?.Invoke();
+        OnComletedMessegaQuest?.Invoke();
     }
 
 }

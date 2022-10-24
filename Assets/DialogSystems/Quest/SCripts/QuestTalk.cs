@@ -22,7 +22,7 @@ namespace  Quest.Goal
 
         protected override void Evaluate()
         {
-            EventManadger.OnNPCTalk.RemoveListener(CompleteQuest);
+            //EventManadger.OnNPCTalk.RemoveListener(CompleteQuest);
             _currentAmount++;
             base.Evaluate();
         }

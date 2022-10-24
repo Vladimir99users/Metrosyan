@@ -10,6 +10,7 @@ namespace Quest.Goal
         public override void Initialize()
         {
             base.Initialize();
+            Debug.Log("НУЖНА УБИТЬ ДРАКОНОВ С ТИПОМ " + _type.ToString() );
             EventManadger.OnKillSendMessage.AddListener(CompleteQuest);
         }
 

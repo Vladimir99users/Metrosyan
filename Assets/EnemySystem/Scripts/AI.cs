@@ -45,6 +45,7 @@ public class AI : Enemy
         var pointer = Instantiate(_dotPatrol,position);
         _pointAroundWhichPatrol = pointer.transform;
         pointer.transform.parent = null;
+        
     }
 
     private void Update()
@@ -148,6 +149,13 @@ public class AI : Enemy
             }
         }
         
+    }
+
+    private void OnDestroy()
+    {
+        if(_typeEnemy == EnemyType.None) return;
+        
+        EventManadger.OnKillSendMessage?.Invoke(_typeEnemy);
     }
 
     private void OnDrawGizmosSelected()
