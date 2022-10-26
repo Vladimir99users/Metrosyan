@@ -2254,7 +2254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8254f6749e5c3b47803a896f12b6728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _quest: {fileID: 11400000, guid: a7c533ac9a36eea4b82ea70e49013b08, type: 2}
+  _quest: {fileID: 11400000, guid: f8d4ebeaa1edbe74ba5b7ad565871bf8, type: 2}
 --- !u!114 &1535418874
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2263358751529198555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055f4a2aaff2c90409fa026e8eed777d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _description: {fileID: 11400000, guid: de2fd35734241f248ab531b96e14b6c8, type: 2}
+  _requiredAmount: 1
+  _currentAmount: 0
+  Completed: 0
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  _configuration: {fileID: 11400000, guid: 7391fecdca95a73418248a8d8c421f6b, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff20daa15827f2459b47bc8faaa8eb1, type: 3}
+  m_Name: FindItem
+  m_EditorClassIdentifier: 
+  Info:
+    _nameQuest: saf
+    _descriptionQuest: sadf
+  _isCompleted: 0
+  ID: 0
+  Goals:
+  - {fileID: -2263358751529198555}

@@ -22,8 +22,8 @@ namespace Quest
         public abstract class QuestGoal : ScriptableObject
         {
 
-            // Вывести в отдельную сущность и применить локализацию.
-            public string _description;
+            public LocalizationDescriptionQuest _description;
+
             public int _requiredAmount = 1;
             public int _currentAmount ;
 
@@ -34,13 +34,11 @@ namespace Quest
 
             public virtual string GetDescription()
             {
-                return _description;
+                return _description.GetTextFile().Description;
             }
 
             public virtual void Initialize()
             {
-                
-                Debug.Log("Quest Description = " + _description);
                 ResetAllProperty();
                 GoalCompleted = new UnityEvent();
             }
@@ -246,7 +244,7 @@ namespace Quest
             } 
 
             serializedObject.ApplyModifiedProperties();
-
+            serializedObject.ApplyModifiedPropertiesWithoutUndo();
             //base.OnInspectorGUI();
         }
 

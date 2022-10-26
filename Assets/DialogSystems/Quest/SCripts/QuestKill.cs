@@ -5,7 +5,7 @@ namespace Quest.Goal
 {
     public class QuestKill : Quest.QuestGoal
     {
-        public EnemyType _type;
+        [SerializeField] private EnemyType _type;
 
         public override void Initialize()
         {

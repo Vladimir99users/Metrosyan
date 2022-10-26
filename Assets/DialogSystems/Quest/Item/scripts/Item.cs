@@ -1,18 +1,14 @@
 using UnityEngine;
-using UnityEngine.Events;
+using Quest.ItemConfiguration;
+
 namespace Quest
 {
     public class Item : MonoBehaviour
     {
-        internal UnityEvent OnDragItem = new UnityEvent();
-
+        [SerializeField] private Configuration _configuration;
         public void Init()
         {
-            OnDragItem.AddListener(DragItem);
-        }
-        private void OnDestroy()
-        {
-            OnDragItem.RemoveListener(DragItem);
+            Debug.Log("Создал объект в точке");
         }
 
         private void OnTriggerEnter(Collider Col)
@@ -21,7 +17,8 @@ namespace Quest
             { 
                 return;
             }
-             OnDragItem?.Invoke();
+            EventManadger.SendDragItem(_configuration);
+            DragItem();
         }
 
         private void DragItem()

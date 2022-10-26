@@ -1,9 +1,12 @@
 using UnityEngine.Events;
+using Quest.ItemConfiguration;
 public class EventManadger
 {
     public static UnityEvent<CreateNewNPC> OnNPCTalk = new UnityEvent<CreateNewNPC>();
     public static UnityEvent<EnemyType> OnKillSendMessage = new UnityEvent<EnemyType>();
     public static UnityEvent OnComletedMessegaQuest = new UnityEvent();
+
+    public static UnityEvent<Configuration> OnDragItem = new UnityEvent<Configuration>();
     public static void SendWithNPC(CreateNewNPC nameNPC)
     {
         OnNPCTalk?.Invoke(nameNPC);
@@ -13,10 +16,14 @@ public class EventManadger
     {
         OnKillSendMessage?.Invoke(type);
     }
-
-    public static void SendComletedMessegaQuest()
+    public static void SendComletedMessageQuest()
     {
         OnComletedMessegaQuest?.Invoke();
+    }
+
+    public static void SendDragItem(Configuration item)
+    {
+        OnDragItem?.Invoke(item);
     }
 
 }

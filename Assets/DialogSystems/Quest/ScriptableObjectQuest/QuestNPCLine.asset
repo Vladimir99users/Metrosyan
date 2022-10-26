@@ -12,32 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5a287ba81fd634fbaa10d64eb53897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _description: "\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438 \u043B\u043E\u043B\u043E"
+  _description: {fileID: 0}
   _requiredAmount: 1
+  _currentAmount: 0
   Completed: 0
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []
   NPC: {fileID: 0}
---- !u!114 &-2490424229587104532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba5a287ba81fd634fbaa10d64eb53897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _description: "\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438 \u0441 WarLord"
-  _requiredAmount: 1
-  Completed: 1
-  GoalCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  NPC: {fileID: 11400000, guid: 34ce485f55261bd409a4be8ca10e2302, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,28 +44,6 @@ MonoBehaviour:
   ID: 2
   Goals:
   - {fileID: 5106797372197781533}
-  - {fileID: -2490424229587104532}
-  - {fileID: 457452342894218642}
-  - {fileID: 7074110318014885146}
---- !u!114 &457452342894218642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba5a287ba81fd634fbaa10d64eb53897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _description: sdfghfsd
-  _requiredAmount: 1
-  Completed: 1
-  GoalCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  NPC: {fileID: 11400000, guid: ec43ec4cb5d3e5a4da9840025eaa682a, type: 2}
 --- !u!114 &5106797372197781533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,8 +56,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5a287ba81fd634fbaa10d64eb53897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _description: "\u041D\u0410\u0427\u0410\u041B\u041E \u043A \u0411\u041E\u0411\u041E"
+  _description: {fileID: 11400000, guid: de2fd35734241f248ab531b96e14b6c8, type: 2}
   _requiredAmount: 1
+  _currentAmount: 0
   Completed: 1
   GoalCompleted:
     m_PersistentCalls:
@@ -115,29 +76,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5a287ba81fd634fbaa10d64eb53897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _description: "\u0412\u0435\u0440\u043D\u0438\u0441\u044C \u043A \u0431\u043E\u0440\u043E\u0434\u0430\u0447\u0443"
+  _description: {fileID: 0}
   _requiredAmount: 1
+  _currentAmount: 0
   Completed: 0
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []
   NPC: {fileID: 11400000, guid: 34ce485f55261bd409a4be8ca10e2302, type: 2}
---- !u!114 &7074110318014885146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0761b5e93680bb499dd36a7fb7b1b6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _description: "\u0423\u0411\u0415\u0419 \u042D\u0422\u0418\u0425 \u0422\u0412\u0410\u0420\u0415\u0419!"
-  _requiredAmount: 10
-  Completed: 0
-  GoalCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  _type: 1
