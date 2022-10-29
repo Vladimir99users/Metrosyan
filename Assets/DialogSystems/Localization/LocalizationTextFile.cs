@@ -5,7 +5,7 @@ public class LocalizationTextFile<T> : ScriptableObject  where T : ScriptableObj
 {
     [SerializeField] private T _localizationRu;
     [SerializeField] private T _localizationEng;
-    public T GetTextFile()
+    public T GetText()
     {
         if(LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
         {

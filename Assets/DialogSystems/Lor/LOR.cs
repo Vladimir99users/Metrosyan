@@ -15,7 +15,7 @@ public class LOR : MonoBehaviour
     private void OnFirstNarrationEnter()
     {
         _isLorRead = true;
-        LORViewer.OnStartLORViewer?.Invoke(_narration.GetTextFile());
+        LORViewer.OnStartLORViewer?.Invoke(_narration.GetText());
     }
 
     public void EndLor()

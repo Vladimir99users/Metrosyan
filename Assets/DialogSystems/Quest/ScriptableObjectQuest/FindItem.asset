@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _description: {fileID: 11400000, guid: de2fd35734241f248ab531b96e14b6c8, type: 2}
-  _requiredAmount: 1
-  _currentAmount: 0
-  Completed: 0
+  _sprite: {fileID: 21300000, guid: f8c474a190148084288bae0427efe153, type: 3}
+  _requiredAmount: 2
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -38,4 +37,24 @@ MonoBehaviour:
   _isCompleted: 0
   ID: 0
   Goals:
+  - {fileID: 8771083247817524969}
   - {fileID: -2263358751529198555}
+--- !u!114 &8771083247817524969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5a287ba81fd634fbaa10d64eb53897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _description: {fileID: 11400000, guid: de2fd35734241f248ab531b96e14b6c8, type: 2}
+  _sprite: {fileID: 21300000, guid: f8c474a190148084288bae0427efe153, type: 3}
+  _requiredAmount: 1
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  NPC: {fileID: 11400000, guid: ec43ec4cb5d3e5a4da9840025eaa682a, type: 2}

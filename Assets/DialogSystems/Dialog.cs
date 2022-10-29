@@ -22,12 +22,12 @@ public class Dialog : MonoBehaviour
     {
         if(indexConvarsation >= _conversationFirst.Count)
         {
-            ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationSecond.GetTextFile().Nodes);
+            ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationSecond.GetText().Nodes);
             Debug.Log("NONE DIALOG");
             return;
         }
         
-        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst[indexConvarsation].GetTextFile().Nodes);        
+        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst[indexConvarsation].GetText().Nodes);        
 
     }
 

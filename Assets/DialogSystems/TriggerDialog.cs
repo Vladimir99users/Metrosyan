@@ -24,10 +24,10 @@ public class TriggerDialog : MonoBehaviour
     {
         if(indexConvarsation >= _conversationFirst.Count)
         {
-            ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationSecond.GetTextFile().Nodes);
+            ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationSecond.GetText().Nodes);
             return;
         }
-        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst[indexConvarsation].GetTextFile().Nodes);
+        ViewDialog.OnStartConfigurationDialog?.Invoke(_conversationFirst[indexConvarsation].GetText().Nodes);
         indexConvarsation++;
     }
 

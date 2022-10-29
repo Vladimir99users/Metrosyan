@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 namespace Quest
 {
+
+    using UI;
     [CreateAssetMenu(fileName = "New Quest", menuName = "Create Quest/Quest")]
     public class Quest : ScriptableObject
     {
@@ -23,18 +25,17 @@ namespace Quest
         {
 
             public LocalizationDescriptionQuest _description;
-
+            public Sprite _sprite;
             public int _requiredAmount = 1;
-            public int _currentAmount ;
-
-            public bool Completed ;
+            public int _currentAmount {get;protected set;}
+            public bool Completed {get;protected set;}
 
             [HideInInspector]
             public UnityEvent GoalCompleted;
 
             public virtual string GetDescription()
             {
-                return _description.GetTextFile().Description;
+                return _description.GetText().Description;
             }
 
             public virtual void Initialize()
@@ -96,6 +97,7 @@ namespace Quest
                 Debug.Log("Quest completed " + Info._nameQuest);
                 OnCompleteQuest?.Invoke(this);
                 OnCompleteQuest.RemoveAllListeners();
+                QuestViewer.OnRemoveQuestViewer?.Invoke(this);
             }
         }
 
@@ -106,7 +108,7 @@ namespace Quest
             {
                 CheckGoals();
             });
-        
+            QuestViewer.OnAddorUpdateQuestViewer?.Invoke(this);
         }
     }
 

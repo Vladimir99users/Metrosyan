@@ -13,7 +13,7 @@ public abstract class Menu : MonoBehaviour
 
     public bool IsOpen => _canvasGroup.interactable;
 
-    private CanvasGroup _canvasGroup;
+    protected CanvasGroup _canvasGroup;
 
     [ContextMenu("Open")]
     public virtual void Open()
