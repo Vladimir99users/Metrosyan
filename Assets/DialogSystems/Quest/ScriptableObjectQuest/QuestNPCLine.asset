@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _description: {fileID: 0}
+  _sprite: {fileID: 0}
   _requiredAmount: 1
-  _currentAmount: 0
-  Completed: 0
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -40,8 +39,8 @@ MonoBehaviour:
       \u0434\u043E\u043B\u0436\u0435\u043D \u043F\u0440\u043E\u0439\u0442\u0438 \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435,
       \u0430 \u043F\u043E\u0442\u043E\u043C \u043C\u044B \u0441 \u0442\u043E\u0431\u043E\u0439
       \u0441\u043C\u043E\u0436\u0435\u043C \u043F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C"
-  _isCompleted: 0
-  ID: 2
+  _isCompleted: 1
+  ID: 1
   Goals:
   - {fileID: 5106797372197781533}
 --- !u!114 &5106797372197781533
@@ -57,9 +56,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _description: {fileID: 11400000, guid: de2fd35734241f248ab531b96e14b6c8, type: 2}
+  _sprite: {fileID: 21300000, guid: f8c474a190148084288bae0427efe153, type: 3}
   _requiredAmount: 1
-  _currentAmount: 0
-  Completed: 1
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -77,9 +75,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _description: {fileID: 0}
+  _sprite: {fileID: 0}
   _requiredAmount: 1
-  _currentAmount: 0
-  Completed: 0
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []

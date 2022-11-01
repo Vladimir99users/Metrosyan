@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38af4d6bcf37cf4c916018f000734d3, type: 3}
-  m_Name: DescriptionENG
+  m_Script: {fileID: 11500000, guid: 0317332be76b666409b4c7ce27559a28, type: 3}
+  m_Name: FindItemCube
   m_EditorClassIdentifier: 
-  _description: You Need Talk with BOBO
+  _localizationRu: {fileID: 11400000, guid: 6ff9ecd54e5522c45abe884aa0ca3249, type: 2}
+  _localizationEng: {fileID: 11400000, guid: e8fd9be2ba3c1554ea7f4d977eb2a736, type: 2}

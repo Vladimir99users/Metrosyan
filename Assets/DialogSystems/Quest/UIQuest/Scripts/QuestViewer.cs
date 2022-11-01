@@ -2,17 +2,16 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
-using TMPro;
+
 
 
 namespace Quest.UI
 {
     public class QuestViewer : MonoBehaviour
     {   
-        [SerializeField] private UIQuestGoal _visualQuestGoal;
-        [SerializeField] private TextMeshProUGUI _nameQuest;
+       
         [SerializeField] private RectTransform _parent;
-
+        [SerializeField] private UIQuest _questUI;
 
 
         public static UnityAction<Quest> OnAddorUpdateQuestViewer;
@@ -20,7 +19,7 @@ namespace Quest.UI
 
         // не верный словарь! нужно через UIQuestGoal
 
-        private Dictionary<Quest,Quest.QuestGoal> _questDictionary = new Dictionary<Quest, Quest.QuestGoal>();
+        private Dictionary<Quest,UIQuest> _questDictionary = new Dictionary<Quest, UIQuest>();
 
         private void OnEnable()
         {
@@ -36,32 +35,25 @@ namespace Quest.UI
 
         private void AddQuest(Quest _quest)
         {
-            if(_questDictionary.ContainsKey(_quest))
+            if(_questDictionary.ContainsKey(_quest) == false)
             {
-                _questDictionary[_quest] = _quest.Goals[_quest.ID];
-                UpdateInformationGoal(_quest.Goals[_quest.ID]);
+                var item = Instantiate(_questUI,_parent);
+                item.Initialize(_quest.Info._nameQuest, _quest.Goals[_quest.ID],true);
+                _questDictionary.Add(_quest,item);
             } else 
             {
-                _questDictionary.Add(_quest,_quest.Goals[_quest.ID]);
-                UpdateInformationQuest(_quest);
+                _questDictionary[_quest].Initialize(_quest.Info._nameQuest, _quest.Goals[_quest.ID],false);
             }
         }
+
         private void RemoveQuest(Quest _quest)
         {
+            Destroy(_questDictionary[_quest].gameObject);
+            
             _questDictionary.Remove(_quest);
+            Debug.Log("I am Destroy quest, осталось квестов = " + _questDictionary.Count);
         }
 
-        private void UpdateInformationQuest(Quest _quest)
-        {
-            _nameQuest.text = _quest.Info._nameQuest;
-            UpdateInformationGoal(_quest.Goals[_quest.ID]);
-        }
-
-        private void UpdateInformationGoal(Quest.QuestGoal _goal)
-        {
-            var goal = Instantiate (_visualQuestGoal,_parent);
-            goal.Init(_goal._description.GetText().Description, _goal._sprite);
-        }
 
 
     }

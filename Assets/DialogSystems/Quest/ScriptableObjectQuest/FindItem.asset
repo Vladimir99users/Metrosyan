@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055f4a2aaff2c90409fa026e8eed777d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _description: {fileID: 11400000, guid: de2fd35734241f248ab531b96e14b6c8, type: 2}
+  _description: {fileID: 11400000, guid: cdf88f2434736744f80794a8ade57b4a, type: 2}
   _sprite: {fileID: 21300000, guid: f8c474a190148084288bae0427efe153, type: 3}
   _requiredAmount: 2
   GoalCompleted:
@@ -34,8 +34,8 @@ MonoBehaviour:
   Info:
     _nameQuest: saf
     _descriptionQuest: sadf
-  _isCompleted: 0
-  ID: 0
+  _isCompleted: 1
+  ID: 2
   Goals:
   - {fileID: 8771083247817524969}
   - {fileID: -2263358751529198555}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0317332be76b666409b4c7ce27559a28, type: 3}
-  m_Name: DescriptionCube
+  m_Name: TalkWithBOBO
   m_EditorClassIdentifier: 
   _localizationRu: {fileID: 11400000, guid: 0ed8e0d462bb4a64884ae6aa9013fc9c, type: 2}
   _localizationEng: {fileID: 11400000, guid: 31d612bfa9335cf489c37bcbd2c7efef, type: 2}
