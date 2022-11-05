@@ -1,4 +1,4 @@
-using UnityEngine.Localization.Settings;
+using DialogControl.Item;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Conversation List", menuName = "Conversation/LocalizationConversation")]

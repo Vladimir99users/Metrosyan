@@ -4,11 +4,10 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.Events;
+using DialogControl.Item;
 
 public class ViewDialog : Menu
 {
-    public UnityEvent OnDialogEnd;
     [Header("Компоненты для визуального отображения диалога")]
     [SerializeField] private TextMeshProUGUI _dialogTextMeshPro;
     [SerializeField] private Button _prefabsButton;
@@ -22,14 +21,12 @@ public class ViewDialog : Menu
     [Tooltip("Сколько секунд надо ждать (по умолчанию равна _interval)")] [SerializeField] [Range(0f,2f)] private float _sumInterval = 1;
 
 
-
-    private Dictionary<string,Node> _selectedPart;
-    public static Action<List<Node>> OnStartConfigurationDialog;
+    public static Action<Conversation> OnStartConfigurationDialog;
     public static Action OnCloseConfigurationDialog;
 
-    private List<Node> _nodes;
+    private Dictionary<string,Node> _selectedPart;
     private Node _nextNode;
-    private int _startIndex = 0;
+    private readonly int STARTINDEX = 0;
 
     private void OnEnable()
     {
@@ -44,7 +41,7 @@ public class ViewDialog : Menu
         OnCloseConfigurationDialog -=  Close;
         
     }
-    private void ConfigurationDialog(List<Node> anotherNode)
+    private void ConfigurationDialog(Conversation anotherNode)
     {
         if(anotherNode is null) 
         {
@@ -54,16 +51,14 @@ public class ViewDialog : Menu
         }
 
         _selectedPart = new Dictionary<string, Node>();
-        foreach (var item in anotherNode)
+        foreach (var item in anotherNode.Nodes)
         {
             _selectedPart.Add(item.Contens.ToLower(),item);
         }
 
-
-        ResetTimeSlider();
-        _nodes = anotherNode;
         Open();
-        ViewNodes(_nodes[_startIndex]);
+        ViewNodes(anotherNode.Nodes[STARTINDEX]);
+        ResetTimeSlider();
     }
 
 
@@ -92,16 +87,8 @@ public class ViewDialog : Menu
         }
         else
         {
-            Close();
-            OnDialogEnd?.Invoke();        
+            Close();      
         }
-    }
-
-
-    private void SelectedNode(string content)
-    {
-        ResetTimeSlider();
-        ViewNodes(_selectedPart[content]);
     }
     private void DeleteAllChild(RectTransform parent)
     {
@@ -111,6 +98,13 @@ public class ViewDialog : Menu
             Destroy(parent.GetChild(children).gameObject);
         }
     }
+
+    private void SelectedNode(string content)
+    {
+        ResetTimeSlider();
+        ViewNodes(_selectedPart[content]);
+    }
+    
 
     private void ResetTimeSlider()
     {

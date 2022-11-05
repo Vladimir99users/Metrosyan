@@ -165,7 +165,6 @@ GameObject:
   - component: {fileID: 222295535}
   - component: {fileID: 222295534}
   - component: {fileID: 222295533}
-  - component: {fileID: 222295536}
   - component: {fileID: 222295538}
   - component: {fileID: 222295537}
   m_Layer: 0
@@ -190,18 +189,6 @@ MonoBehaviour:
   InteractedButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 222295536}
-        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
-        m_MethodName: StartDialog
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 222295537}
         m_TargetAssemblyTypeName: GiveQuest, Assembly-CSharp
         m_MethodName: SendMessageIntheWorld
@@ -277,21 +264,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 168.628, z: 0}
---- !u!114 &222295536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222295532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f85d35362f0c06d479be5e80ef5f0a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _conversationFirst:
-  - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
-  _conversationSecond: {fileID: 0}
 --- !u!114 &222295537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,7 +815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701829639
@@ -1564,7 +1536,6 @@ GameObject:
   - component: {fileID: 1535418870}
   - component: {fileID: 1535418869}
   - component: {fileID: 1535418868}
-  - component: {fileID: 1535418872}
   - component: {fileID: 1535418873}
   - component: {fileID: 1535418874}
   m_Layer: 0
@@ -1589,18 +1560,6 @@ MonoBehaviour:
   InteractedButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1535418872}
-        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
-        m_MethodName: StartDialog
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1535418873}
         m_TargetAssemblyTypeName: GiveQuest, Assembly-CSharp
         m_MethodName: SendMessageIntheWorld
@@ -1676,25 +1635,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1535418872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535418867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f85d35362f0c06d479be5e80ef5f0a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _conversationFirst:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
-  - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
-  - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
-  - {fileID: 11400000, guid: 8b268db89e8f1964d831f79bdb62305f, type: 2}
-  _conversationSecond: {fileID: 0}
 --- !u!114 &1535418873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1839,7 +1779,6 @@ GameObject:
   - component: {fileID: 1700405801}
   - component: {fileID: 1700405800}
   - component: {fileID: 1700405799}
-  - component: {fileID: 1700405803}
   - component: {fileID: 1700405805}
   - component: {fileID: 1700405804}
   m_Layer: 0
@@ -1864,18 +1803,6 @@ MonoBehaviour:
   InteractedButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1700405803}
-        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
-        m_MethodName: StartDialog
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1700405804}
         m_TargetAssemblyTypeName: GiveQuest, Assembly-CSharp
         m_MethodName: SendMessageIntheWorld
@@ -1954,21 +1881,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 207.818, z: 0}
---- !u!114 &1700405803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700405798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f85d35362f0c06d479be5e80ef5f0a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _conversationFirst:
-  - {fileID: 0}
-  _conversationSecond: {fileID: 0}
 --- !u!114 &1700405804
 MonoBehaviour:
   m_ObjectHideFlags: 0
