@@ -18,6 +18,26 @@ MonoBehaviour:
     _descriptionQuest: "\u0417\u0435\u043B\u0435\u0431\u043E\u0431\u0430 \u0434\u0435\u0431\u0438\u043B,
       \u0438 \u043D\u0435 \u0437\u043D\u0430\u0435\u0442 \u043A\u0430\u043A \u0437\u043D\u0430\u043A\u043E\u0438\u0442\u0441\u044F
       \u043F\u043E\u043C\u043E\u0433\u0438 \u0435\u043C\u0443."
-  _isCompleted: 1
-  ID: 4
-  Goals: []
+  _isCompleted: 0
+  ID: 0
+  Goals:
+  - {fileID: 5117934004427800962}
+--- !u!114 &5117934004427800962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5a287ba81fd634fbaa10d64eb53897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _description: {fileID: 11400000, guid: de2fd35734241f248ab531b96e14b6c8, type: 2}
+  _sprite: {fileID: 21300000, guid: f8c474a190148084288bae0427efe153, type: 3}
+  _requiredAmount: 1
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  NPC: {fileID: 11400000, guid: 34ce485f55261bd409a4be8ca10e2302, type: 2}
