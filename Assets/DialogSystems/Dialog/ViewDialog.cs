@@ -3,8 +3,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using System.Collections;
-using DialogControl.Item;
+using DialogSystem.Item;
 
 public class ViewDialog : Menu
 {
@@ -12,14 +11,6 @@ public class ViewDialog : Menu
     [SerializeField] private TextMeshProUGUI _dialogTextMeshPro;
     [SerializeField] private Button _prefabsButton;
     [SerializeField] private RectTransform _positionOfResponses;
-    [SerializeField] private Slider _timerSlider;
-    
-
-    [Space] [Header("Найстрока таймера ответа")]
-    [Tooltip("Время через которое, игрок перейдёт на следующий Node")][SerializeField][Range(0,100)] private int _timeToThink = 5;
-    [Tooltip("Если нужен таймер не раз в секунду")] [SerializeField][Range(0f,2f)] private float _interval = 1;
-    [Tooltip("Сколько секунд надо ждать (по умолчанию равна _interval)")] [SerializeField] [Range(0f,2f)] private float _sumInterval = 1;
-
 
     public static Action<Conversation> OnStartConfigurationDialog;
     public static Action OnCloseConfigurationDialog;
@@ -30,7 +21,6 @@ public class ViewDialog : Menu
 
     private void OnEnable()
     {
-        _timerSlider.maxValue = _timeToThink;
         OnStartConfigurationDialog += ConfigurationDialog;
         OnCloseConfigurationDialog +=  Close;
     }
@@ -58,7 +48,6 @@ public class ViewDialog : Menu
 
         Open();
         ViewNodes(anotherNode.Nodes[STARTINDEX]);
-        ResetTimeSlider();
     }
 
 
@@ -69,13 +58,9 @@ public class ViewDialog : Menu
         StopAllCoroutines();
 
         _nextNode = _currentNode;
-
-        
-
         _dialogTextMeshPro.text = _currentNode.MainText;
         if(_currentNode.Responce.Length != 0)
         {
-            StartCoroutine(PausedToReply());
             for(int i = _currentNode.Responce.Length - 2; i >= 0; i--)
             {
                 Button button = Instantiate(_prefabsButton,_positionOfResponses) as Button;
@@ -101,50 +86,9 @@ public class ViewDialog : Menu
 
     private void SelectedNode(string content)
     {
-        ResetTimeSlider();
         ViewNodes(_selectedPart[content]);
     }
     
 
-    private void ResetTimeSlider()
-    {
-        _timerSlider.value = _timerSlider.maxValue;
-    }
-
-    private IEnumerator PausedToReply()
-    {
-        while(true)
-        {
-            if(_timerSlider.value == _timerSlider.minValue)
-            {
-                SelectedNode(_nextNode.Responce[_nextNode.Responce.Length-1].Id.ToLower());
-                yield return null;
-            }
-            _timerSlider.value -= _sumInterval;
-            yield return new WaitForSeconds(_interval);
-        }
-    }
-
-
-    private IEnumerator CloseDialogPanel()
-    {
-        while(true)
-        {
-            if(_timerSlider.value == _timerSlider.minValue)
-            {
-                yield return new WaitForSeconds(_interval);
-                StopAllCoroutines();
-                Close();
-            }
-            _timerSlider.value -= _sumInterval;
-            yield return new WaitForSeconds(_interval);
-        }     
-    }
-
-
-    [ContextMenu("Change value")]
-    public void Changed()
-    {
-       _timerSlider.value = _timerSlider.maxValue;
-    }
+    
 }

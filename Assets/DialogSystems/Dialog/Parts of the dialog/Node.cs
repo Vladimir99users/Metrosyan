@@ -1,5 +1,5 @@
 
-namespace DialogControl.Item
+namespace DialogSystem.Item
 {
     [System.Serializable]
     public class Node

@@ -1,4 +1,4 @@
-using DialogControl.Item;
+using DialogSystem.Item;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Conversation List", menuName = "Conversation/LocalizationConversation")]

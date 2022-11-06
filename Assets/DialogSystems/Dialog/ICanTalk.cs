@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DialogControl
+namespace DialogSystem
 {
     using Item;
     interface ICanTalk

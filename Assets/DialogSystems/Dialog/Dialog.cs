@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-namespace DialogControl
+namespace DialogSystem
 {
     using Item;
 
@@ -11,12 +11,7 @@ namespace DialogControl
     {
         [Header("Последовательность диалогов")]
         [SerializeField] private  List<LocalizationTextFile<Conversation>> _conversation ;
-        private int indexConvarsation = 0;
-
-        [Header("Настройки диалога")]
-        [Space]
-        public DialogueIsStarted OnDialogStarted;
-        public DialogueIsEnd OnDialogEnd;
+        public int IDConversation {get;set;}
 
         public List<LocalizationTextFile<Conversation>> Conversation
         {
@@ -30,22 +25,19 @@ namespace DialogControl
                 Conversation = _conversation;
             }
         }
-
         public void Initialize()
         {
-            indexConvarsation = 0;
+            IDConversation = 0;
         }
 
         public void StartDialog()
         {
-            throw new System.NotImplementedException();
+            StartСonversation(IDConversation);
         }
         private void StartСonversation(int index)
         {
             ViewDialog.OnStartConfigurationDialog?.Invoke(_conversation[index].GetText());        
         }
-
-        
     }
 
     public class DialogueIsStarted : UnityEvent<Dialog> { }

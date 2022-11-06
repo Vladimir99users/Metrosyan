@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace DialogControl.Item
+namespace DialogSystem.Item
 {
     [CreateAssetMenu(fileName = "Conversation", menuName = "Conversation/talk")]
     public class Conversation : ScriptableObject
