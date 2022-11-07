@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DialogSystem.Item
 {
-    [CreateAssetMenu(fileName = "Conversation", menuName = "Conversation/talk")]
+    [CreateAssetMenu(fileName = "Conversation", menuName = "Conversation/Dialog/Conversation")]
     public class Conversation : ScriptableObject
     {
         [SerializeField] private List<Node> _nodes;

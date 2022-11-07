@@ -72,6 +72,7 @@ public class ViewDialog : Menu
         }
         else
         {
+            EventManadger.SendAboutDialogueHasEnded();
             Close();      
         }
     }

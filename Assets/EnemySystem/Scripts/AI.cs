@@ -155,7 +155,7 @@ public class AI : Enemy
     {
         if(_typeEnemy == EnemyType.None) return;
         
-        EventManadger.OnKillSendMessage?.Invoke(_typeEnemy);
+        EventManadger.SendMessageKillEnemy(_typeEnemy);
     }
 
     private void OnDrawGizmosSelected()

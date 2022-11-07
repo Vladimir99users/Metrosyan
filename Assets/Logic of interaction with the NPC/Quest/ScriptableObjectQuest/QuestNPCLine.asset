@@ -61,7 +61,7 @@ MonoBehaviour:
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []
-  NPC: {fileID: 11400000, guid: ec43ec4cb5d3e5a4da9840025eaa682a, type: 2}
+  NPC: {fileID: 11400000, guid: 34ce485f55261bd409a4be8ca10e2302, type: 2}
 --- !u!114 &5803607697315341616
 MonoBehaviour:
   m_ObjectHideFlags: 0
